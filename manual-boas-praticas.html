@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manual de Boas Práticas em Sala — Sociologia Rural 2026.2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0e0e12; --surface: #16161e; --surface-2: #1e1e2a; --border: #2a2a3a;
+    --accent: #f59e0b; --accent-dim: #92610a; --teal: #38bdf8; --green: #4ade80;
+    --amber: #fbbf24; --red: #f87171; --purple: #7c6af7; --text: #e8e8f4; --muted: #7a7a9a;
+    --sans: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 640px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+
+  p { margin-bottom: 16px; font-size: 1.02rem; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  strong { color: #e8e8ff; }
+
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 20px 0; font-size: 1rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 20px 0; font-size: 1rem; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+
+  .pending { border: 1px dashed var(--border); border-radius: 10px; padding: 18px 22px; margin: 20px 0; color: var(--muted); font-size: .96rem; background: var(--surface); }
+  .pending .p-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-family: var(--mono); margin-bottom: 6px; }
+
+  /* TABELA DE ADVERTÊNCIAS */
+  .tabela { width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .tabela th, .tabela td { padding: 12px 18px; text-align: left; font-size: .95rem; border-bottom: 1px solid var(--border); }
+  .tabela th { background: var(--surface-2); font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .tabela td { background: var(--surface); }
+  .tabela tr:last-child td { border-bottom: none; }
+  .tabela td.num { font-family: var(--mono); font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .tabela td.desconto { font-family: var(--mono); color: var(--red); font-weight: 600; }
+  .tabela td.desconto.zero { color: var(--green); }
+
+  .rubrica { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 20px 0; }
+  .rubrica-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; font-size: .95rem; color: var(--text); }
+  .rubrica-item .r-num { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 44px 0; }
+
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+  .back-link { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--teal); text-decoration: none; font-family: var(--mono); }
+  .back-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Manual de Boas Práticas</div>
+  <h1>Manual de Boas Práticas <span>em Sala</span></h1>
+  <p class="hero-sub">Normas de frequência, conduta e participação que regem o curso de Sociologia Rural — válidas em sala de aula, nas semanas livres de pesquisa de campo e no Seminário Final.</p>
+  <div class="meta-row">
+    <span class="meta-pill">Frequência</span>
+    <span class="meta-pill">Conduta em sala</span>
+    <span class="meta-pill">Pesquisa de campo</span>
+    <span class="meta-pill">Seminário Final</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="frequencia">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Frequência e Pontualidade</h2>
+    </div>
+    <p>Aplica-se ao curso a normativa geral de frequência da UFCG: presença mínima de 75% do total de aulas ministradas é condição para aprovação, independente do desempenho nas avaliações. Faltas não justificam automaticamente reposição de conteúdo ou de atividades avaliativas — cabe ao aluno buscar o material perdido e se manter em dia com o andamento do curso.</p>
+    <p>Pontualidade é esperada no início de cada aula. Entradas recorrentes após o início do encontro podem ser registradas como atraso, a critério do professor, sem prejuízo da presença já registrada.</p>
+    <div class="pending">
+      <div class="p-label">A confirmar</div>
+      Consulte o regimento acadêmico oficial da UFCG vigente para o detalhamento completo das regras de frequência e abono de faltas.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="dispositivos">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Uso de Celular e Notebook em Sala</h2>
+    </div>
+    <p>Celulares e notebooks são bem-vindos como ferramenta de estudo: consulta a textos, anotações, pesquisa pontual durante a aula. O critério é simples — o uso não pode se tornar fonte de distração para quem está usando o dispositivo, nem para os colegas ao redor.</p>
+    <p>Durante discussões coletivas e apresentações de colegas, a expectativa é de atenção à sala. Chamadas, notificações sonoras e uso de redes sociais alheio ao conteúdo da aula devem ser evitados ou resolvidos fora do espaço de aula.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="pesquisa-campo">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Participação nas Semanas Livres de Pesquisa de Campo</h2>
+    </div>
+    <p>As 3 semanas livres do curso colocam os alunos em contato direto com pessoas reais fora do ambiente acadêmico. Isso implica compromissos éticos básicos de pesquisa, além dos compromissos acadêmicos usuais:</p>
+    <ul>
+      <li><strong>Compromisso com o entrevistado:</strong> confirmar horário e local combinados; se atrasar ou precisar cancelar, avisar com antecedência.</li>
+      <li><strong>Identificação clara:</strong> apresentar-se como parte de um projeto de curso de graduação, explicando brevemente o objetivo da conversa.</li>
+      <li><strong>Consentimento antes de registrar:</strong> pedir permissão explícita antes de gravar áudio, fotografar ou citar nominalmente qualquer pessoa no material entregue.</li>
+      <li><strong>Não constranger o entrevistado:</strong> respeitar o direito de não responder a uma pergunta, de interromper a conversa, ou de pedir que algo não seja usado.</li>
+      <li><strong>Anonimização quando solicitada:</strong> se o entrevistado pedir para não ser identificado, o grupo deve substituir o nome real por uma identificação genérica no diário de campo e na apresentação final.</li>
+    </ul>
+    <p>Essas diretrizes seguem os mesmos princípios de qualquer pesquisa social básica com seres humanos: transparência sobre o objetivo, consentimento e respeito pela pessoa entrevistada.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conduta">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Conversas Paralelas em Sala de Aula</h2>
+    </div>
+    <p>Conversas paralelas durante explicações, discussões ou apresentações de colegas prejudicam a escuta de toda a turma. A regra abaixo existe para preservar o ambiente de aula — não para punir:</p>
+
+    <div class="callout">
+      <div class="callout-label">1ª advertência</div>
+      Aviso verbal registrado pelo professor no momento da ocorrência. <strong>Sem desconto de pontuação.</strong>
+    </div>
+    <div class="callout">
+      <div class="callout-label">A partir da 2ª advertência</div>
+      Desconto de <strong>0,5 ponto</strong> na nota de participação por ocorrência, de forma cumulativa.
+    </div>
+
+    <table class="tabela">
+      <thead>
+        <tr><th>Ocorrência</th><th>Desconto acumulado na nota de participação</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1ª advertência</td><td class="desconto zero">Sem desconto — aviso verbal registrado</td></tr>
+        <tr><td class="num">2ª advertência</td><td class="desconto">−0,5 ponto</td></tr>
+        <tr><td class="num">3ª advertência</td><td class="desconto">−1,0 ponto</td></tr>
+        <tr><td class="num">4ª advertência</td><td class="desconto">−1,5 ponto</td></tr>
+        <tr><td class="num">5ª advertência</td><td class="desconto">−2,0 ponto</td></tr>
+      </tbody>
+    </table>
+    <p>E assim sucessivamente: cada nova advertência a partir da 2ª soma mais 0,5 ponto ao desconto acumulado. Toda advertência é registrada pelo professor no momento em que ocorre — não há aplicação retroativa. O objetivo da regra é preservar o ambiente de aula para todos, não acumular punição; qualquer aluno pode, a qualquer momento, ajustar sua conduta e não receber novas advertências.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="prazos">
+    <div class="section-header">
+      <div class="step-num">05</div>
+      <h2>Prazos das Semanas Livres</h2>
+    </div>
+    <p>Cada semana livre de pesquisa de campo (Encontros 10, 11 e 12) tem um produto a entregar — ver detalhes no <a href="roteiro-pesquisa-campo.html">roteiro do projeto de pesquisa de campo</a>.</p>
+    <div class="pending">
+      <div class="p-label">A definir</div>
+      Prazo exato de entrega de cada produto semanal e política de atraso ainda serão definidos pelo professor e comunicados à turma.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="seminario">
+    <div class="section-header">
+      <div class="step-num">06</div>
+      <h2>Critérios do Seminário Final</h2>
+    </div>
+    <p>O Seminário Final (Encontros 13 e 14) segue a rubrica definida no roteiro do projeto de pesquisa de campo. Cada grupo apresenta 10-12 minutos, seguidos de 5 minutos de perguntas, e é avaliado por:</p>
+    <div class="rubrica">
+      <div class="rubrica-item"><div class="r-num">Critério 1</div>Qualidade do registro de campo (evidência real, não fabricada)</div>
+      <div class="rubrica-item"><div class="r-num">Critério 2</div>Uso correto e não decorativo do conceito sociológico</div>
+      <div class="rubrica-item"><div class="r-num">Critério 3</div>Capacidade de conectar história agrária brasileira com o presente</div>
+      <div class="rubrica-item"><div class="r-num">Critério 4</div>Clareza da apresentação</div>
+    </div>
+    <p>A estrutura obrigatória da apresentação e o detalhamento completo da rubrica estão no <a href="roteiro-pesquisa-campo.html#seminario">roteiro do Seminário Final</a>.</p>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Curso de História · Manual de Boas Práticas em Sala</p>
+    <a class="back-link" href="apresentacao.html">&larr; Voltar para a apresentação do curso</a>
+  </div>
+
+</div>
+</body>
+</html>
