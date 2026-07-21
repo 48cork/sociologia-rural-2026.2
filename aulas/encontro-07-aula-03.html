@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modos de vida camponeses — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 07 · Aula 03</div>
+  <h1>Modos de vida<br><span>camponeses</span></h1>
+  <p class="hero-sub">Mutirão, herança e transmissão de saberes: a cultura camponesa como parte inseparável da economia camponesa</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: O Campesinato Brasileiro</span>
+    <span class="meta-pill">reciprocidade · trabalho · identidade</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">
+      Explorar o modo de vida camponês para além da dimensão puramente econômica — reciprocidade, mutirão, transmissão de saberes e a terra como herança e identidade —, entendendo cultura e economia camponesas como duas faces de um mesmo processo.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Nas duas aulas anteriores, tratamos o campesinato principalmente pelo ângulo da economia: a lógica do balanço trabalho-consumo em Chayanov, a pressão da concentração fundiária na formação histórica brasileira. Mas reduzir o campesinato a uma unidade de produção seria um erro — e um erro particularmente perigoso para um historiador, que lida o tempo todo com fontes que registram práticas culturais, rituais, formas de sociabilidade. O modo de vida camponês é inseparavelmente econômico e cultural: a forma como a família organiza o trabalho, entende a terra e se relaciona com a vizinhança está sempre carregada de significados que vão muito além do cálculo de subsistência.</p>
+
+    <h3>Reciprocidade e mutirão</h3>
+    <p>Um dos traços mais estudados dos modos de vida camponeses no Brasil é a prática da reciprocidade — a troca de trabalho, favores e apoio material entre famílias vizinhas ou aparentadas, sem que isso passe necessariamente por uma transação monetária. O mutirão é a expressão mais visível desse princípio: um grupo de vizinhos se reúne para realizar, em conjunto, uma tarefa que seria muito pesada para uma única família sozinha — erguer uma casa, fazer uma colheita em tempo hábil antes da chuva, limpar um terreno para plantio. Quem recebe a ajuda hoje sabe que deverá retribuí-la amanhã, quando outra família precisar. Não se trata de caridade nem de mercado: é um sistema de obrigações mútuas que sustenta a reprodução do grupo como um todo, para além da unidade familiar isolada.</p>
+
+    <p>Reciprocidade não é ausência de cálculo — é um cálculo de longo prazo, baseado em confiança e obrigação mútua, e não em preço e pagamento imediato. Recuperando o que vimos na aula sobre Durkheim (Encontro 2): esse tipo de coesão, sustentada por valores e costumes partilhados por todos, é mais parecida com solidariedade mecânica ou com solidariedade orgânica? Trata-se, de fato, de um exemplo direto de solidariedade mecânica — uma coesão social que dispensa a divisão complexa e especializada do trabalho característica da solidariedade orgânica das sociedades urbano-industriais, o que também ajuda a entender por que comunidades camponesas resistem, muitas vezes, à plena monetização de suas relações de trabalho.</p>
+
+    <h3>A terra como herança e identidade</h3>
+    <p>Para o modo de vida camponês, a terra raramente é apenas um meio de produção substituível por outro. Ela carrega a história da família: é onde os antepassados trabalharam e estão enterrados, é o que se pretende deixar para os filhos, é o espaço onde memórias, festas religiosas e marcos da vida da família aconteceram. Essa dimensão simbólica da terra ajuda a explicar comportamentos que, vistos apenas pela lógica de mercado, pareceriam "irracionais" — como a recusa em vender uma propriedade mesmo diante de uma oferta financeira aparentemente vantajosa, algo que já discutimos no caso da aula anterior.</p>
+
+    <p>Essa relação com a terra também molda disputas e resistências políticas: quando uma comunidade camponesa enfrenta ameaça de despejo, grilagem ou expropriação, o que está em jogo não é apenas um ativo econômico, mas a continuidade de uma identidade coletiva construída ao longo de gerações. Compreender essa dimensão é fundamental para interpretar, por exemplo, a intensidade dos conflitos de terra na história brasileira — muito além do valor de mercado da terra em disputa.</p>
+
+    <h3>Transmissão de saberes entre gerações</h3>
+    <p>O trabalho camponês envolve um conhecimento técnico minucioso — sobre o solo, o clima, as estações, as plantas, os animais — que raramente está escrito em manuais e é transmitido de forma prática, de pais para filhos, de avós para netos, através da observação e da experiência compartilhada no próprio trabalho da terra. Esse saber é adaptado, ao longo de gerações, às condições específicas de cada região — incluindo ambientes difíceis, como o semiárido, onde a agricultura exige conhecimento muito preciso sobre quando plantar, como armazenar água e como lidar com períodos de estiagem prolongada.</p>
+
+    <div class="callout">
+      <div class="callout-label">Por que isso importa para a História</div>
+      Reduzir o campesinato a uma categoria puramente econômica apaga justamente aquilo que costuma aparecer nas fontes históricas mais ricas — cartas, relatos orais, processos judiciais, registros paroquiais: <strong>a cultura camponesa como sistema de sentido</strong>, não apenas como sistema de produção.
+    </div>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: a roça de toco e o mutirão no sertão</h2>
+    </div>
+    <div class="caso">
+      <div class="caso-label">Ilustração · sertão nordestino</div>
+      <h3>A agricultura de sequeiro como modo de vida</h3>
+      <p>No sertão nordestino, um padrão amplamente documentado de agricultura camponesa é a chamada "roça de toco" (ou agricultura de sequeiro): o cultivo de milho, feijão e outras culturas de subsistência em terrenos preparados de forma tradicional, dependente das chuvas irregulares da região, sem irrigação artificial extensiva. Essa produção combina, tipicamente, uma parte destinada ao consumo direto da família com um pequeno excedente para troca ou venda em feiras locais.</p>
+      <p>A organização do trabalho nessa roça costuma envolver, além do núcleo familiar, redes de vizinhança e parentesco: mutirões para o plantio ou a colheita em momentos críticos do calendário agrícola (especialmente quando as chuvas chegam e é preciso plantar rapidamente), trocas de sementes adaptadas às condições locais, e conhecimento acumulado sobre os sinais que antecipam um período de seca mais severa. A roça de toco sertaneja ilustra, assim, ao mesmo tempo, a lógica chayanoviana do balanço trabalho-consumo (produção orientada à reprodução da família, não ao lucro) e a dimensão cultural da reciprocidade e da solidariedade mecânica durkheimiana (mutirão, troca de sementes, saber compartilhado) — mostrando que economia e cultura camponesas são, na prática, indissociáveis.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que a prática do mutirão não pode ser explicada apenas como uma estratégia econômica de redução de custos, ignorando sua dimensão de obrigação e confiança mútua?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Como a relação simbólica com a terra — como herança e identidade — ajuda a explicar a intensidade de certos conflitos fundiários na história do Brasil?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Que tipo de fonte histórica (documental, oral, material) seria mais adequada para captar a transmissão de saberes agrícolas entre gerações camponesas, e por quê?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 07 · Aula 03 · Modos de vida camponeses</p>
+</div>
+
+</body>
+</html>

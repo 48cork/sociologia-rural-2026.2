@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Consequências Sociais da Modernização — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .activity { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th { padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); font-family: var(--mono); }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 09 · Aula 03</div>
+  <h1>Êxodo e <span>Concentração</span></h1>
+  <p class="hero-sub">As consequências sociais da modernização conservadora — e o início do nosso projeto de pesquisa de campo</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 minutos</span>
+    <span class="meta-pill">Bloco: Modernização da Agricultura</span>
+    <span class="meta-pill">Êxodo rural · concentração fundiária</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">Analisar as principais consequências sociais da modernização conservadora — o êxodo rural em direção às cidades e o aprofundamento da concentração fundiária — fechando o bloco sobre modernização da agricultura brasileira.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">25 min</span>
+    </div>
+
+    <p>Nas duas últimas aulas, vimos o conceito de modernização conservadora e o funcionamento concreto da Revolução Verde no Brasil, com seu modelo de crédito rural desigualmente distribuído. É hora de perguntar: quais foram as consequências sociais concretas desse processo para a população que vivia — e ainda vive — no campo brasileiro? Duas consequências se destacam na historiografia: o êxodo rural em massa e o aprofundamento, não a redução, da concentração de terra.</p>
+
+    <h3>O êxodo rural como efeito social da modernização</h3>
+    <p>Se a modernização conservadora tornou a agricultura mais produtiva sem redistribuir terra, o que vocês esperariam que acontecesse com as pessoas que antes trabalhavam essa terra manualmente — elas ficaram mais necessárias, ou menos? A mecanização do trabalho agrícola — tratores substituindo trabalho manual, colheitadeiras substituindo grandes equipes de trabalhadores na colheita — reduziu drasticamente a necessidade de mão de obra no campo, mesmo em áreas onde a produção aumentava. Trabalhadores rurais que antes tinham ocupação garantida em fazendas, mesmo que precária, viram seus postos de trabalho desaparecerem à medida que máquinas tomavam seu lugar. Ao mesmo tempo, a industrialização acelerada nas grandes cidades brasileiras — sobretudo em São Paulo e no eixo Rio–São Paulo — oferecia, ou parecia oferecer, alternativa de emprego urbano.</p>
+
+    <p>O resultado foi um dos maiores deslocamentos populacionais da história brasileira: entre as décadas de 1950 e 1980, milhões de pessoas deixaram o campo em direção às cidades, alterando de forma irreversível a proporção entre população rural e urbana no país. Esse processo não foi uniforme: regiões como o Nordeste, historicamente com forte presença de trabalhadores rurais sem terra e camponeses pobres, foram das principais fontes desse fluxo migratório, alimentando as periferias das grandes metrópoles do Sudeste com trabalhadores em busca de oportunidade.</p>
+
+    <div class="highlight">
+      <strong>Um ponto importante para o historiador:</strong> o êxodo rural não deve ser lido apenas como "vontade individual de buscar vida melhor na cidade" — ele é, em grande medida, um efeito estrutural de decisões econômicas e políticas sobre como modernizar a agricultura sem redistribuir terra nem garantir alternativas de trabalho rural para quem foi substituído pelas máquinas.
+    </div>
+
+    <h3>Concentração fundiária: modernizar sem redistribuir aprofunda a desigualdade</h3>
+    <p>A segunda consequência é, à primeira vista, contraintuitiva: por que a modernização, que trouxe tanto crescimento de produtividade, não reduziu a concentração de terra? A resposta está no próprio modelo de crédito e incentivo que estudamos na aula anterior. Como o crédito subsidiado exigia garantias que favoreciam quem já possuía terra e capital, os produtores que já eram grandes proprietários tiveram condições de se capitalizar ainda mais, comprando terras de vizinhos menores que não conseguiram acompanhar o novo patamar de investimento tecnológico exigido para competir no mercado.</p>
+
+    <p>Esse processo de "modernizar para concentrar ainda mais" ficou conhecido, em parte da literatura, como uma espécie de seleção natural artificial no campo: quem tinha acesso a crédito, terra suficiente para servir de garantia e conexão com o sistema bancário sobrevivia e crescia; quem não tinha, muitas vezes vendia sua pequena propriedade — voluntariamente ou sob pressão de dívidas — e engrossava o fluxo migratório para as cidades. A modernização, portanto, contribuiu ativamente para aprofundar a concentração fundiária histórica em determinadas regiões e períodos.</p>
+
+    <p>Esse padrão de êxodo combinado com concentração fecha um ciclo importante da nossa disciplina: da colonização às sesmarias, da Lei de Terras à abolição sem reforma agrária, do coronelismo à modernização conservadora, o fio condutor é sempre o mesmo — momentos de grande transformação histórica que, por escolha política, preservam e às vezes aprofundam a desigualdade no acesso à terra no Brasil.</p>
+
+    <div class="callout">
+      <div class="callout-label">Lançamento do projeto de pesquisa de campo</div>
+      Nos últimos 20 minutos deste encontro, a turma inicia o projeto <strong>"O Rural tem Classe Social na Era das Plataformas?"</strong>. Formem grupos de 4 a 5 pessoas e escolham (ou sorteiem) um perfil de ator rural para acompanhar ao longo das próximas três semanas: agricultor(a) familiar, trabalhador(a) do agronegócio (assalariado rural), membro de comunidade quilombola ou tradicional, assentado(a) da reforma agrária, ou jovem rural que migrou ou pensa em migrar para a cidade. A pergunta que vai guiar o trabalho do grupo é: <strong>como esse perfil vive, hoje, a relação entre terra, trabalho e as novas tecnologias e plataformas digitais que chegam ao campo</strong> (crédito rural digital, aplicativos de venda, redes sociais, agricultura de precisão etc.)? Cada grupo vai receber um roteiro de três semanas e deve manter um caderno de campo, físico ou digital, para registrar tudo o que for observado e conversado. Os encontros 10, 11 e 12 serão inteiramente dedicados a essa pesquisa de campo, com leitura guiada e tarefa específica em cada semana.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o Nordeste como fonte histórica de migração rural</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Nordeste Brasileiro · Décadas de 1950-1980</div>
+      <h3>Trabalhadores rurais sem terra e o fluxo para o Sudeste</h3>
+      <p>Durante boa parte do século XX, o Nordeste brasileiro — marcado por concentração fundiária herdada da economia açucareira e da pecuária colonial, por ciclos de seca recorrentes e por baixo investimento estatal em infraestrutura agrícola voltada aos pequenos produtores — foi uma das principais regiões de origem do êxodo rural brasileiro. Trabalhadores que perdiam seus postos em engenhos e fazendas cada vez mais mecanizados, ou que simplesmente nunca tiveram acesso à terra, buscavam nas grandes cidades do Sudeste, sobretudo São Paulo, uma alternativa de trabalho assalariado na indústria em expansão.</p>
+      <p>Esse fluxo teve efeitos duradouros na composição social das periferias urbanas brasileiras e alimentou, por décadas, um imaginário nacional que associava o nordestino migrante à pobreza e ao "atraso" — sem reconhecer que essa migração era, em grande parte, resultado direto do modelo de modernização conservadora que excluiu justamente essa população do acesso à terra e ao crédito. O caso mostra como um processo aparentemente "econômico" — migração em busca de trabalho — tem raiz estrutural em decisões históricas sobre terra e crédito, decisões que moldaram, de forma duradoura, a distribuição regional da população brasileira.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>O êxodo rural deve ser entendido principalmente como escolha individual em busca de melhores condições de vida, ou como efeito estrutural de políticas de modernização que excluíram parte da população rural? Como equilibrar essas duas leituras?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Por que um processo de modernização técnica que aumenta a produtividade agrícola pode, ao mesmo tempo, aprofundar a concentração de terra em vez de reduzi-la? Que mecanismo explica esse paradoxo?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Pensando no perfil de ator rural que seu grupo escolheu para o projeto de pesquisa: em que medida a história do êxodo rural e da concentração fundiária ainda ecoa na vida dessa pessoa hoje?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 09 · Aula 03 · Êxodo e concentração — lançamento do projeto de campo</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Leitura Guiada: Agricultura Familiar — Semana Livre 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .activity { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 10 · Aula 01 · Semana Livre 1</div>
+  <h1>Leitura Guiada: <span>Agricultura Familiar</span></h1>
+  <p class="hero-sub">Antes de ir a campo, revisitar o que já vimos sobre agricultura familiar e afinar o olhar para a entrevista</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 minutos</span>
+    <span class="meta-pill">Semana Livre de Pesquisa de Campo</span>
+    <span class="meta-pill">Projeto: O Rural tem Classe Social na Era das Plataformas?</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">Retomar os conceitos-chave sobre agricultura familiar já trabalhados no curso e orientar a leitura de base da semana, preparando cada grupo para a entrevista de campo que será realizada nos próximos dias.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="leitura-guiada">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Leitura Guiada</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Estamos na primeira das três semanas livres dedicadas ao projeto <strong>"O Rural tem Classe Social na Era das Plataformas?"</strong>, lançado no encontro anterior. Cada grupo já escolheu ou sorteou um perfil de ator rural para acompanhar ao longo dessas três semanas: agricultor(a) familiar, trabalhador(a) do agronegócio, membro de comunidade quilombola ou tradicional, assentado(a) da reforma agrária, ou jovem rural em relação de permanência ou migração. Esta primeira semana é dedicada especificamente ao perfil da <strong>agricultura familiar</strong> — mesmo que o perfil escolhido pelo seu grupo seja outro, a leitura e a reflexão desta semana ajudam a construir um repertório comum para todos.</p>
+
+    <div class="activity blue">
+      <div class="activity-header">
+        <div class="activity-icon blue">📖</div>
+        <h3>O que revisitar: agricultura familiar no Brasil</h3>
+      </div>
+      <p>No encontro 7, ao estudarmos o campesinato brasileiro, já vimos que a agricultura familiar é uma unidade produtiva em que o trabalho e a gestão estão nas mãos da própria família, em contraste com modelos de produção baseados em trabalho assalariado em larga escala. A leitura de base desta semana é o mesmo texto curto sobre agricultura familiar já indicado naquele encontro (por exemplo, o capítulo de Abramovay que compara agricultura familiar e agronegócio). Releiam esse material com uma pergunta nova em mente: como essa forma de produzir se relaciona, hoje, com tecnologias digitais de venda, crédito e comunicação?</p>
+      <p>"Agricultura familiar" não é sinônimo de pobreza ou de atraso técnico: é uma categoria de organização do trabalho e da produção, reconhecida inclusive em lei (Lei nº 11.326/2006), que abrange desde pequenos produtores de subsistência até unidades familiares bastante capitalizadas e conectadas a mercados regionais e até de exportação.</p>
+    </div>
+
+    <div class="activity amber">
+      <div class="activity-header">
+        <div class="activity-icon amber">🎯</div>
+        <h3>Para onde olhar durante a entrevista</h3>
+      </div>
+      <p>Ao ler (ou reler) o texto de base, tenham em mente três eixos que vão orientar a conversa com quem for entrevistado nesta semana:</p>
+      <ul>
+        <li><strong>Circuito de venda:</strong> como esse produtor vende o que produz — feira, atravessador, cooperativa, venda direta?</li>
+        <li><strong>Uso de tecnologia digital:</strong> ele(a) usa algum aplicativo, WhatsApp, rede social ou plataforma para vender sua produção ou comprar insumos?</li>
+        <li><strong>Relação com a terra:</strong> como essa pessoa descreve o vínculo com a terra que trabalha — como propriedade, herança de família, meio de vida, ou parte da própria identidade?</li>
+      </ul>
+    </div>
+
+    <div class="highlight">
+      <strong>Lembrete do projeto:</strong> a pergunta motriz que conecta as três semanas livres é como cada perfil de ator rural vive, hoje, a relação entre terra, trabalho e as novas tecnologias e plataformas digitais que chegam ao campo. Cada achado semanal vai alimentar, ao final, uma análise usando um conceito sociológico do curso — mas essa costura teórica só será fechada depois da terceira semana.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Antes de Ir a Campo</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Orientação 01</div>
+        <p>Já sabem quem vão entrevistar? Se ainda não, definam agora um nome ou contato possível — de preferência alguém da própria região ou da rede de contatos do grupo.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Orientação 02</div>
+        <p>Revisem as três perguntas-guia (venda, tecnologia digital, relação com a terra) e pensem em como adaptá-las a uma conversa natural, sem parecer um questionário engessado.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Orientação 03</div>
+        <p>Combinem, dentro do grupo, quem conduz a entrevista, quem registra por escrito e quem cuida de fotos ou prints — isso evita improviso no momento da conversa.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 10 · Aula 01 · Semana Livre 1 — Leitura guiada</p>
+</div>
+
+</body>
+</html>

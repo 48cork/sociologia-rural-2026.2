@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Por que estudar o rural hoje? Rural não é sinônimo de atraso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0e0e12; --surface: #16161e; --surface-2: #1e1e2a; --border: #2a2a3a;
+    --accent: #f59e0b; --accent-dim: #92610a; --teal: #38bdf8; --green: #4ade80;
+    --amber: #fbbf24; --red: #f87171; --purple: #7c6af7; --text: #e8e8f4; --muted: #7a7a9a;
+    --sans: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 01 · Aula 02</div>
+  <h1>Por que estudar o rural hoje? Rural não é <span>sinônimo de atraso</span></h1>
+  <p class="hero-sub">Desmontando uma equação que o próprio Estado brasileiro ajudou a construir: rural = atraso, urbano = progresso</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco 1 · Fundamentos</span>
+    <span class="meta-pill">Ideologia da modernização</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Desconstruir a associação automática entre "rural" e "atraso", mostrando que o campo brasileiro contemporâneo é um espaço heterogêneo, disputado e, em muitos aspectos, tão "moderno" quanto a cidade — só que moderno de outras formas.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Há uma equação que muitos brasileiros carregam quase sem perceber: rural é sinônimo de atraso, e urbano é sinônimo de progresso. Essa equação não é natural nem óbvia — ela foi construída historicamente, tem autores, tem interesses por trás, e precisa ser desmontada com cuidado antes que possamos estudar o mundo rural brasileiro sem lentes distorcidas.</p>
+
+    <h3>De onde vem essa ideia?</h3>
+    <p>A associação entre progresso e cidade ganha força no Brasil sobretudo a partir do final do século XIX, com o ideário positivista que influenciou boa parte da elite republicana. A frase "Ordem e Progresso", estampada na bandeira desde 1889, resume um projeto de país que via a industrialização, a urbanização e a ciência como sinônimos de avanço civilizatório — e via o campo, especialmente o campo pobre e não-branco, como o lugar do atraso a ser superado ou, na melhor das hipóteses, modernizado à força. Esse ideário atravessou o século XX: nas políticas de colonização e "marcha para o oeste" do Estado Novo, no discurso desenvolvimentista dos anos 1950-60, e na própria Revolução Verde que veremos no encontro 9, sempre esteve presente a ideia de que "salvar" o campo significava torná-lo parecido com a cidade — mecanizado, tecnificado, urbano em espírito, mesmo quando rural em localização.</p>
+
+    <p>O problema dessa narrativa não é reconhecer que existem mudanças tecnológicas importantes no campo — elas existem e são reais. O problema é a hierarquia moral escondida na palavra "atraso": ela sugere que formas de vida, de trabalho e de organização social diferentes das urbanas são inferiores, e não apenas diferentes. Essa hierarquia moral tem consequências políticas concretas: justificou historicamente a desapropriação de terras indígenas e camponesas em nome do "progresso", a desvalorização do conhecimento tradicional de agricultores familiares e comunidades tradicionais, e políticas públicas que tratam o campo apenas como fornecedor de matéria-prima e de mão de obra barata para as cidades.</p>
+
+    <p>"Rural" não é um estágio anterior a "urbano" na linha do tempo do progresso: é uma forma diferente de organizar a vida social, com sua própria complexidade, suas próprias tecnologias e suas próprias formas de mudança — que convivem, às vezes na mesma região, com o que há de mais avançado em tecnologia agrícola global.</p>
+
+    <h3>O rural é plural: do agronegócio de precisão às comunidades tradicionais</h3>
+    <p>Um dos enganos mais comuns é imaginar o "rural brasileiro" como uma coisa única e homogênea. Na verdade, sob esse mesmo rótulo convivem realidades radicalmente diferentes. De um lado, existe um agronegócio de grãos e proteína animal altamente tecnificado, que usa imagens de satélite, sensores de solo, drones e inteligência artificial para otimizar plantio e colheita — um "rural" tecnologicamente tão sofisticado quanto qualquer setor urbano de ponta. De outro lado, no mesmo território nacional, existem comunidades quilombolas, indígenas, ribeirinhas, de fundo de pasto e agricultores familiares que sustentam sua reprodução social com lógicas muito diferentes da lógica de lucro do agronegócio — lógicas que estudaremos com mais cuidado nos encontros sobre campesinato (7) e povos tradicionais (12).</p>
+
+    <p>Nenhuma dessas formas é "mais atrasada" que a outra em sentido absoluto — elas respondem a projetos de vida e a inserções na economia diferentes. Um erro simétrico ao de tratar o campo como atraso é romantizá-lo como um paraíso perdido de simplicidade — os dois enganos escondem a mesma coisa: a recusa em olhar com atenção para a real diversidade e a real desigualdade que organizam o Brasil rural.</p>
+
+    <h3>Repensando o "êxodo rural" e o "fim do campesinato"</h3>
+    <p>Duas ideias muito repetidas merecem uma leitura crítica. A primeira é a de "êxodo rural" como processo inevitável e unidirecional — do campo para a cidade, sempre. Mas se fosse mesmo inevitável, por que ele se intensifica justamente nos períodos de maior mecanização excludente e de maior concentração de terra, em vez de correr num ritmo constante ao longo de toda a história? A palavra "êxodo" já dá a pista: a migração rural-urbana no Brasil foi, em grande medida, uma migração forçada pela concentração de terra e pela mecanização excludente, não uma escolha livre em busca de uma vida melhor automática. A segunda ideia é a do "fim do campesinato", anunciada por diferentes correntes teóricas ao longo do século XX (voltaremos a isso no encontro 7, com Kautsky) — uma previsão que a história brasileira, e mundial, sistematicamente desmentiu: o campesinato não desapareceu, se recriou sob novas formas, resistiu e hoje é reconhecido inclusive juridicamente, através da categoria "agricultura familiar".</p>
+
+    <div class="highlight">
+      <strong>Um convite metodológico:</strong> ao longo do curso, sempre que você encontrar a palavra "atraso" aplicada ao rural — em um documento histórico, numa fala política, num discurso de época — pergunte-se: atraso segundo qual critério, definido por quem, e a serviço de que interesse?
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o Sertão e a Inversão do Estigma</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Nordeste · Semiárido</div>
+      <h3>O sertão nordestino como suposto símbolo do "atraso" brasileiro</h3>
+      <p>Poucas regiões do país carregam com tanto peso o estigma do "atraso" quanto o sertão semiárido nordestino. Desde o século XIX, a imagem do sertão foi construída — em relatos de viajantes, em discursos políticos e depois na cobertura de imprensa sobre as secas periódicas — como sinônimo de miséria, fatalismo e ausência de futuro. Essa imagem alimentou décadas de políticas públicas que tratavam a região apenas como "problema" a ser resolvido de fora, quase sempre por meio de grandes obras hídricas decididas sem consulta às populações locais (voltaremos a esse ponto com mais profundidade no encontro 14).</p>
+      <p>Só que, ao mesmo tempo em que essa imagem circulava, o próprio sertão desenvolvia — e segue desenvolvendo — formas próprias e sofisticadas de organização social e produtiva: sistemas de manejo do solo e da caatinga adaptados à irregularidade das chuvas, redes de reciprocidade e ajuda mútua entre famílias, e, mais recentemente, um dos movimentos de convivência com a seca mais reconhecidos internacionalmente como modelo de tecnologia social — o das cisternas de captação de água da chuva, articulado por organizações da sociedade civil da própria região. O estigma de atraso não resiste a essa observação mais atenta: o que existe ali é conhecimento acumulado e formas de organização social específicas para lidar com um ambiente difícil, conhecimento que, historicamente, foi sistematicamente desvalorizado por quem olhava a região de fora, através das lentes do ideário de progresso urbano-industrial.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">15 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Você consegue identificar, em outra disciplina do curso de História, um momento em que o "atraso" do rural foi usado para justificar uma política de Estado?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>É possível reconhecer as desigualdades reais do campo brasileiro sem cair no discurso do "atraso"? Como fazer essa distinção na prática?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Que exemplos você conhece, da sua própria região ou família, de tecnologia ou organização social rural que desafiam o estereótipo do atraso?</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 01 · Aula 02 · Ideologia da modernização</p>
+  </div>
+
+</div>
+</body>
+</html>

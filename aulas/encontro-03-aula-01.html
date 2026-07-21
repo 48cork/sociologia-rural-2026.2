@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Colonização, Sesmarias e a Gênese da Propriedade da Terra — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 3 · Aula 1</div>
+  <h1>Colonização, Sesmarias e a <span>Gênese da Propriedade da Terra</span></h1>
+  <p class="hero-sub">Como a terra deixou de ser um bem comum e virou privilégio de poucos — muito antes de qualquer lei dizer isso</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Formação Histórica do Brasil Rural</span>
+    <span class="meta-pill">Sesmarias · Latifúndio · Sertão</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Compreender como o sistema de sesmarias e capitanias hereditárias, herdado do direito português, lançou as bases históricas da concentração fundiária no Brasil, e identificar a linha de continuidade entre esse regime colonial e a Lei de Terras de 1850.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">exposição</span>
+    </div>
+
+    <p>Quando pensamos na desigualdade no acesso à terra no Brasil, é comum associá-la a fenômenos recentes: agronegócio, grilagem, especulação imobiliária. Mas a raiz desse problema é muito mais antiga do que qualquer um desses fenômenos — ela nasce no primeiro século da colonização portuguesa, numa época em que "propriedade privada da terra", no sentido moderno, sequer existia como categoria jurídica no Brasil. Entender essa origem é essencial para qualquer historiador que queira explicar por que o Brasil chegou ao século XXI com uma das estruturas fundiárias mais concentradas do mundo.</p>
+
+    <h3>A terra como concessão, não como mercadoria</h3>
+    <p>Em 1534, a Coroa portuguesa dividiu o território que reivindicava na América em capitanias hereditárias: grandes faixas de terra doadas a nobres e homens de confiança do rei, os donatários, que tinham o dever de povoar, defender e explorar economicamente a área em troca de amplos poderes administrativos e judiciais. Note que a lógica aqui não é de mercado: a terra não é comprada, é <em>concedida</em> por um soberano como recompensa e como instrumento de colonização. Quem recebe uma capitania não é necessariamente quem tem mais dinheiro, mas quem tem mais prestígio, serviços prestados à Coroa ou proximidade com o poder real.</p>
+
+    <p>Dentro das capitanias, e depois mais amplamente em todo o território colonial, o instrumento jurídico usado para repassar terras a colonos foi a <strong>sesmaria</strong>: uma concessão de uso da terra, também feita pela Coroa (ou por seus representantes locais), que em tese exigia que o sesmeiro cultivasse a área e não a deixasse ociosa. Na prática, porém, o sistema de sesmarias favoreceu enormemente quem já tinha recursos para explorar grandes extensões — engenho de açúcar, mão de obra escravizada, gado — e deixou de fora a maior parte da população livre pobre, que ocupava terras informalmente, como posseiros, sem nunca conseguir título algum.</p>
+
+    <p>Vale a pena parar aqui e recuperar algo que vimos no Encontro 1: qual era, para Marx, o mecanismo estrutural que precisava acontecer antes de o capitalismo agrário se firmar — o processo que ele chamava de acumulação primitiva? E, se esse mecanismo depende de separar o trabalhador dos seus próprios meios de produção, onde exatamente essa separação já estaria em curso no sistema de sesmarias que acabamos de descrever, mais de dois séculos antes dos cercamentos ingleses que Marx analisou? Se vocês pensaram na exclusão sistemática dos posseiros pobres do acesso a qualquer título de terra, chegaram ao ponto certo: essa exclusão antecipa, em chave colonial, o mesmo mecanismo de separação entre trabalhador e meios de produção. Na Inglaterra estudada por Marx, essa separação veio pela expulsão de camponeses de terras que já ocupavam havia gerações; no Brasil colonial, o resultado é semelhante por um caminho diferente: um desenho institucional que, desde o início, impediu a maior parte da população livre de sequer chegar a ter título formal sobre a terra.</p>
+
+    <p>O ponto central para a Sociologia Rural é que, desde o início, o acesso à terra no Brasil não foi organizado por um mercado livre nem por uma distribuição igualitária, mas pela proximidade com o poder político — uma lógica de concentração via relação com o Estado, e não via competição econômica aberta, que vai se repetir sob formas diferentes ao longo de toda a história agrária brasileira.</p>
+
+    <h3>Sesmarias e capitanias hereditárias: uma lógica que ultrapassa o litoral</h3>
+    <p>É importante que vocês, como futuros historiadores, não associem esse processo apenas à faixa açucareira do litoral nordestino. O sistema de sesmarias também organizou a ocupação do interior — e é aí que mora um dos aspectos mais interessantes, e menos conhecidos, dessa história: a expansão da pecuária pelo sertão.</p>
+
+    <p>Enquanto o litoral se organizava em torno do engenho de açúcar, o sertão — o interior semiárido do Nordeste — foi ocupado principalmente pela criação de gado, atividade que não competia diretamente pela terra fértil da faixa canavieira, mas que precisava de grandes extensões para ser viável. As sesmarias de gado, concedidas a criadores que avançavam rio acima em direção ao interior, criaram uma malha de propriedades enormes, com baixíssima densidade populacional e um controle territorial que, em muitos casos, durou séculos nas mãos das mesmas famílias.</p>
+
+    <h3>Do "curral" ao poder local: uma semente do coronelismo</h3>
+    <p>Esse padrão de ocupação sertaneja é decisivo para entender capítulos posteriores deste curso. O <strong>curral</strong> — o núcleo da fazenda de gado, muitas vezes origem de povoados e depois de cidades inteiras do sertão nordestino — concentrava mais do que produção: o dono do curral controlava a terra, decidia quem podia ou não se instalar nas redondezas, e frequentemente controlava também a única fonte de água disponível numa região de chuvas escassas e irregulares.</p>
+
+    <p>Esse controle concentrado — de terra, de água e, por extensão, de gente — é uma das raízes históricas mais profundas do fenômeno que vamos estudar com mais vagar no encontro 6: o coronelismo. Não é uma coincidência que boa parte dos municípios sertanejos tenha se formado literalmente ao redor de uma fazenda de gado, e que sobrenomes de famílias sesmeiras do período colonial ainda apareçam, séculos depois, em disputas políticas locais.</p>
+
+    <h3>Da concessão à mercadoria: o prenúncio da Lei de Terras</h3>
+    <p>O sistema de sesmarias foi oficialmente suspenso em 1822, no contexto da Independência, gerando um vácuo jurídico: por quase trinta anos, não houve regra clara sobre como se adquiria terra no Brasil, e a ocupação por posse — sem título algum — se tornou generalizada, inclusive por parte de população livre pobre, incluindo muitos ex-escravizados e libertos em áreas específicas. Esse período de "terras livres" de fato, ainda que precário e sem segurança jurídica, terminaria de forma abrupta em 1850, com a promulgação da Lei de Terras — o marco que vamos estudar na próxima aula, e que fechará definitivamente a porta que a colonização já havia deixado bem estreita.</p>
+
+    <div class="callout">
+      <div class="callout-label">Para reter</div>
+      A concentração fundiária brasileira não começa com o agronegócio, nem com a industrialização, nem mesmo com a escravidão isoladamente — ela começa com um desenho institucional colonial que tratou a terra como instrumento de poder político, distribuído por proximidade com a Coroa, e não como bem de acesso amplo. Esse desenho inicial molda todos os capítulos seguintes da história agrária brasileira.
+    </div>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o Sertão como Território de Currais</h2>
+      <span class="duration">Nordeste · semiárido</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso concreto · Ocupação sertaneja colonial</div>
+      <h3>A pecuária como vetor de conquista territorial no semiárido</h3>
+      <p>Diferente do litoral açucareiro, o interior nordestino foi ocupado, ao longo dos séculos XVII e XVIII, principalmente por fazendas de gado que avançavam ao longo dos vales dos rios em direção ao sertão profundo. Essas sesmarias de criação chegavam a abranger dezenas de milhares de hectares — uma escala territorial completamente diferente da pequena propriedade que, em tese, o sistema deveria também viabilizar.</p>
+      <p>O resultado, historicamente documentado por diferentes gerações de historiadores da colonização nordestina, foi a formação de um padrão fundiário sertanejo marcado por grandes extensões em poucas mãos, baixíssima densidade populacional livre não vinculada às fazendas, e um controle quase total do acesso à água — recurso especialmente crítico numa região de clima semiárido, com chuvas concentradas e irregulares. Esse controle da água, somado ao controle da terra, deu às famílias proprietárias um poder que ultrapassava em muito a esfera econômica, projetando-se sobre a organização social e política de vastas regiões: o controle simultâneo de dois recursos escassos — terra e água — antecipa, em miniatura, o que Max Weber chamaria de dominação tradicional, tipo de poder que vamos estudar com mais detalhe adiante no curso.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Se a terra, desde o início da colonização, foi distribuída por proximidade com o poder político e não por um mercado aberto, faz sentido falarmos hoje em "livre mercado de terras" no Brasil? Ou essa herança institucional ainda pesa sobre o presente?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Por que vocês acham que o controle da água, e não só da terra, foi um fator tão decisivo no poder das fazendas sertanejas? Que outros recursos escassos podem gerar esse mesmo tipo de poder concentrado em diferentes contextos históricos?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>O vácuo jurídico entre o fim das sesmarias (1822) e a Lei de Terras (1850) permitiu que muita gente pobre ocupasse terra por posse, sem título. Por que, na opinião de vocês, esse período de maior abertura foi encerrado justamente às vésperas da abolição da escravidão?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 3 · Aula 1 · Sesmarias e origem da propriedade da terra</p>
+</div>
+
+</body>
+</html>

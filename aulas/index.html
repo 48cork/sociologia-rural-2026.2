@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Índice de Aulas — Sociologia Rural 2026.2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 72px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* LAYOUT */
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  /* ENCONTRO BLOCK */
+  .encontro-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+  }
+
+  .encontro-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .encontro-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .encontro-head h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+  }
+
+  .encontro-tag {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+    padding: 4px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .encontro-tag.livre {
+    color: var(--teal);
+    background: #0e1d26;
+    border: 1px solid #1e4a6a;
+  }
+
+  /* AULA LIST */
+  .aula-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+  .aula-list li a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .15s, color .15s;
+  }
+
+  .aula-list li a:hover {
+    background: var(--surface-2);
+  }
+
+  .aula-list li a:hover .aula-title {
+    color: var(--accent);
+  }
+
+  .aula-tag {
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px 9px;
+    min-width: 78px;
+    text-align: center;
+  }
+
+  .aula-tag.extra {
+    color: var(--amber);
+    background: #1c1a10;
+    border-color: var(--accent-dim);
+  }
+
+  .aula-title {
+    font-size: .98rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+    transition: color .15s;
+  }
+
+  .aula-list li.empty a {
+    opacity: .4;
+    pointer-events: none;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0 32px; }
+
+  .block-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--mono);
+    margin: 40px 0 16px;
+    padding-left: 4px;
+  }
+
+  .block-label:first-child { margin-top: 0; }
+
+  /* CLOSING */
+  .closing {
+    margin-top: 48px;
+    text-align: center;
+    padding: 36px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · 2026.2</div>
+  <h1>Índice de<br><span>Aulas</span></h1>
+  <p class="hero-sub">16 encontros, 49 aulas — clique em qualquer título abaixo para abrir o texto completo da aula</p>
+  <div class="meta-row">
+    <span class="meta-pill">16 encontros</span>
+    <span class="meta-pill">49 aulas</span>
+    <span class="meta-pill">3 semanas livres de campo</span>
+    <span class="meta-pill">1 aula extra</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <div class="block-label">Bloco 1 · Fundamentos e Bases Teóricas</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">01</div>
+      <h2>Apresentação e Fundamentos</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-01-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Sociologia Rural: objeto, história da disciplina e diálogo com a História</span></a></li>
+      <li><a href="encontro-01-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Por que estudar o rural hoje? Rural não é sinônimo de atraso</span></a></li>
+      <li><a href="encontro-01-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Clássicos I: Marx e a questão agrária</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">02</div>
+      <h2>Bases Teóricas Clássicas</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-02-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Clássicos II: Weber, tipos de dominação e mundo rural</span></a></li>
+      <li><a href="encontro-02-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Clássicos III: Durkheim, solidariedade e comunidades tradicionais</span></a></li>
+      <li><a href="encontro-02-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Bourdieu no campo: habitus, campo e capital em contexto rural</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 2 · Formação Histórica do Brasil Rural</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">03</div>
+      <h2>Formação Histórica do Brasil Rural</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-03-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Colonização, sesmarias e a gênese da propriedade da terra</span></a></li>
+      <li><a href="encontro-03-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Escravidão e economia agrária: o rural como base do Brasil colonial e imperial</span></a></li>
+      <li><a href="encontro-03-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Abolição sem reforma agrária: continuidades da exclusão</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">04</div>
+      <h2>Quilombos e Resistência Negra Rural</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-04-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Quilombos: formação, resistência e territorialidade</span></a></li>
+      <li><a href="encontro-04-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Comunidades quilombolas contemporâneas: reconhecimento e conflito</span></a></li>
+      <li><a href="encontro-04-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Estudo de caso: quilombos do semiárido nordestino</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 3 · Estrutura Fundiária e Poder Local</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">05</div>
+      <h2>Estrutura Fundiária Brasileira</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-05-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Latifúndio e minifúndio: origens históricas da concentração de terra</span></a></li>
+      <li><a href="encontro-05-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Concentração fundiária no Brasil contemporâneo: dados e debates</span></a></li>
+      <li><a href="encontro-05-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Grilagem, conflitos de terra e violência no campo</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">06</div>
+      <h2>Coronelismo e Poder Local</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-06-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Coronelismo: conceito, origens e funcionamento</span></a></li>
+      <li><a href="encontro-06-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Clientelismo e mandonismo local: heranças no Brasil rural</span></a></li>
+      <li><a href="encontro-06-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Coronelismo hoje: persistências e transformações</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 4 · Campesinato e Questão Agrária</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">07</div>
+      <h2>O Campesinato Brasileiro</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-07-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">O que é campesinato? Debates teóricos (Chayanov, Kautsky)</span></a></li>
+      <li><a href="encontro-07-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Formação histórica do campesinato brasileiro</span></a></li>
+      <li><a href="encontro-07-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Modos de vida camponeses: cultura, trabalho e reprodução social</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">08</div>
+      <h2>Questão Agrária e Movimentos Sociais</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-08-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">A questão agrária no Brasil: da Colônia à República</span></a></li>
+      <li><a href="encontro-08-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Ligas Camponesas e a luta pela terra no século XX</span></a></li>
+      <li><a href="encontro-08-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">MST e a reforma agrária contemporânea</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 5 · Modernização, Agronegócio e Pesquisa de Campo</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">09</div>
+      <h2>Modernização da Agricultura</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-09-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Modernização conservadora: conceito e crítica</span></a></li>
+      <li><a href="encontro-09-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Revolução Verde no Brasil: tecnologia, crédito e exclusão</span></a></li>
+      <li><a href="encontro-09-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Consequências sociais da modernização: êxodo e concentração</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">10</div>
+      <h2>Agricultura Familiar</h2>
+      <span class="encontro-tag livre">Semana Livre 1</span>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-10-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Leitura guiada: agricultura familiar no Brasil</span></a></li>
+      <li><a href="encontro-10-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Roteiro de pesquisa de campo: entrevistando um agricultor familiar</span></a></li>
+      <li><a href="encontro-10-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Registro no diário de campo e o produto da semana</span></a></li>
+      <li><a href="encontro-10-aula-extra.html"><span class="aula-tag extra">Extra</span><span class="aula-title">Agronegócio Contemporâneo: formação, território e poder político, impactos socioambientais</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">11</div>
+      <h2>Povos e Comunidades Tradicionais</h2>
+      <span class="encontro-tag livre">Semana Livre 2</span>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-11-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Leitura guiada: territorialidade e comunidades tradicionais</span></a></li>
+      <li><a href="encontro-11-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Roteiro de pesquisa de campo: comunidades tradicionais e uso de redes digitais</span></a></li>
+      <li><a href="encontro-11-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Registro no diário de campo e conceito aplicado</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">12</div>
+      <h2>Gênero e Trabalho no Campo</h2>
+      <span class="encontro-tag livre">Semana Livre 3</span>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-12-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Leitura guiada: trabalho feminino rural e juventude rural</span></a></li>
+      <li><a href="encontro-12-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Roteiro de pesquisa de campo: mulheres e juventude rural</span></a></li>
+      <li><a href="encontro-12-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Registro final e preparação da consolidação da pesquisa</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 6 · Gênero, Semiárido e Políticas Públicas</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">13</div>
+      <h2>Gênero e Trabalho no Campo</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-13-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Trabalho feminino na história rural brasileira</span></a></li>
+      <li><a href="encontro-13-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Mulheres rurais hoje: trabalho, invisibilidade e luta por reconhecimento</span></a></li>
+      <li><a href="encontro-13-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Juventude rural: permanência, êxodo e novas gerações</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">14</div>
+      <h2>Semiárido e Convivência</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-14-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Semiárido nordestino: história de um território estigmatizado</span></a></li>
+      <li><a href="encontro-14-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Seca como construção social e política, não só fenômeno natural</span></a></li>
+      <li><a href="encontro-14-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Convivência com o semiárido: alternativas e experiências locais</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">15</div>
+      <h2>Políticas Públicas para o Campo</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-15-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">História das políticas agrárias no Brasil (INCRA, PRONAF)</span></a></li>
+      <li><a href="encontro-15-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Políticas públicas contemporâneas: avanços e retrocessos</span></a></li>
+      <li><a href="encontro-15-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Desafios atuais: crédito, assistência técnica e sustentabilidade</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 7 · Síntese e Encerramento</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">16</div>
+      <h2>Síntese e Encerramento</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-16-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Rural e urbano: fronteiras cada vez mais tênues</span></a></li>
+      <li><a href="encontro-16-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">O rural brasileiro no século XXI: síntese do curso</span></a></li>
+      <li><a href="encontro-16-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Seminário de encerramento: apresentação dos trabalhos finais</span></a></li>
+    </ul>
+  </div>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Curso de História · Índice de Aulas · 49 arquivos</p>
+  </div>
+
+</div>
+</body>
+</html>

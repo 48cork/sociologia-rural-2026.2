@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sociologia Rural: objeto, história da disciplina e diálogo com a História</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 01 · Aula 01</div>
+  <h1>Sociologia Rural: objeto, história da <span>disciplina</span> e diálogo com a História</h1>
+  <p class="hero-sub">Por que uma ciência que nasceu para entender as transformações do campo europeu se tornou indispensável para pensar o Brasil</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco 1 · Fundamentos</span>
+    <span class="meta-pill">Objeto da disciplina</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Apresentar o objeto e a trajetória da Sociologia Rural como disciplina, e mostrar por que ela é uma ferramenta necessária — não apenas complementar — para quem estuda a história do Brasil.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Todo curso de Sociologia Rural começa com uma pergunta simples que esconde uma armadilha: o que, exatamente, esta disciplina estuda? A resposta óbvia — "o campo", "a vida rural", "a agricultura" — não basta, porque história, geografia, economia e antropologia também estudam essas coisas. O que torna a Sociologia Rural uma disciplina própria não é o assunto, mas o tipo de pergunta que ela faz sobre esse assunto: como se organizam as relações sociais no mundo rural? Quem manda e quem obedece, e por quê? Que estruturas de classe, de poder e de propriedade sustentam a vida no campo, e como elas se reproduzem ao longo do tempo?</p>
+
+    <h3>Uma disciplina nascida da inquietação com a modernidade</h3>
+    <p>A Sociologia Rural, como campo organizado de estudos, ganha corpo na Europa e nos Estados Unidos entre o final do século XIX e as primeiras décadas do XX, exatamente no momento em que a industrialização e a urbanização aceleradas colocavam em xeque o mundo agrário tradicional. Pesquisadores queriam entender o que acontecia com as comunidades camponesas quando a fábrica, a ferrovia e o mercado urbano passavam a ditar o ritmo da vida no campo. Havia, portanto, desde o início, uma preocupação em captar a transição: o rural não era visto como um cenário parado no tempo, mas como um espaço atravessado por mudanças profundas impostas de fora — e também resistido, reinterpretado e reorganizado por dentro.</p>
+
+    <p>No Brasil, essa tradição de pensamento ganhou um sotaque próprio, muito por conta do trabalho do sociólogo José de Souza Martins, cuja obra <em>Introdução Crítica à Sociologia Rural</em> é ainda hoje uma porta de entrada obrigatória para o tema. Martins insiste em um ponto que vai guiar todo este curso: não se pode entender o rural brasileiro fora da questão da terra, do trabalho e das formas de dominação que historicamente organizaram o acesso a esses dois recursos. Diferente de outros países onde o campesinato foi, em algum momento, uma força política e social relativamente autônoma, o Brasil rural nasceu sob o signo da grande propriedade, do trabalho compulsório e, depois, da exclusão persistente de parte da população do acesso à terra. Entender a Sociologia Rural brasileira, portanto, é entender uma disciplina que nasce comprometida com a explicação dessa desigualdade estrutural.</p>
+
+    <div class="highlight">
+      <strong>Ideia central:</strong> a Sociologia Rural não estuda "o campo" como paisagem ou como setor econômico isolado — estuda as relações sociais de poder, propriedade e trabalho que se organizam no espaço rural, e como essas relações se transformam (ou resistem à transformação) ao longo do tempo histórico.
+    </div>
+
+    <h3>Objeto da Sociologia versus objeto da História: rivais ou parceiras?</h3>
+    <p>Para um estudante de História, pode parecer, à primeira vista, que a Sociologia trabalha com abstrações — "estrutura", "classe", "dominação" — enquanto a História trabalha com o concreto: datas, documentos, pessoas nomeadas, eventos irrepetíveis. Essa diferença é real, mas não é uma barreira: é um convite à parceria. A Sociologia oferece conceitos e modelos explicativos que ajudam a organizar a massa de eventos históricos em padrões inteligíveis. A História, por sua vez, fornece à Sociologia o material empírico, a textura temporal e a atenção à mudança que impedem os conceitos sociológicos de se tornarem fórmulas vazias, aplicáveis a qualquer época e lugar sem cuidado.</p>
+
+    <p>Pense num caso concreto: durante a Primeira República (1889-1930), um sociólogo e um historiador diante dos mesmos registros — eleições fraudadas, trocas de favores, violência política local — não enxergariam exatamente a mesma coisa. Trabalhando cada um sozinho, com sua ferramenta própria, o que cada um arriscaria perder de vista? Um historiador sem o conceito sociológico de "coronelismo" (que veremos em detalhe no encontro 6) tende a ver apenas uma sucessão de fatos, sem enxergar o padrão estrutural que os une; um sociólogo sem a ancoragem histórica desse mesmo conceito corre o risco de transformar "coronelismo" numa etiqueta genérica, aplicável a qualquer situação de poder local, perdendo justamente a especificidade do fenômeno brasileiro. O diálogo entre as duas disciplinas é, portanto, uma via de mão dupla: conceito e processo, estrutura e evento, permanência e mudança.</p>
+
+    <h3>Por que este curso interessa a quem estuda História</h3>
+    <p>Ao longo dos próximos quinze encontros, vamos usar ferramentas conceituais da Sociologia — de Marx a Bourdieu, passando por Weber, Durkheim e autores brasileiros como Martins, Abramovay e Bernardo Mançano Fernandes — para reler processos que vocês já conhecem ou vão conhecer em outras disciplinas do curso de História: a colonização e o sistema de sesmarias, a escravidão e a economia agrária, a abolição sem redistribuição de terras, o coronelismo da Primeira República, a formação do campesinato, as Ligas Camponesas, o MST, a modernização conservadora da agricultura. Em cada um desses casos, a pergunta sociológica será sempre a mesma pergunta de fundo: quem tem acesso à terra e ao poder, quem não tem, e como essa desigualdade se justifica e se reproduz ao longo do tempo? Essa não é uma questão abstrata: entender a estrutura social do Brasil rural é a chave para explicar continuidades históricas de longuíssima duração — a concentração fundiária que atravessa a Colônia, o Império, a República e chega, transformada, até o presente do agronegócio contemporâneo.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">15 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Em que sentido a Sociologia Rural pode ajudar você, futuro(a) historiador(a), a explicar processos que a narrativa factual sozinha não explica?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Você concorda que o Brasil rural nasceu "comprometido" com a desigualdade no acesso à terra? Que outros exemplos históricos, de outras disciplinas que já cursou, poderiam confirmar ou questionar essa tese?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Um conceito sociológico aplicado sem contexto histórico corre o risco de virar "etiqueta vazia". Você consegue pensar em um termo do senso comum (como "coronel" ou "fazendeiro") que às vezes é usado assim, de forma solta demais?</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 01 · Aula 01 · Objeto da disciplina</p>
+  </div>
+
+</div>
+</body>
+</html>

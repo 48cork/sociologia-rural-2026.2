@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Agronegócio Contemporâneo: Formação, Território e Impactos — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* LAYOUT */
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  /* BLOCKQUOTE */
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* OBJETIVO / HIGHLIGHT */
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  /* CASO */
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  /* PERGUNTAS / DEBATE */
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  /* DIVIDER / PROSE */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  /* CLOSING */
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Aula Extra · Bloco Modernização/Agronegócio</div>
+  <h1>Agronegócio Contemporâneo:<br><span>Formação, Território e Impactos</span></h1>
+  <p class="hero-sub">O outro lado da modernização conservadora: como o agronegócio se consolidou como potência econômica e força política no Brasil rural</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Aula extra · complementa o Encontro 9</span>
+    <span class="meta-pill">Modernização e Agronegócio</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Compreender a formação histórica do agronegócio brasileiro, sua relação com território e poder político, e seus principais impactos socioambientais — completando, como aula complementar, a discussão sobre modernização iniciada no Encontro 9.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">35 min</span>
+    </div>
+
+    <p>No Encontro 9, vimos como a modernização conservadora trouxe máquinas, insumos químicos e crédito rural para o campo brasileiro a partir das décadas de 1960 e 1970, sem alterar a estrutura fundiária concentrada que já vinha desde a Lei de Terras de 1850. Esta aula extra segue esse fio até o presente: o que aconteceu quando essa modernização técnica se consolidou em um setor econômico organizado, com nome próprio e peso político direto? A resposta tem um nome: agronegócio.</p>
+
+    <h3>Da modernização ao complexo agroindustrial</h3>
+    <p>O termo "agronegócio" (tradução de <em>agribusiness</em>) não descreve apenas a produção agrícola em si, mas uma cadeia inteira: da pesquisa genética de sementes e do financiamento bancário, passando pelo plantio mecanizado e o uso intensivo de insumos, até o processamento industrial, o transporte, a armazenagem e a exportação para o mercado internacional. É esse encadeamento — e não apenas "a fazenda" — que caracteriza o agronegócio contemporâneo.</p>
+    <p>Essa configuração começou a se consolidar justamente no período da Revolução Verde estudado no Encontro 9, mas ganhou escala e organização política própria a partir dos anos 1990 e 2000, com a abertura comercial brasileira, a valorização internacional de commodities agrícolas (soja, milho, carne, celulose) e a formação de grandes conglomerados que hoje respondem por parcela expressiva das exportações do país. O Brasil deixou de ser apenas um país agrícola para se tornar, nesse setor, uma potência agroexportadora global — o que trouxe divisas e investimento, mas também aprofundou padrões históricos de desigualdade no campo.</p>
+
+    <p>O agronegócio não é uma ruptura com o passado agrário brasileiro — é a sua continuidade em nova escala. A concentração fundiária que vimos desde a colonização e a Lei de Terras de 1850 persistiu ao longo da modernização, reorganizada em torno de empresas, cadeias produtivas e grandes propriedades ainda mais capitalizadas.</p>
+
+    <h3>Agronegócio, território e poder político</h3>
+    <p>O agronegócio brasileiro não atua apenas no mercado — atua também na política. A chamada "bancada ruralista" no Congresso Nacional reúne parlamentares ligados a interesses do setor e tem peso decisivo em votações sobre legislação ambiental, demarcação de terras indígenas e quilombolas, crédito rural e tributação. Esse poder político não é um fenômeno novo: ele repete, em escala nacional e institucional, a mesma lógica que estudamos no coronelismo (Encontro 6) — a conversão de poder econômico sobre a terra em poder político sobre o Estado. A diferença é que, hoje, esse poder se organiza por meio de associações setoriais, financiamento de campanhas e articulação parlamentar, e não mais pelo voto de cabresto.</p>
+    <p>Territorialmente, o agronegócio também expandiu suas fronteiras para além das regiões tradicionalmente agrícolas do Sul e Sudeste. A região conhecida pela sigla MATOPIBA (que abrange partes do Maranhão, Tocantins, Piauí e Bahia) tornou-se, nas últimas décadas, uma nova fronteira de expansão da soja e de outras commodities sobre áreas de cerrado — um processo que frequentemente entra em conflito com comunidades tradicionais, pequenos agricultores e povos indígenas que já ocupavam essas terras, muitas vezes sem título formal de propriedade reconhecido.</p>
+
+    <h3>Impactos socioambientais</h3>
+    <p>Os impactos do agronegócio não devem ser lidos de forma maniqueísta — nem como vilão único, nem como solução automática para o desenvolvimento. É um fenômeno com efeitos contraditórios. Por um lado, o setor gera divisas importantes para a economia brasileira, emprega uma cadeia extensa de trabalhadores e fornecedores, e impulsiona investimento em pesquisa agrícola. Por outro lado, sua expansão está associada a desmatamento em biomas sensíveis (especialmente cerrado e, em menor medida, partes da caatinga), uso intensivo de agrotóxicos com efeitos sobre saúde pública e ecossistemas, e uma concentração de renda que reproduz — em vez de resolver — as desigualdades históricas do campo brasileiro.</p>
+    <p>Para um historiador, o ponto mais importante não é decidir se o agronegócio é "bom" ou "ruim" em abstrato, mas entender que ele é o resultado de escolhas políticas e econômicas de longa duração — escolhas sobre quem tem acesso a crédito, a terra, a tecnologia e a poder de decisão sobre o território.</p>
+
+    <div class="callout">
+      <div class="callout-label">Tese central</div>
+      O agronegócio é, ao mesmo tempo, o capítulo mais recente da modernização conservadora e a prova de que ela cumpriu sua promessa apenas pela metade: modernizou a produção sem democratizar o acesso à terra.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o Polo Petrolina-Juazeiro e a Fruticultura Irrigada do Vale do São Francisco</h2>
+      <span class="duration">15 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Nordeste · Semiárido · Pernambuco/Bahia</div>
+      <h3>Quando o agronegócio de exportação floresce no semiárido</h3>
+      <p>O polo formado pelas cidades de Petrolina (PE) e Juazeiro (BA), às margens do rio São Francisco, é um dos exemplos mais emblemáticos e bem documentados de agronegócio contemporâneo no semiárido nordestino. A partir de grandes projetos públicos de irrigação — impulsionados desde as décadas de 1970-80 por órgãos como a extinta Sudene e, mais diretamente, pela Codevasf (Companhia de Desenvolvimento dos Vales do São Francisco e do Parnaíba) — uma região historicamente associada à seca e à estiagem se tornou um dos principais polos de fruticultura irrigada de exportação do país, com destaque para uva e manga vendidas a mercados da Europa e dos Estados Unidos.</p>
+      <p>Esse caso é pedagogicamente rico porque cria um contraste direto com o tema do Encontro 14 (Semiárido e Convivência): a mesma região que é palco de tecnologias sociais de convivência com a seca, como as cisternas da Articulação Semiárido Brasileiro, é também palco de um dos empreendimentos agrícolas mais tecnificados e capital-intensivos do Brasil. O semiárido nordestino abriga, lado a lado, a agricultura familiar de sequeiro, comunidades tradicionais e um agronegócio irrigado de padrão internacional — uma heterogeneidade que desafia qualquer definição única desse território. O Vale do São Francisco mostra que modernização e semiárido estigmatizado convivem no mesmo espaço por escolha do Estado: historicamente, o poder público investiu pesado em infraestrutura de irrigação para viabilizar agronegócio de exportação em certas áreas do semiárido, enquanto a convivência com a seca de populações camponesas em áreas vizinhas recebeu, por muito tempo, investimento público bem menor. A pergunta sociológica relevante aqui é para quem o Estado decidiu tornar esse território produtivo, e em que termos: essa escolha política, não a natureza do solo, é o que explica por que uma parte do semiárido floresceu como potência exportadora enquanto a vizinhança seguiu dependente de cisternas.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">5 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Como conciliar a imagem do semiárido como território de convivência com a seca, estudada no Encontro 14, com a realidade do agronegócio irrigado de exportação do Vale do São Francisco? São processos contraditórios ou complementares?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>A expansão do agronegócio para novas fronteiras agrícolas, como o MATOPIBA, repete o padrão histórico de concentração fundiária que vimos desde a Lei de Terras de 1850, ou representa algo estruturalmente novo?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Quem paga o custo socioambiental do agronegócio brasileiro, e quem fica com os principais ganhos econômicos? Essa distribuição pode ser lida à luz de algum conceito já visto no curso (Marx, Weber, Bourdieu)?</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Aula Extra · Agronegócio Contemporâneo · complementa o Encontro 9</p>
+  </div>
+
+</div>
+</body>
+</html>

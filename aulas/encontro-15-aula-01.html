@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>História das Políticas Agrárias no Brasil — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 15 · Aula 01</div>
+  <h1>História das <span>Políticas Agrárias</span> no Brasil</h1>
+  <p class="hero-sub">INCRA e PRONAF: como o Estado brasileiro tentou — e nem sempre conseguiu — organizar o acesso à terra e ao crédito no campo</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Políticas Públicas para o Campo</span>
+    <span class="meta-pill">INCRA · PRONAF · Reforma Agrária</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Reconstruir a história das principais políticas públicas para o campo brasileiro — a criação do INCRA em 1970 e do PRONAF em 1996 — entendendo o que cada uma pretendia resolver e por que, mesmo juntas, elas não resolveram a questão agrária de fundo.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Nas últimas aulas, este curso mostrou como a questão da terra no Brasil nasce ainda no período colonial, se agrava com a Lei de Terras de 1850, atravessa a abolição sem qualquer redistribuição, e se aprofunda com a modernização conservadora da agricultura a partir dos anos 1960 e 1970. Chegou a hora de perguntar: o que o Estado brasileiro fez, ao longo do século XX, diante desse quadro de desigualdade fundiária? A resposta não é simples, porque não houve uma política única e coerente — houve, sim, um conjunto de iniciativas parciais, muitas vezes contraditórias entre si, que reagiam a pressões sociais e políticas de momentos específicos.</p>
+
+    <h3>O INCRA e a reforma agrária que ficou pela metade</h3>
+    <p>O Instituto Nacional de Colonização e Reforma Agrária, o INCRA, foi criado em 1970, durante o regime militar. Antes de seguir, vale parar neste ponto aparentemente contraditório: por que um governo que reprimia duramente os movimentos camponeses organizados — como as Ligas Camponesas que este curso já estudou — criaria, ao mesmo tempo, um órgão federal encarregado, ao menos formalmente, de cadastrar terras, promover a colonização de áreas como a Amazônia e conduzir processos de assentamento de trabalhadores rurais sem terra? Pensando no que já vimos sobre coronelismo e sobre como o Estado brasileiro historicamente responde a pressão social sem alterar a estrutura de poder de fundo, que tipo de solução vocês esperariam que um regime autoritário desse a essa tensão?</p>
+    <p>Essa aparente contradição faz sentido quando entendemos a lógica do regime militar: em vez de uma reforma agrária redistributiva, que tiraria terra de quem já a possuía para entregar a quem não tinha, o governo apostou na "colonização" de fronteiras agrícolas — sobretudo na Amazônia — como válvula de escape para a pressão por terra, sem mexer na estrutura fundiária já consolidada nas regiões mais antigas do país. O INCRA, portanto, nasceu menos como instrumento de reforma agrária no sentido forte do termo, e mais como órgão de gestão fundiária e de colonização dirigida.</p>
+    <p>Mesmo assim, ao longo das décadas seguintes — sobretudo depois da redemocratização e da pressão de movimentos como o MST, que este curso já estudou — o INCRA passou a exercer um papel mais efetivo nos processos de desapropriação de terras improdutivas para fins de assentamento, na titulação de territórios quilombolas (como vimos no encontro sobre quilombos) e no cadastramento de imóveis rurais em todo o país. É um órgão que carrega, ao mesmo tempo, a marca de sua origem limitada e o resultado de décadas de disputa social por um papel mais ativo.</p>
+
+    <div class="highlight">
+      <strong>Um ponto central para reter:</strong> nenhuma dessas políticas surge "de cima para baixo" por boa vontade do Estado. Toda ampliação de política agrária no Brasil — seja o próprio INCRA, seja o PRONAF adiante — é resposta a alguma forma de pressão social organizada, ainda que o resultado final fique aquém do que os movimentos reivindicavam.
+    </div>
+
+    <h3>O PRONAF e o reconhecimento tardio da agricultura familiar</h3>
+    <p>Se o INCRA nasce pensando em terra, o Programa Nacional de Fortalecimento da Agricultura Familiar, o PRONAF, nasce pensando em crédito. Criado em 1996, já no contexto da redemocratização e depois de anos de mobilização de sindicatos rurais e de organizações de agricultores familiares, o PRONAF foi a primeira política de crédito rural brasileira desenhada especificamente para pequenos produtores que trabalham com mão de obra predominantemente familiar — e não para grandes produtores comerciais, que já tinham acesso a linhas de crédito rural desde a Revolução Verde discutida na aula sobre modernização.</p>
+    <p>Isso é significativo porque, até então, o crédito rural subsidiado no Brasil beneficiava quase exclusivamente grandes proprietários, o que ajuda a explicar por que a modernização da agricultura brasileira aprofundou desigualdades em vez de reduzi-las: quem já tinha terra e capital teve acesso a financiamento; quem não tinha, ficou para trás. O PRONAF tentou, décadas depois, corrigir parte dessa distorção, reconhecendo formalmente a agricultura familiar como categoria econômica e social merecedora de política pública própria — algo que este curso já discutiu na aula sobre campesinato e agricultura familiar.</p>
+
+    <p>Vale notar a distância temporal: o Brasil demorou quase 150 anos entre a Lei de Terras de 1850, que fechou o acesso à terra livre, e o PRONAF de 1996, que criou a primeira política de crédito voltada aos pequenos agricultores familiares. Essa demora não é acidental — ela reflete quem, historicamente, teve poder de pressionar o Estado brasileiro e quem não teve.</p>
+
+    <p>Vocês, como futuros historiadores, não devem ler essas políticas como capítulos isolados de uma "evolução" linear rumo a mais justiça social no campo. Elas são, na verdade, resultado de correlações de força específicas em cada momento histórico: o INCRA nasce sob a ditadura, como forma de administrar a questão agrária sem tocar na estrutura fundiária; o PRONAF nasce na redemocratização, como resposta a décadas de organização sindical rural. Compreender essas políticas exige sempre perguntar: quem pressionou, o que se conquistou, e o que ficou de fora.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o Assentamento como Símbolo Ambíguo</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso ilustrativo · Brasil rural</div>
+      <h3>Entre o papel e o chão: o assentamento rural</h3>
+      <p>Pensemos num caso ilustrativo, comum em diferentes regiões do país, inclusive no semiárido nordestino: uma família assentada pelo INCRA depois de anos acampada às margens de uma rodovia, aguardando a desapropriação de uma fazenda considerada improdutiva. A conquista do lote de terra é real e representa uma vitória histórica de décadas de luta camponesa. Mas o assentamento, sozinho, não garante estrada de acesso, poço ou cisterna, energia elétrica, nem crédito para começar a produzir — é exatamente aí que políticas como o PRONAF deveriam entrar, mas nem sempre chegam com a mesma velocidade com que a terra foi conquistada. Esse descompasso entre conquistar a terra e conseguir viver dela ilustra bem os limites das políticas agrárias discutidas nesta aula: o Estado brasileiro historicamente separou a questão da terra (INCRA) da questão do crédito e da assistência técnica (PRONAF e outros programas), quando, na prática vivida pelas famílias, essas duas dimensões são inseparáveis.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que um governo que reprimia movimentos camponeses organizados, como o regime militar, criou ao mesmo tempo um órgão como o INCRA? O que isso revela sobre a diferença entre "reconhecer" uma questão social e "resolvê-la"?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>O PRONAF levou quase 150 anos, contados desde a Lei de Terras de 1850, para existir. O que essa demora ensina sobre quem, historicamente, tem poder de fazer o Estado brasileiro criar política pública — e quem precisa esperar décadas de mobilização?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Conquistar terra e conseguir viver dela são a mesma coisa? Que outras políticas, além de crédito, uma família assentada provavelmente precisa para transformar um lote de terra em um meio de vida sustentável?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 15 · Aula 01 · INCRA e PRONAF</p>
+</div>
+
+</body>
+</html>

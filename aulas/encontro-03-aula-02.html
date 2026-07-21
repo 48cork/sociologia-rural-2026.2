@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Escravidão e Economia Agrária — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th { padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); font-family: var(--mono); }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 3 · Aula 2</div>
+  <h1>Escravidão e Economia Agrária: <span>o Rural como Base do Brasil</span></h1>
+  <p class="hero-sub">Açúcar, gado, algodão e café — o trabalho escravizado sustentando três séculos de economia agrária colonial e imperial</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Formação Histórica do Brasil Rural</span>
+    <span class="meta-pill">Escravidão · Cativeiro da Terra</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Compreender a centralidade estrutural do trabalho escravizado na economia agrária brasileira do período colonial e imperial, e a tese de José de Souza Martins sobre a ligação intrínseca entre escravidão e propriedade da terra no "cativeiro da terra".</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">exposição</span>
+    </div>
+
+    <p>Na aula anterior, vimos como a terra brasileira foi distribuída, desde o início da colonização, por concessão da Coroa a poucos — sesmarias, capitanias hereditárias. Mas terra sozinha não produz riqueza: é preciso trabalho para transformá-la em lavoura, em gado, em mercadoria exportável. E durante praticamente todo o período colonial e boa parte do período imperial, esse trabalho foi, majoritariamente, trabalho escravizado. Entender essa combinação — terra concentrada mais trabalho compulsório — é entender a espinha dorsal da economia agrária brasileira por mais de trezentos anos.</p>
+
+    <h3>Açúcar, o primeiro grande ciclo</h3>
+    <p>A economia açucareira, instalada já no século XVI principalmente no litoral de Pernambuco e da Bahia, foi a primeira grande experiência de produção agrária em larga escala no Brasil, e nasceu já organizada em torno do trabalho escravizado — primeiro indígena, depois, de forma crescente e dominante, africano. O engenho de açúcar reunia, numa mesma unidade produtiva, terra, casa-grande, senzala e a fábrica de processamento da cana. Essa unidade se tornaria o modelo de referência para pensar a plantation brasileira: grande propriedade monocultora, voltada à exportação, sustentada por mão de obra escravizada e organizada sob autoridade pessoal quase absoluta do senhor de engenho.</p>
+
+    <h3>O sertão: gado e algodão com a mesma base</h3>
+    <p>É comum que o senso comum associe a escravidão apenas às grandes lavouras do litoral e, mais tarde, aos cafezais do Sudeste. Mas o interior nordestino — o sertão que estudamos na aula anterior através das sesmarias de gado — também teve sua economia sustentada, ainda que em proporção e configuração distintas, por trabalho escravizado. A pecuária extensiva sertaneja empregava número menor de cativos por unidade produtiva do que o engenho açucareiro, mas ainda assim dependia de mão de obra escrava para tocar o gado, cuidar dos currais e sustentar a vida cotidiana da fazenda.</p>
+
+    <p>A partir do século XVIII e, com mais força, no século XIX, o algodão se soma a essa economia sertaneja, aproveitando o clima semiárido e ganhando impulso em momentos de alta internacional do preço da fibra (como durante a Guerra de Secessão nos Estados Unidos, quando o algodão americano ficou temporariamente fora do mercado mundial). Também aqui, a expansão da lavoura algodoeira no Nordeste se apoiou em trabalho escravizado, ainda que de forma menos concentrada do que nas grandes lavouras de exportação do Centro-Sul.</p>
+
+    <div class="highlight">
+      <strong>Um ponto frequentemente esquecido:</strong> quando falamos em "economia escravista brasileira", tendemos a pensar automaticamente em cana-de-açúcar e depois em café. Mas o sertão nordestino — com gado e algodão — também foi, à sua maneira e em escala distinta, uma economia agrária sustentada por trabalho escravizado. Isso é importante para não tratarmos o semiárido como um espaço "à margem" da história econômica escravista do Brasil.
+    </div>
+
+    <h3>Café: o último grande ciclo escravista</h3>
+    <p>No século XIX, a economia cafeeira do Vale do Paraíba e depois do Oeste Paulista se torna o novo eixo dinâmico da economia brasileira, e absorve intensamente mão de obra escravizada, inclusive por meio do tráfico interno — o deslocamento forçado de pessoas escravizadas de regiões em declínio econômico (como partes do Nordeste açucareiro) para as novas fronteiras cafeeiras. Esse tráfico interno é, ele mesmo, um capítulo de violência histórica pouco discutido fora dos cursos especializados: famílias inteiras separadas, pessoas deslocadas centenas ou milhares de quilômetros, para sustentar a expansão de uma nova fronteira agrícola.</p>
+
+    <h3>O Cativeiro da Terra: a tese de José de Souza Martins</h3>
+    <p>O sociólogo José de Souza Martins, num livro que dá nome a esta aula — <em>O Cativeiro da Terra</em> —, propõe uma tese fundamental para a Sociologia Rural brasileira: a de que a escravidão e a propriedade da terra estiveram, no Brasil, estruturalmente amarradas uma à outra, e que essa amarração não terminou com a abolição jurídica da escravidão em 1888. Para Martins, o fim do trabalho escravo apenas transformou o problema da terra: era preciso agora criar novos mecanismos que impedissem os ex-escravizados e a população livre pobre de terem acesso fácil à terra, garantindo assim a permanência de uma força de trabalho disponível e dependente para as grandes propriedades.</p>
+
+    <blockquote>
+      A ideia central de Martins é que, no Brasil, "libertar" o trabalhador da escravidão sem lhe dar acesso à terra é uma libertação incompleta: ele continua "cativo" — não mais de um senhor individual, mas da própria estrutura fundiária que o obriga a vender sua força de trabalho para sobreviver.
+    </blockquote>
+
+    <p>Antes de revelar como Martins conecta essa tese ao que já vimos: pensem no conceito de expropriação de Marx, estudado no Encontro 1 — a separação entre trabalhador e meios de produção que cria o proletariado moderno. Se a abolição de 1888 vai libertar juridicamente os escravizados, mas a estrutura fundiária que estudamos na aula passada (sesmarias, Lei de Terras de 1850) já havia fechado o acesso à terra livre décadas antes, o que isso significa para o "trabalhador liberto" no dia seguinte à abolição — ele estaria, na prática, mais próximo ou mais distante da situação do proletário inglês que Marx descreveu? Martins responde exatamente a essa pergunta: para ele, essa separação não precisou ser criada do zero depois da abolição — ela já estava garantida de antemão pela concentração fundiária herdada da colonização. Essa tese vai iluminar diretamente a próxima aula, sobre a abolição sem reforma agrária: veremos como, exatamente no momento em que a escravidão jurídica termina, a estrutura fundiária brasileira já havia sido desenhada para impedir que os libertos se tornassem proprietários.</p>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: Gado, Algodão e Trabalho Escravizado no Sertão</h2>
+      <span class="duration">Nordeste · semiárido</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso concreto · Economia escravista sertaneja</div>
+      <h3>Um ciclo econômico menos visível, mas real</h3>
+      <p>Enquanto os livros didáticos costumam dar grande destaque à economia açucareira e depois à cafeeira, a economia pecuária e algodoeira do sertão nordestino, sustentada também por trabalho escravizado, costuma receber bem menos atenção — apesar de ter estruturado a ocupação de uma imensa área do território brasileiro por mais de dois séculos.</p>
+      <p>Historicamente, essa economia sertaneja combinava fazendas de gado de grande extensão territorial com número relativamente menor de pessoas escravizadas por propriedade (se comparado aos grandes engenhos ou às fazendas de café), e uma dependência estreita das condições climáticas do semiárido: períodos de seca prolongada afetavam diretamente a criação e, por consequência, a exploração da mão de obra escravizada disponível, muitas vezes intensificando o sofrimento imposto a essa população em momentos de escassez. Esse caso mostra que a escravidão brasileira assumiu configurações regionais distintas, adaptadas a diferentes bases econômicas — monocultura de exportação no litoral, pecuária extensiva no sertão —, o que reforça, para a Sociologia Rural, a ideia de que processos estruturais amplos como a escravidão sempre se realizam de formas historicamente específicas, a depender do território, do clima e da atividade econômica dominante.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que vocês acham que a economia escravista do sertão (gado, algodão) é menos lembrada nos relatos gerais sobre a escravidão brasileira do que a economia açucareira e cafeeira? O que isso revela sobre como se constrói a memória histórica?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Se, como diz Martins, a propriedade da terra e a escravidão estavam estruturalmente amarradas, o que isso sugere sobre os limites reais da abolição de 1888 enquanto medida de libertação plena da população negra no Brasil?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>O tráfico interno de pessoas escravizadas, deslocando-as do Nordeste em declínio para o Sudeste cafeeiro em expansão, é um capítulo pouco discutido. Por que esse deslocamento forçado interno merece a mesma atenção histórica que o tráfico transatlântico?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 3 · Aula 2 · Escravidão e economia agrária</p>
+</div>
+
+</body>
+</html>

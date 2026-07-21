@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MST e a reforma agrária contemporânea — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 08 · Aula 03</div>
+  <h1>MST e a reforma agrária<br><span>contemporânea</span></h1>
+  <p class="hero-sub">Ocupação, acampamento, assentamento: o repertório de ação de um dos maiores movimentos sociais rurais da América Latina</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Questão Agrária e Movimentos Sociais</span>
+    <span class="meta-pill">MST · geografia agrária · assentamentos</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">
+      Apresentar a formação do Movimento dos Trabalhadores Rurais Sem Terra (MST) em 1984, no contexto da redemocratização, e seu repertório de ação — ocupações, acampamentos e assentamentos — como continuidade e reinvenção da luta histórica pela terra no Brasil.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula passada, vimos como as Ligas Camponesas foram duramente reprimidas após o golpe civil-militar de 1964, e como sua organização como força política nacional foi praticamente desmantelada. Durante todo o período do regime militar (1964-1985), a organização aberta de trabalhadores rurais em torno da bandeira da reforma agrária permaneceu extremamente dificultada pela repressão política. É apenas no contexto da abertura política e da redemocratização, no início dos anos 1980, que a luta pela terra volta a se organizar em escala nacional — agora sob uma nova forma: o Movimento dos Trabalhadores Rurais Sem Terra, o MST.</p>
+
+    <h3>Formação em 1984 e a novidade do MST</h3>
+    <p>O MST se formou oficialmente em 1984, articulando trabalhadores rurais sem-terra de diferentes regiões do país, com apoio de setores da Igreja Católica (especialmente ligados à Comissão Pastoral da Terra) e de setores sindicais e de esquerda que reemergiam com a redemocratização. Diferentemente das Ligas Camponesas, que tiveram forte base regional no Nordeste canavieiro, o MST nasceu com vocação explicitamente nacional, buscando articular trabalhadores rurais sem-terra em múltiplos estados desde o início.</p>
+
+    <p>O geógrafo Bernardo Mançano Fernandes, em seus estudos sobre a formação e territorialização do MST, chama atenção para como o movimento constrói, ao longo do tempo, uma verdadeira rede de territórios conquistados — os assentamentos — que se tornam, por sua vez, base material e política para a continuidade da luta em novas frentes. Essa análise geográfica ajuda a entender o MST não apenas como um movimento de protesto, mas como um agente ativo de reorganização do espaço rural brasileiro.</p>
+
+    <p>O ciclo de ação do MST costuma seguir um percurso relativamente estável: ocupação de uma propriedade considerada improdutiva (segundo os critérios da legislação de reforma agrária), formação de um acampamento com organização interna própria (educação, saúde, produção coletiva), pressão política e jurídica pela desapropriação e, quando bem-sucedida, transformação em assentamento, com lotes individuais ou coletivos de produção.</p>
+
+    <h3>Repertório de ação e controvérsia pública</h3>
+    <p>A ocupação de terras é, ao mesmo tempo, o instrumento mais visível e o mais controverso do repertório de ação do MST. Para o movimento, a ocupação é uma forma legítima de pressão sobre propriedades que não cumprem a função social da terra prevista na legislação brasileira (ou seja, terras improdutivas ou griladas). Para seus críticos, a ocupação é vista como uma forma de invasão à propriedade privada, independentemente de sua produtividade efetiva. Esse é um dos debates mais polarizados da política brasileira contemporânea, e vale a pena que os alunos de História identifiquem os argumentos de cada lado antes de formar uma opinião — o objetivo da aula não é fechar essa controvérsia, mas equipá-los para entendê-la historicamente.</p>
+
+    <p>Independentemente da posição que se tome nesse debate, é inegável o impacto histórico do MST: o movimento contribuiu para a criação de milhares de assentamentos rurais no Brasil desde sua fundação, tornou-se referência internacional para outros movimentos de luta pela terra na América Latina, e manteve viva, décadas depois das Ligas Camponesas, a pauta histórica da redistribuição fundiária que atravessa toda a questão agrária brasileira estudada na primeira aula deste encontro.</p>
+
+    <div class="callout">
+      <div class="callout-label">Continuidade histórica</div>
+      Ligas Camponesas (1950-60) e MST (1984 em diante) não são o mesmo movimento, mas compartilham uma mesma questão de fundo: a persistência, ao longo de todo o século XX, da luta organizada de trabalhadores rurais por acesso à terra em um país cuja estrutura fundiária nunca passou por uma reforma agrária ampla.
+    </div>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: do acampamento ao assentamento</h2>
+    </div>
+    <div class="caso">
+      <div class="caso-label">Ilustração · trajetória típica de um assentamento do MST</div>
+      <h3>A vida organizada sob a lona preta</h3>
+      <p>Um padrão amplamente documentado na trajetória de famílias que integram o MST é a longa permanência em acampamentos — muitas vezes por anos — sob barracos de lona preta, enquanto o processo de desapropriação da terra ocupada tramita na Justiça e nos órgãos de reforma agrária. Nesse período, o acampamento se organiza internamente com escolas próprias, sistemas de saúde comunitária e produção coletiva de alimentos, formando uma espécie de comunidade provisória com forte identidade política.</p>
+      <p>Quando (e se) o processo de desapropriação é concluído com sucesso, o acampamento se transforma em assentamento: as famílias recebem lotes de terra, individuais ou organizados de forma coletiva, e passam a produzir de forma mais estável — muitas vezes retomando, nesse novo contexto, práticas camponesas de produção para consumo familiar combinada com excedente para venda, como discutimos com Chayanov. Essa trajetória de acampamento a assentamento mostra como um movimento social pode ser, ao mesmo tempo, um instrumento de pressão política e um processo de reconstrução concreta do modo de vida camponês — unindo a dimensão do conflito político à dimensão, já discutida em aulas anteriores, da cultura e da economia camponesas.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Quais são os principais argumentos de quem defende a ocupação de terras como instrumento legítimo de luta, e de quem a considera uma violação da propriedade privada? Onde esses argumentos se apoiam na legislação brasileira sobre função social da terra?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Em que sentido o MST pode ser lido como uma continuidade histórica das Ligas Camponesas, e em que sentido representa algo genuinamente novo na luta pela terra no Brasil?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Por que a análise geográfica de Bernardo Mançano Fernandes sobre "territorialização" ajuda a entender o MST de forma diferente de uma leitura que o veja apenas como um movimento de protesto pontual?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 08 · Aula 03 · MST e reforma agrária contemporânea</p>
+</div>
+
+</body>
+</html>

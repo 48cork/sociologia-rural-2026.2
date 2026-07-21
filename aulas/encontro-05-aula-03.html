@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Grilagem e Conflitos de Terra — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 05 · Aula 03</div>
+  <h1>Grilagem, Conflitos de Terra <span>e Violência no Campo</span></h1>
+  <p class="hero-sub">Como documentos falsificados e disputas por terras públicas alimentam, até hoje, um dos capítulos mais violentos da história rural brasileira</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Estrutura Fundiária Brasileira</span>
+    <span class="meta-pill">CPT · Conflitos no Campo</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Explicar a origem e o funcionamento da grilagem de terras no Brasil e compreender por que a disputa por terras públicas e de uso comum segue gerando conflitos e violência no campo até os dias atuais.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Encerramos o bloco sobre estrutura fundiária com um dos fenômenos mais persistentes e menos visíveis da história rural brasileira: a grilagem de terras. O termo vem de uma prática bastante concreta e quase folclórica em sua origem: para dar aparência de antiguidade a um documento de posse falsificado, forjadores colocavam o papel dentro de uma caixa com grilos. Os insetos, ao se alimentarem e defecarem sobre o papel, amareleciam e desgastavam artificialmente as folhas em poucas semanas, fazendo o documento parecer décadas mais velho do que realmente era. Esse "envelhecimento" servia para sustentar reivindicações de propriedade sobre terras que, na origem, eram públicas, devolutas ou ocupadas por posseiros sem título formal.</p>
+
+    <h3>Terra pública, apropriação privada</h3>
+    <p>Se a Lei de Terras de 1850, vista na aula 05-01, passou a exigir título de propriedade para reconhecer qualquer posse como legítima — e se grande parte do território brasileiro nunca tinha sido formalmente registrado, por ser terra devoluta, sem dono legal reconhecido pelo Estado —, que brecha essa exigência abriu para quem tivesse dinheiro, contatos e disposição para fraudar? A grilagem é exatamente essa brecha em ação: um fenômeno estrutural, ligado diretamente ao processo que estudamos nas duas aulas anteriores, mais do que um amontoado de crimes isolados de indivíduos gananciosos. Quem tinha recursos para pagar cartórios, advogados e, muitas vezes, agentes públicos corruptos, conseguia "legalizar" a apropriação de terras que, de fato, já eram ocupadas por posseiros, indígenas ou comunidades tradicionais havia gerações. Quem tinha recursos para pagar cartórios, advogados e, muitas vezes, agentes públicos corruptos, conseguia "legalizar" a apropriação de terras que, de fato, já eram ocupadas por posseiros, indígenas ou comunidades tradicionais havia gerações.</p>
+
+    <p>Esse processo se intensifica em momentos de expansão da fronteira agrícola brasileira — na ocupação do Centro-Oeste e da Amazônia ao longo do século XX, por exemplo — mas também se repete, em escala menor, em disputas por terras de uso comum no interior do Nordeste, como veremos no caso a seguir. Uma das principais fontes de acompanhamento sistemático desses conflitos é a Comissão Pastoral da Terra (CPT), ligada à Igreja Católica e fundada em 1975, ainda durante a ditadura militar: seu relatório anual, "Conflitos no Campo Brasil", documenta assassinatos, expulsões, ameaças e disputas por terra em todo o país, servindo até hoje como referência tanto para pesquisadores quanto para movimentos sociais.</p>
+
+    <h3>Do documento falso à violência real</h3>
+    <p>Para vocês, como estudantes de História, o mais relevante é entender a grilagem como o primeiro elo de uma cadeia que frequentemente termina em violência física — a fraude documental é só o ponto de partida. Uma vez "legalizada" a apropriação de uma terra ocupada por posseiros, o passo seguinte costuma ser a tentativa de expulsão dos ocupantes anteriores — por via judicial, por pressão econômica ou, em muitos casos documentados ao longo do século XX e ainda no XXI, por violência direta: queima de roças e casas, ameaças, e em casos extremos, assassinatos de lideranças comunitárias e sindicais rurais.</p>
+
+    <p>Essa dinâmica ajuda a explicar por que o Brasil aparece, ano após ano, entre os países com maior número de assassinatos ligados a conflitos de terra no mundo — um dado que pode ser acompanhado justamente pelos relatórios da CPT mencionados acima. A grilagem, portanto, não é um capítulo fechado da história fundiária brasileira: é um mecanismo ainda ativo, que conecta o século XIX ao XXI através de uma mesma lógica de apropriação da terra pela força do documento e, quando necessário, pela força bruta — e mostra como a fronteira entre legalidade e ilegalidade na questão da terra brasileira sempre foi mais porosa do que os manuais de direito sugerem.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: disputas por terras de fundo de pasto no semiárido</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Semiárido nordestino · Terras de uso comum</div>
+      <h3>Quando a terra devoluta vira alvo de grilagem</h3>
+      <p>As áreas de fundo de pasto, mencionadas na aula anterior como um sistema de uso comunitário do pasto sem cercas individuais, são um alvo histórico de grilagem no semiárido nordestino. Justamente por não terem título de propriedade individual — sendo tradicionalmente terras devolutas ou de uso comum entre famílias de posseiros — essas áreas ficam vulneráveis a processos de apropriação por terceiros que buscam documentos formais de propriedade, muitas vezes obtidos por vias questionáveis, para cercar e privatizar o que antes era compartilhado.</p>
+      <p>Comunidades de fundo de pasto em estados como Bahia e Piauí têm, ao longo das últimas décadas, se organizado coletivamente e buscado apoio de órgãos como o INCRA para obter o reconhecimento formal de seu direito de uso comunitário, numa tentativa de romper com séculos de vulnerabilidade jurídica diante da lógica da propriedade privada individual — a ausência de título formal, comum entre comunidades tradicionais, não é neutra: ela cria uma brecha jurídica que historicamente favoreceu quem tinha recursos para produzir documentos, verdadeiros ou falsificados, em seu próprio nome. Em termos do capital de Bourdieu, visto na aula 02-03, é como se o direito costumeiro dessas famílias sobre a terra fosse um capital real, mas não reconhecido pelo Estado — e por isso mesmo vulnerável a quem consegue converter posse em papel.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que a exigência de título formal de propriedade, criada pela Lei de Terras de 1850, abriu espaço estrutural para a prática da grilagem ao longo da história brasileira?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Qual é o papel de organizações como a Comissão Pastoral da Terra na produção de dados e na visibilidade pública dos conflitos de terra no Brasil? Por que esse tipo de registro é importante para historiadores?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Apliquem essa lógica de vulnerabilidade jurídica por ausência de título individual a um caso já visto neste curso — a territorialidade quilombola do Encontro 4. A vulnerabilidade funciona da mesma forma nos dois casos, ou há uma diferença importante entre eles?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 05 · Aula 03 · Grilagem e Conflitos de Terra</p>
+</div>
+
+</body>
+</html>

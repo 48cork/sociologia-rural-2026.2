@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ligas Camponesas e a luta pela terra — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 08 · Aula 02</div>
+  <h1>Ligas Camponesas e a luta<br><span>pela terra no século XX</span></h1>
+  <p class="hero-sub">Do Nordeste canavieiro para o cenário nacional: como camponeses e trabalhadores rurais se organizaram e colocaram a reforma agrária na agenda política brasileira</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Questão Agrária e Movimentos Sociais</span>
+    <span class="meta-pill">Ligas Camponesas · Francisco Julião</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">
+      Apresentar as Ligas Camponesas como um dos primeiros grandes movimentos organizados de luta pela terra no Brasil, situando sua origem em Pernambuco, sua expansão regional e sua interrupção pelo golpe civil-militar de 1964.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior, vimos que a questão agrária brasileira atravessou a Colônia, o Império e a República como um problema estrutural nunca resolvido. Mas isso não significa que os trabalhadores rurais tenham simplesmente aceitado essa condição de forma passiva ao longo de toda a história. Em meados do século XX, essa desigualdade histórica encontrou uma de suas expressões políticas mais importantes: as Ligas Camponesas, movimento que colocou, pela primeira vez em escala nacional, a reforma agrária no centro do debate público brasileiro.</p>
+
+    <h3>Origem no engenho de cana pernambucano</h3>
+    <p>As Ligas Camponesas surgiram em Pernambuco na década de 1950, num contexto de forte exploração dos trabalhadores rurais ligados à economia canavieira. Muitos desses trabalhadores viviam em condições próximas às de moradores de fazenda ou foreiros — cultivando pequenas roças de subsistência dentro de grandes engenhos, sob autorização (e à mercê da vontade) dos proprietários. Quando os donos de engenho começaram a proibir essas roças de subsistência, para dedicar toda a terra à monocultura da cana (que se tornava mais rentável no período), esses trabalhadores perderam sua principal fonte de segurança alimentar — e essa ameaça concreta e imediata foi um dos estopins que impulsionou a organização coletiva.</p>
+
+    <p>O movimento ganhou projeção nacional sob a liderança do advogado e político pernambucano Francisco Julião, que ajudou a articular politicamente as demandas dos trabalhadores rurais, defendendo publicamente a bandeira da reforma agrária como resposta estrutural ao problema da concentração de terra. As Ligas Camponesas se espalharam de Pernambuco para outros estados nordestinos, incluindo a Paraíba, e passaram a ser vistas, tanto por seus apoiadores quanto por seus opositores, como um símbolo da possibilidade real de mudança na estrutura fundiária brasileira.</p>
+
+    <p>O que havia de novo nas Ligas Camponesas era justamente isto: pela primeira vez em escala tão ampla, trabalhadores rurais organizados colocavam a redistribuição da terra como reivindicação política explícita e coletiva — não apenas como resistência local e dispersa, mas como um movimento com repercussão nacional. Recuperando o conceito weberiano de dominação tradicional, que já vimos aplicado ao morador de fazenda (Encontro 7): o que precisa acontecer para que uma dependência pessoal tolerada havia gerações — como a do morador dentro do engenho — deixe de ser aceita como legítima? Ela precisa, antes de mais nada, deixar de ser vivida como "sempre foi assim" e passar a ser nomeada como injustiça. É exatamente esse o instante em que a obediência costumeira se rompe e dá lugar a uma ação orientada por um valor explícito, a reforma agrária.</p>
+
+    <h3>Repressão e interrupção pelo golpe de 1964</h3>
+    <p>O crescimento das Ligas Camponesas e de outras formas de organização de trabalhadores rurais no início dos anos 1960 gerou forte reação de setores ligados à grande propriedade rural, que viam nesse movimento uma ameaça direta à estrutura fundiária existente. Com o golpe civil-militar de 1964, as Ligas Camponesas foram duramente reprimidas: lideranças foram perseguidas, presas ou exiladas, e a organização foi praticamente desmantelada como força política nacional. O próprio Francisco Julião teve que se exilar.</p>
+
+    <p>O contexto mais amplo da Guerra Fria ajuda a explicar a intensidade dessa repressão: o temor de uma "reforma agrária radical" nos moldes de outras experiências latino-americanas da época alimentou parte da justificativa política para reprimir o movimento camponês organizado, tratado por setores conservadores como ameaça à ordem social e à propriedade privada.</p>
+
+    <div class="callout">
+      <div class="callout-label">Por que essa aula importa para a história do campo</div>
+      As Ligas Camponesas são um antecedente histórico direto de movimentos posteriores de luta pela terra no Brasil, incluindo o MST, que estudaremos na próxima aula. Entender sua trajetória — ascensão, repressão, interrupção — ajuda a compreender por que a questão da terra permanece, até hoje, um tema politicamente sensível e disputado no Brasil.
+    </div>
+
+    <h3>Um legado que não desaparece com a repressão</h3>
+    <p>Mesmo com o desmantelamento das Ligas Camponesas como organização formal, a experiência de mobilização que elas representaram deixou marcas duradouras: memórias de luta transmitidas entre gerações de trabalhadores rurais, um repertório de reivindicações (redistribuição de terra, fim de relações de trabalho semelhantes à servidão) que reapareceria mais tarde, e uma referência histórica constante para movimentos posteriores que, já em contexto de redemocratização, retomariam a bandeira da reforma agrária de forma organizada.</p>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: a proibição das roças de subsistência no engenho</h2>
+    </div>
+    <div class="caso">
+      <div class="caso-label">Nordeste açucareiro · Pernambuco, década de 1950</div>
+      <h3>Quando a monocultura elimina a segurança alimentar</h3>
+      <p>O episódio historicamente documentado que ajuda a explicar a explosão das Ligas Camponesas é a decisão de muitos donos de engenho, em meados do século XX, de proibir os "foros" ou pequenas roças de subsistência que trabalhadores rurais mantinham dentro das terras do engenho, para dedicar essa área integralmente ao cultivo comercial da cana-de-açúcar, então mais rentável. Para os trabalhadores, essa decisão significava perder, de uma hora para outra, a principal garantia de alimentação da família — sem que sua remuneração em dinheiro (quando existia) fosse suficiente para compensar essa perda. Esse episódio ilustra como uma mudança na organização econômica da grande propriedade pode transformar uma situação de dependência tolerada em uma ameaça concreta à sobrevivência — e como isso pode detonar, de forma relativamente rápida, um processo de organização coletiva e conflito aberto.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que a proibição das roças de subsistência foi um fator tão decisivo para a mobilização dos trabalhadores rurais pernambucanos, mais do que a exploração já existente havia sido?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Como o contexto da Guerra Fria ajuda a explicar a intensidade da repressão às Ligas Camponesas após 1964?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>De que forma um movimento que foi duramente reprimido e "desmantelado" pode ainda assim deixar um legado histórico importante para lutas posteriores?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 08 · Aula 02 · Ligas Camponesas</p>
+</div>
+
+</body>
+</html>

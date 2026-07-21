@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rural e Urbano: Fronteiras Cada Vez Mais Tênues — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .activity { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; }
+  .activity.green { border-left: 5px solid var(--green); }
+  .activity.blue { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber { border-left: 5px solid var(--amber); }
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .activity-icon.green { background: #0f2010; }
+  .activity-icon.blue { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th { padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); font-family: var(--mono); }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 16 · Aula 01</div>
+  <h1>Rural e Urbano: <span>Fronteiras</span> Cada Vez Mais Tênues</h1>
+  <p class="hero-sub">Como o Brasil contemporâneo torna cada vez mais artificial a linha rígida entre "campo" e "cidade" que a sociologia clássica muitas vezes pressupôs</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Síntese e Encerramento</span>
+    <span class="meta-pill">Bourdieu revisitado · Fronteira rural-urbana</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Mostrar, retomando o conceito de campo e habitus de Bourdieu já visto no encontro 02-03, por que a fronteira entre rural e urbano no Brasil contemporâneo é muito mais porosa do que a oposição clássica entre "campo" e "cidade" sugere — sem tratar essa porosidade como uma novidade teórica isolada, mas como algo que as próprias ferramentas do curso já permitem antecipar.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Este curso começou, no seu segundo encontro, desconstruindo a ideia de que rural é sinônimo de atraso e urbano é sinônimo de modernidade. Agora, no penúltimo encontro do curso, é hora de dar um passo além dessa desconstrução: mostrar que, no Brasil contemporâneo, a própria separação entre "o rural" e "o urbano" como dois mundos estanques está cada vez mais difícil de sustentar na prática.</p>
+
+    <h3>De onde vem a ideia de fronteira rígida entre campo e cidade</h3>
+    <p>Boa parte da sociologia clássica que este curso estudou — sobretudo em suas leituras de Durkheim e mesmo de certas interpretações de Weber — trabalhou com uma oposição relativamente nítida entre comunidade rural (tradicional, de laços pessoais, de solidariedade mecânica) e sociedade urbana (moderna, de laços impessoais, de divisão do trabalho complexa). Essa oposição fez sentido histórico em um momento de industrialização acelerada na Europa, quando o campo parecia de fato representar o "antigo" e a cidade o "novo". Só que, quando aplicamos essa mesma oposição rígida ao Brasil de hoje, ela deixa de explicar boa parte do que realmente acontece no território nacional.</p>
+
+    <h3>Rurbanização: um nome para um fenômeno que Bourdieu já explicava</h3>
+    <p>Um nome descritivo útil para essa mudança é rurbanização: pequenas e médias cidades brasileiras cuja economia inteira depende diretamente da produção agropecuária ao redor — comércio, serviços, bancos, escolas e até vida cultural giram em torno da safra, do preço do gado, do calendário agrícola da região. Nessas cidades, é comum que uma mesma família tenha membros trabalhando na roça e membros trabalhando no comércio urbano, muitas vezes na mesma semana ou no mesmo dia, tornando artificial qualquer tentativa de classificar essa família como "rural" ou "urbana" de forma exclusiva. Mas rurbanização é só um rótulo para o fenômeno — a ferramenta que explica por que ele acontece já foi dada por Bourdieu no encontro 02-03: um campo, no sentido de espaço social de disputa por capital econômico, social e simbólico, não respeita o limite administrativo que o IBGE desenha entre "zona rural" e "zona urbana" no mapa. O capital circula onde a disputa acontece, e a disputa não para na fronteira do município.</p>
+
+    <p>Em muitas regiões do interior brasileiro, inclusive no semiárido nordestino, é comum que trabalhadores morem na sede do município (fisicamente "urbana", segundo a classificação oficial do IBGE) mas se desloquem diariamente ou semanalmente para trabalhar em atividades agrícolas — o inverso também ocorre, com famílias que residem na zona rural mas têm renda majoritariamente urbana, vinda de aposentadorias, comércio ou serviços públicos.</p>
+
+    <h3>"Novas ruralidades": o habitus não mora num endereço</h3>
+    <p>O rótulo "novas ruralidades" tenta nomear essa mesma complexidade a partir de outro ângulo — mobilidade entre campo e cidade, diversificação de fontes de renda dentro da mesma família, acesso a internet e telefonia móvel, e sobretudo a identidade que as próprias pessoas atribuem a si mesmas. Mas, de novo, o que sustenta essa observação já estava no curso: é o habitus de Bourdieu, visto na mesma aula 02-03. Habitus é disposição incorporada ao longo da vida — jeito de se relacionar com o trabalho, com a terra, com o tempo — e disposição incorporada não é a mesma coisa que endereço registrado. Por isso uma pessoa pode manter um habitus rural mesmo morando fisicamente perto de uma cidade, ou incorporar um habitus urbano mesmo trabalhando diretamente na terra: identidade rural ou urbana se define pela trajetória vivida, não pelo polígono do IBGE em que a casa está desenhada.</p>
+    <p>Essa discussão se conecta diretamente com o projeto de pesquisa de campo que vocês realizaram durante as semanas livres do curso: ao investigar como diferentes perfis de atores rurais usam (ou não usam) redes sociais e plataformas digitais, vocês já estavam, na prática, mapeando exatamente essa porosidade entre rural e urbano — um agricultor familiar que vende sua produção por WhatsApp está operando simultaneamente em uma lógica de produção rural tradicional e em uma lógica de circulação de informação e mercadoria tipicamente urbana.</p>
+
+    <div class="callout">
+      <div class="callout-label">Tese central da aula</div>
+      Rural e urbano não são mais (se é que algum dia foram, de forma pura) dois mundos separados por uma linha fixa. São, cada vez mais, dois polos de um mesmo campo bourdieusiano, pelo qual capital econômico, social e simbólico circulam constantemente — e essa leitura não exige nenhum conceito além dos que este curso já construiu.
+    </div>
+
+    <p>Isso não significa que as desigualdades históricas entre campo e cidade tenham desaparecido — elas continuam presentes, como este curso mostrou muitas vezes, na concentração fundiária, no acesso desigual a crédito e assistência técnica, na precariedade de infraestrutura em muitas áreas rurais. O que muda é que essas desigualdades já não podem ser lidas apenas como "atraso rural" versus "progresso urbano", crítica que este curso já fez lá no encontro 01-02: elas atravessam um território cada vez mais interconectado, onde o campo depende da cidade e a cidade depende do campo de formas cada vez mais visíveis e cotidianas.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: a Cidade que Vive da Safra</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso ilustrativo · Interior nordestino</div>
+      <h3>Uma cidade pequena, uma economia inteiramente rural</h3>
+      <p>Pense num município pequeno do interior nordestino, cuja sede urbana tem poucas dezenas de milhares de habitantes. O comércio local — lojas de ferragens, postos de gasolina, casas de insumos agrícolas, bancos — vive quase inteiramente do calendário agrícola da região ao redor: quando a safra vai bem ou quando chove no período certo, o comércio urbano se movimenta; quando a seca se prolonga, o comércio da cidade sente o impacto quase imediatamente, mesmo que nenhum comerciante trabalhe diretamente na terra. Esse caso ilustra bem por que rótulos como "rural" e "urbano" simplificam demais uma relação de interdependência muito mais complexa: a cidade é urbana em sua forma física (ruas, prédios, comércio), mas o campo bourdieusiano em que ela disputa capital é o mesmo campo da lavoura ao redor — a cidade não tem economia própria independente da terra, tem uma extensão urbana da mesma disputa rural.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Se uma pessoa mora na cidade mas trabalha na roça, ou mora na zona rural mas vive de renda urbana, como o IBGE deveria classificá-la? Que critério vocês proporiam além de "densidade populacional"?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Pensando nas entrevistas de campo realizadas durante o projeto de pesquisa: algum perfil investigado pelos grupos combinava elementos "rurais" e "urbanos" ao mesmo tempo? Como isso apareceu na prática?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>A porosidade entre rural e urbano significa que as desigualdades históricas entre os dois desapareceram, ou apenas que elas mudaram de forma? Defendam a resposta com um exemplo do curso.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 16 · Aula 01 · Fronteira rural-urbana à luz de Bourdieu</p>
+</div>
+
+</body>
+</html>

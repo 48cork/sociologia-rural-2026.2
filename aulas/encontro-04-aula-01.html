@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quilombos: Formação, Resistência e Territorialidade — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th { padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); font-family: var(--mono); }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 4 · Aula 1</div>
+  <h1>Quilombos: Formação, <span>Resistência e Territorialidade</span></h1>
+  <p class="hero-sub">Muito além de Palmares — as múltiplas formas históricas de recusa à escravidão e a construção de outro modo de viver a terra</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Quilombos e Resistência Negra Rural</span>
+    <span class="meta-pill">Territorialidade · Resistência</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Compreender a diversidade histórica das formas de quilombo no Brasil, para além do exemplo emblemático de Palmares, e introduzir o conceito de territorialidade quilombola como uma relação com a terra distinta da propriedade privada individual.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">exposição</span>
+    </div>
+
+    <p>Na aula passada, vimos como a abolição de 1888 não veio acompanhada de acesso à terra para a população recém-liberta. Mas seria um erro pensar que a resistência negra à escravidão e à exclusão fundiária começou apenas depois da abolição, ou que ela se resumiu a esperar passivamente por uma lei. Ao longo de todo o período escravista, e mesmo depois dele, populações negras construíram, por conta própria, formas autônomas de organização territorial: os quilombos. Hoje vamos entender essa história em sua diversidade, não apenas através do exemplo mais famoso.</p>
+
+    <h3>Palmares como símbolo, não como modelo único</h3>
+    <p>Quando se fala em quilombo, a referência quase automática é o Quilombo dos Palmares, formado no atual território de Alagoas ao longo do século XVII, que resistiu por décadas a sucessivas expedições militares portuguesas e depois holandesas, e que se tornou o maior e mais duradouro exemplo de organização político-territorial negra autônoma no período colonial. Zumbi, sua liderança mais lembrada, tornou-se símbolo nacional de resistência — e é por isso que o dia de sua morte, 20 de novembro, é hoje reconhecido como o Dia da Consciência Negra.</p>
+
+    <p>Mas é importante que vocês, como futuros historiadores, entendam Palmares como o exemplo mais visível de um fenômeno muito mais amplo e disperso, que se repetiu, em escalas menores, por praticamente todo o território colonial e imperial brasileiro: pequenos e médios agrupamentos de pessoas fugidas da escravidão, formando comunidades autônomas — muitas vezes chamadas de mocambos — em áreas de difícil acesso, como matas fechadas, serras ou regiões pantanosas, onde a perseguição era mais custosa para os senhores e para o aparato de captura de escravizados fugidos.</p>
+
+    <h3>Quilombo não é só fuga: também é doação, herança e ocupação pós-abolição</h3>
+    <p>Um ponto frequentemente ignorado no ensino básico é que nem toda comunidade reconhecida hoje como quilombola se formou exclusivamente por fuga durante o período escravista. A historiografia e a antropologia contemporâneas documentam também comunidades negras rurais formadas por outras vias: terras doadas por antigos senhores a escravizados libertos (às vezes por testamento, às vezes como forma de manter mão de obra vinculada informalmente), terras compradas coletivamente por libertos após a abolição, ou simplesmente a permanência continuada de populações negras em terras que ocupavam havia gerações, sem nunca terem sido formalmente tituladas.</p>
+
+    <div class="highlight">
+      <strong>Por isso a definição contemporânea de comunidade quilombola, usada pelo Estado brasileiro, não exige prova de fuga histórica</strong> — ela se baseia principalmente na autoidentificação da comunidade e na trajetória histórica de ocupação de um território, associada a uma identidade étnica e cultural específica. Veremos essa definição legal com mais detalhe na próxima aula.
+    </div>
+
+    <h3>Territorialidade: um conceito-chave para entender os quilombos</h3>
+    <p>Para a Sociologia Rural, um dos aspectos mais importantes dos quilombos — históricos e contemporâneos — é que sua relação com a terra não corresponde ao modelo de propriedade privada individual que conhecemos do direito civil moderno. Nos quilombos, a terra tende a ser vivida e organizada de forma coletiva: o uso do solo, das águas e dos recursos naturais é compartilhado segundo regras internas da comunidade, muitas vezes vinculadas a laços de parentesco, história familiar comum e práticas religiosas e culturais específicas.</p>
+
+    <p>É a esse tipo de vínculo — mais amplo, mais histórico e mais coletivo do que "ser dono de um pedaço de terra" — que os estudos contemporâneos chamam de <strong>territorialidade</strong>. A terra quilombola não é apenas um ativo econômico: é também um espaço de memória, de identidade étnica e de reprodução cultural, o que explica por que a perda do território, mesmo quando não há expulsão física imediata das pessoas, pode representar uma ameaça grave à continuidade da comunidade enquanto grupo social.</p>
+
+    <blockquote>
+      Pensar a territorialidade quilombola exige um deslocamento de perspectiva: em vez de perguntar apenas "quem é o dono legal desta terra?", pergunta-se "que história, que memória e que forma de vida coletiva esse território sustenta?"
+    </blockquote>
+
+    <p>Pensem de volta no Encontro 2: se para Bourdieu o capital simbólico é aquilo que dá valor a algo além do seu preço de mercado — o prestígio de um sobrenome, por exemplo, que nenhuma conta bancária resume —, o que aconteceria se aplicássemos essa mesma lógica a um pedaço de terra, e não a uma pessoa ou família? A territorialidade quilombola é exatamente essa aplicação: assim como o prestígio de uma família proprietária não se reduz ao valor econômico de suas terras, um território quilombola carrega um valor simbólico e identitário que nenhum preço de mercado consegue captar — e que se perde quando esse território é tratado apenas como mercadoria.</p>
+
+    <h3>Resistência como processo contínuo, não como evento único</h3>
+    <p>Por fim, é fundamental que a turma entenda a resistência quilombola não como um episódio fechado no passado colonial, mas como um processo que se estende até hoje. As mesmas comunidades — ou suas descendentes diretas — que resistiram à escravidão durante séculos seguem, no presente, lutando pelo reconhecimento formal de seus territórios, por proteção contra a expansão de fazendas e empreendimentos agropecuários vizinhos, e pela preservação de seu modo de vida específico. É esse fio de continuidade entre passado e presente que vamos explorar nas próximas duas aulas.</p>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: Palmares e a Diversidade dos Quilombos Nordestinos</h2>
+      <span class="duration">Nordeste</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso concreto · Quilombo dos Palmares, Alagoas</div>
+      <h3>Um Estado quilombola dentro do território colonial</h3>
+      <p>O Quilombo dos Palmares, organizado ao longo do século XVII na região da Serra da Barriga, no atual estado de Alagoas, chegou a reunir, segundo estimativas históricas, milhares de habitantes distribuídos em diversos mocambos interligados, com organização política e social própria — plantio coletivo de alimentos, defesa militar organizada e lideranças reconhecidas, entre as quais Zumbi se tornou a mais lembrada. Resistiu a dezenas de expedições militares ao longo de quase um século, sendo finalmente destruído em 1694-1695 após um cerco prolongado.</p>
+      <p>Palmares é frequentemente tratado como exceção pela sua escala e duração, mas ele expressa, de forma ampliada, uma lógica que se repetiu, em proporções menores, por diferentes partes do Nordeste colonial: a formação de espaços autônomos de vida negra fora do controle direto do sistema escravista, aproveitando as condições geográficas — nesse caso, a Serra da Barriga — para dificultar a repressão. Palmares mostra que a territorialidade negra foi, sobretudo, construção ativa de uma organização social e política alternativa, com suas próprias regras de uso da terra e de convivência coletiva — um antecedente histórico direto do conceito de territorialidade quilombola que discutimos hoje.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que vocês acham que Palmares se tornou o símbolo nacional dos quilombos, enquanto tantas outras experiências menores de resistência negra rural permaneceram pouco conhecidas fora dos estudos especializados?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Se nem toda comunidade quilombola se formou por fuga, o que muda na nossa compreensão histórica quando incluímos também as vias de doação, compra coletiva e permanência continuada como origens legítimas do quilombo?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Apliquem o conceito de territorialidade a um processo histórico diferente do quilombola — por exemplo, a relação de posseiros e sitiantes do sertão com a terra (Encontro 3) ou a disputa por terras de fundo de pasto (Encontro 5). O conceito funciona da mesma forma nesses outros casos, ou precisa ser ajustado?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 4 · Aula 1 · Quilombos, formação e territorialidade</p>
+</div>
+
+</body>
+</html>

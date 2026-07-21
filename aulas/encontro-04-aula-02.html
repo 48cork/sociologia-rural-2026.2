@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comunidades Quilombolas Contemporâneas — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th { padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); font-family: var(--mono); }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 4 · Aula 2</div>
+  <h1>Comunidades Quilombolas Contemporâneas: <span>Reconhecimento e Conflito</span></h1>
+  <p class="hero-sub">Da Constituição de 1988 ao INCRA — o longo e disputado caminho legal para o título da terra</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Quilombos e Resistência Negra Rural</span>
+    <span class="meta-pill">Decreto 4.887/2003 · Titulação</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Conhecer o marco legal contemporâneo do reconhecimento de comunidades quilombolas no Brasil — a partir da Constituição de 1988 e do Decreto nº 4.887/2003 — e compreender os principais conflitos que emergem no processo de titulação de seus territórios.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">exposição</span>
+    </div>
+
+    <p>Na aula anterior, vimos que a resistência negra rural e a construção de territórios quilombolas atravessam toda a história brasileira, desde o período colonial. Mas por muito tempo, essa realidade social não teve nenhum reconhecimento jurídico específico: as comunidades quilombolas existiam de fato, mas não existiam formalmente para o Estado brasileiro como sujeitos de direito com direito à terra que ocupavam havia gerações. Isso só começa a mudar de forma significativa a partir da Constituição de 1988.</p>
+
+    <h3>O Artigo 68 do ADCT: um marco tardio, mas decisivo</h3>
+    <p>A Constituição Federal de 1988, promulgada após o fim da ditadura militar, trouxe um dispositivo até então inédito na história constitucional brasileira: o Artigo 68 do Ato das Disposições Constitucionais Transitórias (ADCT), que reconhece aos "remanescentes das comunidades dos quilombos que estejam ocupando suas terras" o direito à propriedade definitiva, cabendo ao Estado emitir os títulos respectivos.</p>
+
+    <p>Note a formulação: "remanescentes das comunidades dos quilombos". Por muito tempo, essa expressão foi interpretada de maneira restritiva, como se fosse necessário provar uma linha direta e ininterrupta de descendência de quilombos históricos formados por fuga durante a escravidão — uma exigência quase impossível de cumprir documentalmente, dado o apagamento histórico deliberado de muitos desses registros.</p>
+
+    <p>Antes de ver o que a lei brasileira decidiu, recuperem o conceito de territorialidade que vimos na aula passada — um vínculo histórico e coletivo com a terra, não uma linhagem provável em cartório. Se o objetivo fosse dar conta desse tipo de vínculo, que critério vocês esperariam que o Estado adotasse para decidir quem é "remanescente de quilombo": exigir prova genealógica de descendência direta, ou reconhecer a trajetória histórica e identitária vivida pela própria comunidade?</p>
+
+    <h3>O Decreto nº 4.887/2003: autoidentificação como critério central</h3>
+    <p>Foi exatamente a segunda opção que prevaleceu. Em 2003, o Decreto nº 4.887 regulamentou de forma mais ampla e mais fiel ao espírito constitucional o processo de identificação, reconhecimento, delimitação, demarcação e titulação das terras ocupadas por remanescentes de comunidades de quilombos. Um dos pontos centrais desse decreto é o critério da <strong>autoidentificação</strong>: são consideradas comunidades quilombolas aquelas que se autodefinem como tal, com base em critérios de trajetória histórica própria, relações territoriais específicas e ancestralidade negra relacionada à resistência à opressão histórica sofrida.</p>
+
+    <p>Essa mudança de critério é fundamental: ela desloca o processo de reconhecimento de uma prova documental quase impossível — linhagem comprovada desde um quilombo histórico específico — para o reconhecimento da identidade coletiva e da trajetória territorial vivida, um critério mais próximo do conceito de territorialidade que discutimos na aula anterior.</p>
+
+    <h3>Os órgãos envolvidos: INCRA e Fundação Cultural Palmares</h3>
+    <p>Na prática institucional, dois órgãos federais desempenham papéis centrais nesse processo. A <strong>Fundação Cultural Palmares</strong>, vinculada ao Ministério da Cultura, é responsável por certificar comunidades como remanescentes de quilombos, a partir de autodeclaração e de estudos que confirmem a trajetória histórica e identitária do grupo. Já o <strong>INCRA</strong> (Instituto Nacional de Colonização e Reforma Agrária) é o órgão responsável, depois dessa certificação, por conduzir todo o processo técnico de identificação, delimitação territorial, desapropriação de eventuais ocupantes não quilombolas dentro da área delimitada, e, finalmente, titulação coletiva da terra em nome da comunidade.</p>
+
+    <p>Esse processo, na prática, costuma ser extremamente longo — muitas vezes levando anos ou mesmo décadas entre a certificação inicial e a titulação definitiva —, o que expõe as comunidades a um período prolongado de insegurança jurídica sobre seu próprio território.</p>
+
+    <h3>Conflitos: fazendeiros, agronegócio e disputa territorial</h3>
+    <p>É justamente nesse período de tramitação prolongada que se concentram os principais conflitos fundiários envolvendo comunidades quilombolas contemporâneas. Fazendeiros e empreendimentos do agronegócio vizinhos frequentemente contestam judicialmente os limites territoriais propostos pelo INCRA, alegando posse legítima anterior sobre partes da área reivindicada pela comunidade. Relatórios anuais de organizações como a Comissão Pastoral da Terra documentam, ano após ano, conflitos fundiários e episódios de violência envolvendo comunidades quilombolas em diferentes regiões do país, incluindo o Nordeste.</p>
+
+    <div class="callout">
+      <div class="callout-label">Para reter</div>
+      O reconhecimento jurídico das comunidades quilombolas, embora seja um avanço histórico importante desde 1988, não encerrou o conflito em torno da terra — ele deslocou esse conflito para o terreno jurídico e administrativo, onde as comunidades seguem tendo que disputar, muitas vezes por décadas, o reconhecimento efetivo de um território que já ocupam há gerações.
+    </div>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o Tempo Longo da Titulação</h2>
+      <span class="duration">Brasil · processo institucional</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso concreto · Processo de reconhecimento quilombola</div>
+      <h3>Da certificação ao título: um caminho de anos</h3>
+      <p>Um padrão amplamente documentado por pesquisas sobre a política de titulação quilombola no Brasil é o descompasso entre o número de comunidades certificadas pela Fundação Cultural Palmares e o número de territórios efetivamente titulados pelo INCRA. Centenas de comunidades em todo o país permanecem, por anos, na fase intermediária do processo — certificadas, mas ainda sem titulação definitiva —, o que as deixa vulneráveis a pressões e conflitos com vizinhos que contestam os limites da área.</p>
+      <p>Esse padrão se repete em diferentes estados nordestinos, onde comunidades quilombolas frequentemente convivem, num mesmo território em disputa, com fazendas de pecuária extensiva ou lavouras de exportação vizinhas — um eco direto da disputa por terra e água que já vínhamos discutindo desde a aula sobre sesmarias e sertão. Esse caso mostra como um direito reconhecido na letra da lei, o Artigo 68 do ADCT, pode, na prática institucional, demorar décadas para se realizar efetivamente: um lembrete de que a história do direito e a história social vivida nem sempre caminham no mesmo ritmo.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que vocês acham que levou cem anos, entre a abolição (1888) e o primeiro reconhecimento constitucional dos direitos territoriais quilombolas (1988), para que o Estado brasileiro tratasse essa questão de forma explícita?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>O critério de autoidentificação, adotado pelo Decreto 4.887/2003, é elogiado por alguns como mais justo e criticado por outros como "subjetivo demais". Qual é a posição de vocês, e por quê?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Se o processo de titulação pode levar décadas, quem se beneficia dessa demora — e quem é prejudicado por ela? Que interesses estão em jogo nesse tempo de espera?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 4 · Aula 2 · Reconhecimento e conflito quilombola</p>
+</div>
+
+</body>
+</html>

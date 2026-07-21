@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Políticas Públicas Contemporâneas: Avanços e Retrocessos — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .activity { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; }
+  .activity.green { border-left: 5px solid var(--green); }
+  .activity.blue { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber { border-left: 5px solid var(--amber); }
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .activity-icon.green { background: #0f2010; }
+  .activity-icon.blue { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th { padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); font-family: var(--mono); }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 15 · Aula 02</div>
+  <h1>Políticas Públicas <span>Contemporâneas</span>: Avanços e Retrocessos</h1>
+  <p class="hero-sub">O vaivém das políticas agrárias brasileiras conforme mudam os governos — e o que essa oscilação revela sobre a força política de cada grupo social no campo</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Políticas Públicas para o Campo</span>
+    <span class="meta-pill">Ciclos políticos · Orçamento · Correlação de forças</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Compreender por que as políticas agrárias brasileiras não seguem uma trajetória linear de avanço, mas oscilam conforme a correlação de forças políticas de cada período — com fases de expansão de crédito e assentamentos e fases de contenção e retrocesso.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior, vimos como o INCRA e o PRONAF nasceram em momentos históricos específicos, respondendo a pressões sociais determinadas. Uma lição importante daquela aula é que a política agrária avança de forma irregular, como uma escada com degraus que sobem, estagnam ou até descem, dependendo de quem está no governo, de quem consegue se organizar politicamente e de quanto orçamento público está disponível e para onde ele é direcionado.</p>
+
+    <h3>Política pública como resultado de disputa, não de consenso</h3>
+    <p>É tentador imaginar que políticas públicas para o campo evoluem naturalmente ao longo do tempo, como se cada governo apenas "melhorasse" o que o anterior fez. A história recente do Brasil mostra outra coisa: cada mudança de governo pode significar prioridades completamente diferentes para a questão agrária. Um período pode priorizar a expansão de assentamentos de reforma agrária e o fortalecimento do crédito para agricultura familiar; o período seguinte pode reduzir esse orçamento e priorizar, em vez disso, políticas voltadas ao agronegócio de exportação — sem que isso represente, necessariamente, uma "evolução" ou um "retrocesso" objetivo, mas sim uma mudança na aposta de qual modelo de desenvolvimento rural o governo daquele momento privilegia.</p>
+    <p>Isso significa que estudar política agrária brasileira exige sempre perguntar: quem está no poder, com quais alianças políticas, e quais grupos sociais rurais têm força de pressão sobre esse governo específico. Antes de seguir, arrisquem uma previsão: um governo com forte apoio de movimentos de luta pela terra e de agricultura familiar tenderia a expandir ou a reduzir crédito e assentamentos? E um governo apoiado majoritariamente por bancadas ligadas ao agronegócio faria a aposta oposta, ou a mesma? Recuperando a lógica de disputa de forças que este curso vem seguindo desde a Lei de Terras de 1850, a resposta não deveria surpreender: um governo com forte apoio de organizações de agricultura familiar e de movimentos de luta pela terra tende a expandir crédito e assentamentos; um governo com forte apoio de bancadas ligadas ao agronegócio tende a priorizar outras frentes, como infraestrutura de exportação, crédito para grandes produtores ou flexibilização de normas ambientais.</p>
+
+    <p>Essas mudanças expressam, em cada momento, quem consegue transformar sua força social em prioridade orçamentária e legislativa — a mesma lógica de disputa que vocês já viram desde a Lei de Terras de 1850 até o PRONAF, agora operando em ciclos mais curtos, de poucos anos.</p>
+
+    <h3>Assentamentos: números que sobem e descem</h3>
+    <p>Um bom indicador dessa oscilação é o ritmo de criação de novos assentamentos de reforma agrária pelo INCRA ao longo das décadas: há períodos de forte expansão, geralmente associados a governos que fazem da reforma agrária uma bandeira política explícita e que enfrentam pressão organizada de movimentos como o MST; e há períodos de estagnação quase completa, em que praticamente nenhuma nova área é desapropriada para fins de assentamento, mesmo que a demanda social por terra continue existindo. Sem citar números exatos — que vocês podem consultar diretamente nos dados abertos do INCRA — o padrão histórico é claro: o ritmo dos assentamentos segue o ciclo político, não uma necessidade social constante.</p>
+
+    <h3>Crédito rural: duas portas, dois destinos</h3>
+    <p>O mesmo vale para o crédito rural. Existem, no Brasil, linhas de crédito voltadas à agricultura familiar (como o PRONAF) e linhas voltadas ao agronegócio de maior escala. A proporção do orçamento público destinada a cada uma dessas portas também varia conforme o governo e sua base de apoio político. Um aumento expressivo de recursos para o agronegócio, por exemplo, pode conviver com um congelamento dos recursos disponíveis para pequenos produtores familiares — e vice-versa. Entender essa dinâmica ajuda a explicar por que a tensão entre agricultura familiar e agronegócio, discutida em aulas anteriores deste curso, não é apenas um debate técnico sobre eficiência produtiva, mas também uma disputa por orçamento e por atenção do Estado.</p>
+
+    <div class="callout">
+      <div class="callout-label">Tese central da aula</div>
+      Política agrária no Brasil não avança nem retrocede sozinha: ela reflete, a cada momento, qual coalizão política está no poder e qual modelo de desenvolvimento rural essa coalizão representa. Ler política pública é, portanto, ler correlação de forças.
+    </div>
+
+    <p>Para o historiador em formação, essa aula deixa um método de análise mais do que uma lista de fatos: sempre que encontrarem uma política agrária específica em uma fonte histórica — um decreto, um programa, uma verba orçamentária — perguntem quem estava no poder, quais grupos sociais pressionavam naquele momento, e o que essa política deixou de fora. Esse é o mesmo exercício que vocês fizeram com o INCRA e o PRONAF, e que podem repetir para qualquer política pública rural que encontrarem daqui para frente, inclusive nas próprias pesquisas de campo que realizaram durante as semanas livres do curso.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o Mesmo Programa, Governos Diferentes</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso ilustrativo · Brasil rural</div>
+      <h3>Um programa de crédito que muda de tamanho sem mudar de nome</h3>
+      <p>Um exemplo ilustrativo, sem citar dados exatos: um mesmo programa de crédito rural para pequenos produtores pode manter exatamente o mesmo nome e o mesmo desenho institucional ao longo de vinte anos, mas seu orçamento efetivo e sua prioridade dentro do governo podem variar enormemente — em alguns anos, ele é ampliado e divulgado como política central; em outros, ele existe formalmente, mas com recursos tão reduzidos que na prática atinge poucos agricultores. Um pequeno produtor familiar do semiárido, por exemplo, pode ter tido acesso fácil ao crédito em um determinado período e, poucos anos depois, encontrar o mesmo programa praticamente inacessível, sem que nenhuma lei tenha sido formalmente revogada. Esse tipo de caso mostra que analisar política pública apenas pelo nome do programa ou pela lei que o criou é insuficiente — é preciso olhar para a execução orçamentária real, ano a ano, para entender se aquela política estava, de fato, sendo priorizada ou apenas mantida no papel.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Se uma política agrária pode "existir no papel" mas não na prática, o que isso ensina sobre a diferença entre estudar leis e decretos e estudar a execução orçamentária real de um governo?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Quais grupos sociais rurais vocês diriam que têm hoje mais força de pressão sobre o Estado brasileiro: movimentos de agricultura familiar e reforma agrária, ou representantes do agronegócio de exportação? Que evidências vocês usariam para sustentar essa resposta?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Pensando nas entrevistas de campo que os grupos realizaram nas semanas livres do curso: algum entrevistado mencionou, direta ou indiretamente, ter sido afetado por uma mudança em política de crédito, assentamento ou assistência técnica? O que isso revela sobre como políticas públicas chegam — ou não chegam — até quem vive no campo?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 15 · Aula 02 · Ciclos políticos e política agrária</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diário de Campo e Produto da Semana — Semana Livre 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .activity { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 10 · Aula 03 · Semana Livre 1</div>
+  <h1>Registro e <span>Produto da Semana</span></h1>
+  <p class="hero-sub">Transformar a conversa de campo em diário de pesquisa e começar a pensar a leitura teórica do achado</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 minutos</span>
+    <span class="meta-pill">Semana Livre de Pesquisa de Campo</span>
+    <span class="meta-pill">Produto: diário de campo</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">Orientar a escrita do diário de campo a partir da entrevista realizada e organizar o produto da semana a ser entregue, iniciando a reflexão sobre qual conceito sociológico do curso ajuda a interpretar o achado.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="registro">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Como Registrar</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <div class="activity green">
+      <div class="activity-header">
+        <div class="activity-icon green">📓</div>
+        <h3>O produto da semana</h3>
+      </div>
+      <p>O produto desta primeira semana livre é composto de duas partes:</p>
+      <ul>
+        <li><strong>1 página de diário de campo</strong>, com o registro da entrevista realizada.</li>
+        <li><strong>3 fotos ou prints</strong> relacionados à conversa — por exemplo, imagem da feira, do produto, do local de trabalho, ou da tela de um aplicativo usado pela pessoa entrevistada, sempre que possível e autorizado.</li>
+      </ul>
+    </div>
+
+    <div class="activity blue">
+      <div class="activity-header">
+        <div class="activity-icon blue">✍️</div>
+        <h3>O que colocar na página de diário</h3>
+      </div>
+      <ul>
+        <li>Quem foi entrevistado (nome fictício ou apenas iniciais, se a pessoa preferir anonimato), quando e onde aconteceu a conversa.</li>
+        <li>Trechos ou paráfrases das falas mais relevantes sobre venda, uso de tecnologia digital e relação com a terra.</li>
+        <li>Observações do próprio grupo sobre o contexto: como era o local, que detalhes chamaram atenção, o que surpreendeu ou confirmou expectativas.</li>
+        <li>Um registro à parte sobre a própria entrevista: qual pergunta aberta funcionou bem — puxou uma resposta rica, cheia de detalhes — e qual precisou ser reformulada ou substituída pela versão fechada porque não rendeu nada sozinha. Aprender a perguntar é parte do exercício de pesquisa, tanto quanto registrar a resposta.</li>
+      </ul>
+      <p>Escrevam em prosa corrida, como um relato — não como uma lista seca de respostas. Um bom diário de campo deixa o leitor "ver a cena", não apenas ler dados soltos.</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Olhando à frente</div>
+      Comecem a anotar, mesmo que de forma provisória, qual conceito sociológico do curso — Marx, Weber, Durkheim ou Bourdieu — parece mais útil para interpretar o que foi encontrado nesta primeira entrevista. Essa reflexão inicial vai facilitar, depois da terceira semana livre, a escolha do conceito central que vai costurar toda a análise do grupo no seminário final.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="reflexao">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Perguntas para o Diário</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Reflexão 01</div>
+        <p>O que mais surpreendeu o grupo na forma como essa pessoa se relaciona com a terra — algo esperado ou algo que contrariou uma ideia prévia sobre agricultura familiar?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Reflexão 02</div>
+        <p>O uso (ou não uso) de tecnologia digital pareceu mudar algo na relação dessa pessoa com o mercado e com o próprio trabalho, ou a lógica de produção seguiu essencialmente a mesma?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Reflexão 03</div>
+        <p>Se tivessem que resumir esse primeiro achado de campo em uma frase para o seminário final, qual seria — e por quê?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 10 · Aula 03 · Semana Livre 1 — Registro e diário de campo</p>
+</div>
+
+</body>
+</html>

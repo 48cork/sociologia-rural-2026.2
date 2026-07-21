@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bourdieu no campo: habitus, campo e capital em contexto rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0e0e12; --surface: #16161e; --surface-2: #1e1e2a; --border: #2a2a3a;
+    --accent: #f59e0b; --accent-dim: #92610a; --teal: #38bdf8; --green: #4ade80;
+    --amber: #fbbf24; --red: #f87171; --purple: #7c6af7; --text: #e8e8f4; --muted: #7a7a9a;
+    --sans: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 02 · Aula 03</div>
+  <h1>Bourdieu no campo: <span>habitus, campo e capital</span> em contexto rural</h1>
+  <p class="hero-sub">Por que um sobrenome ainda pesa mais que uma conta bancária em muitas cidades do interior</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco 1 · Bases Teóricas</span>
+    <span class="meta-pill">Bourdieu · capital simbólico</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Apresentar os conceitos de habitus, campo e capital de Pierre Bourdieu e mostrar como eles ajudam a explicar por que o prestígio de famílias tradicionais no meio rural sobrevive mesmo quando seu poder econômico diminui.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>O sociólogo francês Pierre Bourdieu (1930-2002) construiu uma das caixas de ferramentas conceituais mais usadas nas ciências sociais contemporâneas para entender como as desigualdades sociais se reproduzem sem que precisem, o tempo todo, de imposição violenta ou de leis explícitas. Três conceitos, usados sempre em conjunto, são centrais nessa caixa de ferramentas: habitus, campo e capital.</p>
+
+    <h3>Habitus: o corpo que carrega a história</h3>
+    <p>Habitus é o conjunto de disposições — formas de pensar, sentir, perceber e agir — que uma pessoa incorpora ao longo da vida, principalmente na infância, a partir da posição social em que nasceu e foi criada. Não é um conjunto de regras conscientes que a pessoa segue deliberadamente: é algo mais profundo, quase corporal, um "jeito de ser" que orienta escolhas e reações de forma quase automática. Uma pessoa criada no ambiente de uma grande propriedade rural, por exemplo, incorpora modos específicos de se relacionar com a terra, com o trabalho, com a hierarquia social e até com o próprio corpo (formas de andar, de falar, de vestir) que a diferenciam de uma pessoa criada em outro contexto social — mesmo que as duas frequentem, mais tarde, os mesmos espaços urbanos.</p>
+
+    <h3>Campo: o jogo com suas próprias regras</h3>
+    <p>Campo é um espaço social relativamente autônomo, com suas próprias regras de disputa e seus próprios critérios do que conta como "vencer" ou "prestígio". Bourdieu fala em campo político, campo religioso, campo econômico, campo intelectual — cada um com sua lógica interna. No mundo rural brasileiro, podemos falar, por exemplo, de um campo político local (a disputa por prefeituras e câmaras municipais no interior) e de um campo de prestígio social ligado à posse da terra e à tradição familiar, que funcionam com regras próprias, distintas das regras do campo político nacional ou do campo empresarial urbano.</p>
+
+    <h3>Capital: além do dinheiro</h3>
+    <p>O conceito de capital em Bourdieu é uma ampliação deliberada da ideia econômica de capital. Ele distingue pelo menos quatro tipos: capital econômico (dinheiro, propriedades, bens), capital social (a rede de relações e conexões que uma pessoa pode mobilizar), capital cultural (conhecimento, educação formal, familiaridade com códigos culturais valorizados) e capital simbólico (o prestígio, a honra, o reconhecimento que uma pessoa ou família acumula e que passa a funcionar quase como um "crédito" social, reconhecido por todos num determinado campo, mesmo sem lastro econômico direto).</p>
+
+    <div class="highlight">
+      <strong>A distinção mais importante desta aula:</strong> capital simbólico pode sobreviver, por um tempo considerável, à erosão do capital econômico que originalmente o sustentou. Uma família pode perder grande parte de suas terras e ainda manter, por gerações, um prestígio social — um "nome que pesa" — herdado da época em que possuía muito mais capital econômico.
+    </div>
+
+    <p>Essa distinção é extremamente útil para o historiador do Brasil rural. Como explicar, então, que descendentes de famílias de antigos coronéis (encontro 6) continuem sendo tratados com deferência social e consigam eleger representantes políticos em municípios do interior, mesmo décadas depois de suas fortunas econômicas terem diminuído diante da concorrência do agronegócio moderno ou da fragmentação de heranças entre muitos herdeiros? A resposta está exatamente na distinção que acabamos de ver: o capital simbólico acumulado — o sobrenome, a história familiar, os favores prestados no passado — continua rendendo dividendos políticos e sociais muito depois de o capital econômico ter minguado.</p>
+
+    <h3>Aplicando a Bourdieu ao campesinato e às comunidades tradicionais</h3>
+    <p>Os conceitos de Bourdieu também ajudam a entender a experiência de quem está do outro lado dessa hierarquia. O habitus camponês — formado pela vida de trabalho na terra, pela relação com o ciclo agrícola, pelas formas específicas de sociabilidade rural — muitas vezes entra em choque quando essa pessoa migra para a cidade ou tenta competir em campos sociais urbanos (escolar, profissional) que valorizam outros tipos de capital cultural, aos quais ela teve menos acesso. Entender essa dinâmica ajuda a explicar, por exemplo, parte das dificuldades enfrentadas por jovens rurais migrantes nas cidades — tema que retomaremos no encontro 13.</p>
+
+    <p>Ao mesmo tempo, comunidades quilombolas, indígenas e outras comunidades tradicionais frequentemente mobilizam formas próprias de capital simbólico — ligadas à ancestralidade, à memória coletiva, ao conhecimento tradicional sobre o território — que funcionam como recurso de legitimidade política em suas lutas por reconhecimento e titulação de terras, tema que exploraremos com mais profundidade nos encontros 4 e 12.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: O Sobrenome que Ainda Manda</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Nordeste · Interior · Capital simbólico</div>
+      <h3>Quando o prestígio sobrevive à fortuna</h3>
+      <p>É comum, em cidades do interior nordestino, encontrar situações em que uma família tradicional — historicamente associada à posse de grandes extensões de terra em décadas passadas — mantém peso político e reconhecimento social relevante, mesmo depois de suas propriedades terem sido fragmentadas entre herdeiros ou vendidas ao longo de gerações. Membros dessa família seguem sendo tratados com deferência em espaços públicos, convidados de honra em eventos locais, e frequentemente conseguem se eleger para cargos políticos municipais, mobilizando uma rede de relações herdada (capital social) e um prestígio de sobrenome (capital simbólico) que preexistem à sua situação econômica atual. Esse fenômeno ilustra com clareza a autonomia relativa do capital simbólico em relação ao capital econômico: o prestígio de um nome de família pode continuar funcionando como "moeda" de reconhecimento social num campo político local, mesmo quando o lastro econômico que originalmente o justificava já não existe na mesma proporção.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">15 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Você consegue identificar, na sua própria cidade ou região, uma família cujo capital simbólico parece maior que seu capital econômico atual?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>De que forma o conceito de habitus ajuda a explicar dificuldades enfrentadas por migrantes rurais ao chegar em ambientes urbanos, como universidades?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Com suas próprias palavras, o que diferencia capital simbólico de simplesmente "ter fama" ou "ser respeitado"? E existe alguma forma de prestígio que, apesar de parecer capital simbólico, você diria que NÃO se encaixa bem no conceito de Bourdieu — por quê?</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 02 · Aula 03 · Bourdieu e capital simbólico</p>
+  </div>
+
+</div>
+</body>
+</html>

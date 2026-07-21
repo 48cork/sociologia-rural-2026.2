@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mulheres Rurais Hoje: Trabalho, Invisibilidade e Reconhecimento — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 13 · Aula 02</div>
+  <h1>Mulheres Rurais Hoje: Trabalho, <span>Invisibilidade e Reconhecimento</span></h1>
+  <p class="hero-sub">De sindicalista assassinada a símbolo de uma marcha nacional: a luta das mulheres do campo por serem vistas como trabalhadoras</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Gênero e Trabalho no Campo</span>
+    <span class="meta-pill">Marcha das Margaridas · MDA/INCRA</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Conhecer as políticas de gênero voltadas às mulheres rurais e os principais movimentos de organização dessas mulheres no Brasil, entendendo a luta por reconhecimento como um processo político concreto, não apenas simbólico.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Na aula passada, vimos como o trabalho das mulheres no campo foi historicamente invisibilizado — registrado como "ajuda" e não como trabalho de fato. Essa invisibilidade nunca foi aceita passivamente. Ao longo do século XX, e com mais força a partir da redemocratização dos anos 1980, mulheres rurais brasileiras se organizaram, se sindicalizaram e passaram a disputar, na prática política, o reconhecimento que os documentos históricos sempre lhes negaram.</p>
+
+    <h3>Do silêncio à organização sindical</h3>
+    <p>A organização de mulheres trabalhadoras rurais em sindicatos e associações ganha força sobretudo a partir das décadas de 1970 e 1980, num contexto de reorganização mais ampla dos movimentos sociais no campo — o mesmo período de fortalecimento de sindicatos rurais, pastorais ligadas à Igreja Católica (como a Comissão Pastoral da Terra) e, mais à frente, do próprio MST. Dentro desse movimento mais amplo, mulheres passaram a reivindicar pautas específicas: direito à sindicalização em nome próprio (e não apenas como dependentes do marido sindicalizado), direito à aposentadoria rural, direito à documentação civil e trabalhista, e reconhecimento do trabalho doméstico e de subsistência como parte do trabalho rural.</p>
+
+    <p>Esse processo de organização não foi pacífico. Em muitas regiões do país, mulheres que assumiram posições de liderança sindical enfrentaram resistência, ameaças e, em casos extremos, violência direta — o que revela o quanto a disputa pelo reconhecimento do trabalho feminino no campo estava (e está) diretamente ligada à disputa por poder e por terra nas comunidades rurais. A luta das mulheres rurais nunca foi apenas por "aparecer" nas estatísticas: era, sobretudo, por ocupar posições de decisão em sindicatos, associações e políticas públicas, o que significava enfrentar diretamente estruturas de poder já consolidadas no campo.</p>
+
+    <h3>Políticas públicas de gênero no meio rural</h3>
+    <p>A partir dos anos 2000, o então Ministério do Desenvolvimento Agrário (hoje incorporado ao MDA/INCRA) passou a produzir políticas e publicações voltadas especificamente às mulheres rurais: programas de documentação civil e trabalhista (fundamentais para que mulheres pudessem acessar crédito rural e aposentadoria em seu próprio nome), linhas de crédito específicas dentro do PRONAF (Programa Nacional de Fortalecimento da Agricultura Familiar) voltadas a mulheres, e ações de apoio a organizações produtivas lideradas por mulheres, como cooperativas de artesanato, beneficiamento de alimentos e produção agroecológica.</p>
+
+    <p>Essas políticas representam um reconhecimento formal, pelo Estado, de que o acesso das mulheres rurais a direitos e recursos exigia ações específicas — e não apenas a expectativa de que elas fossem automaticamente incluídas em políticas pensadas, na prática, para o "chefe de família" homem. É um exemplo de como o reconhecimento histórico de uma desigualdade pode (ainda que lentamente e de forma incompleta) se traduzir em desenho de política pública.</p>
+
+    <p>Antes de nomear as duas chaves teóricas: pensando no que vimos sobre Bourdieu (Encontro 2), que tipo de disputa está em jogo quando uma mulher rural luta para ser "vista e nomeada" como trabalhadora, e não apenas como dependente do marido sindicalizado? E pensando em Weber (também Encontro 2): por que a violência sofrida por lideranças como Margarida Maria Alves poderia ser lida não como um crime isolado, mas como reação a um desafio lançado contra uma forma específica de dominação sobre a terra?</p>
+
+    <div class="callout">
+      <div class="callout-label">Conceito-chave</div>
+      Reconhecimento, aqui, tem duas dimensões que caminham juntas. Na chave de Bourdieu (Encontro 2), a dimensão simbólica é a disputa por <strong>capital simbólico</strong>: ser vista e nomeada como trabalhadora, e não apenas como dependente do marido sindicalizado. Na chave de Weber (também Encontro 2), a violência sofrida por lideranças como Margarida Maria Alves pode ser lida como reação de uma <strong>dominação tradicional</strong> sobre a terra que se via desafiada em sua legitimidade: uma sindicalista mulher confrontava, ao mesmo tempo, a estrutura de gênero e a autoridade de quem sempre mandou na região. A dimensão material (documentos, crédito, renda própria) é a contraparte concreta dessas duas — uma sem as outras tende a ficar incompleta.
+    </div>
+
+    <h3>Organização nacional e mobilização de massa</h3>
+    <p>Esse processo de organização culmina, entre outras expressões, em mobilizações nacionais de grande escala, que levam para as ruas de Brasília milhares de mulheres rurais e sindicalistas vindas de todo o país, reivindicando políticas de gênero, reforma agrária, combate à violência no campo e valorização do trabalho rural feminino. Essas marchas se tornam, ao longo das décadas, um dos maiores fenômenos de mobilização política de mulheres do campo na América Latina — e carregam, em seu próprio nome, a memória de uma luta que custou vidas, como veremos no caso a seguir.</p>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: Margarida Maria Alves e a Marcha das Margaridas</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso real e documentado · Paraíba · Nordeste</div>
+      <h3>Uma sindicalista assassinada que virou símbolo nacional</h3>
+      <p>Margarida Maria Alves foi presidente do Sindicato dos Trabalhadores Rurais de Alagoa Grande, na Paraíba, e uma das principais lideranças sindicais rurais do estado nas décadas de 1970 e 1980. Sua atuação em defesa dos direitos de trabalhadores e trabalhadoras rurais — incluindo o enfrentamento direto a usineiros e grandes proprietários da região — a tornou alvo de ameaças constantes. Em 1983, Margarida Maria Alves foi assassinada em sua própria casa, em Alagoa Grande, num crime que expôs de forma brutal os riscos enfrentados por lideranças sindicais no campo brasileiro.</p>
+      <p>Décadas depois, o nome de Margarida Maria Alves foi escolhido para batizar a Marcha das Margaridas, uma das maiores mobilizações de mulheres rurais e sindicalistas do Brasil, que reúne periodicamente milhares de mulheres em Brasília para reivindicar políticas públicas voltadas ao trabalho, à renda, à terra e ao combate à violência contra a mulher no campo. O caso conecta os dois conceitos discutidos acima: de um lado, a violência como reação de uma dominação tradicional que se via desafiada por uma mulher em posição de liderança; de outro, a transformação dessa violência, pela memória política do movimento, em capital simbólico coletivo — o nome individual de uma sindicalista assassinada torna-se nome de uma causa nacional.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que a liderança sindical de mulheres no campo, historicamente, encontrou tanta resistência e violência? O que isso revela sobre a relação entre gênero e poder na estrutura fundiária brasileira?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>De que forma transformar o nome de uma pessoa assassinada, como Margarida Maria Alves, em símbolo de um movimento nacional muda o significado político desse assassinato?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Políticas específicas para mulheres rurais (crédito, documentação, aposentadoria) resolvem o problema da desigualdade de gênero no campo, ou são apenas um primeiro passo? O que ainda falta, na opinião de vocês?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 13 · Aula 02 · Mulheres rurais e reconhecimento</p>
+</div>
+
+</body>
+</html>

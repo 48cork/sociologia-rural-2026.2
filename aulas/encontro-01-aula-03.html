@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clássicos I: Marx e a questão agrária</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0e0e12; --surface: #16161e; --surface-2: #1e1e2a; --border: #2a2a3a;
+    --accent: #f59e0b; --accent-dim: #92610a; --teal: #38bdf8; --green: #4ade80;
+    --amber: #fbbf24; --red: #f87171; --purple: #7c6af7; --text: #e8e8f4; --muted: #7a7a9a;
+    --sans: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 01 · Aula 03</div>
+  <h1>Clássicos I: <span>Marx</span> e a questão agrária</h1>
+  <p class="hero-sub">Os cercamentos ingleses, a acumulação primitiva e o Brasil que fechou a porta da terra livre exatamente às vésperas da abolição</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco 1 · Fundamentos</span>
+    <span class="meta-pill">Marx · acumulação primitiva</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Compreender o conceito marxista de acumulação primitiva e a expropriação da terra camponesa como processo histórico, e aplicá-lo à Lei de Terras de 1850 no Brasil.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Karl Marx nunca escreveu um tratado dedicado exclusivamente à sociologia do campo. E, no entanto, poucos autores influenciaram tanto o modo como pensamos a questão agrária quanto ele. A razão é simples: para Marx, entender como o capitalismo nasce e se expande exige entender, antes de mais nada, como um grupo de pessoas foi separado da terra que cultivava — porque só essa separação cria, ao mesmo tempo, dois ingredientes indispensáveis ao capitalismo: um exército de trabalhadores sem meios próprios de subsistência, obrigados a vender sua força de trabalho, e uma terra concentrada nas mãos de poucos, disponível para ser explorada em larga escala.</p>
+
+    <h3>Os cercamentos e a "acumulação primitiva"</h3>
+    <p>No livro <em>O Capital</em>, no capítulo dedicado ao que ele chama de "acumulação primitiva", Marx analisa um processo histórico concreto e bem documentado: os chamados <em>enclosures</em> (cercamentos) na Inglaterra, ocorridos principalmente entre os séculos XVI e XVIII. Antes dos cercamentos, grande parte da terra inglesa era usada de forma comunal — camponeses tinham direito costumeiro de plantar, criar animais e coletar lenha em terras que não eram propriedade privada individual de ninguém. Os cercamentos foram um processo, muitas vezes amparado por leis aprovadas pelo próprio Parlamento (dominado por proprietários rurais), de transformar essas terras comunais em propriedade privada cercada, expulsando as famílias camponesas que ali viviam havia gerações.</p>
+
+    <p>Marx chama esse processo de "primitivo" não porque fosse simples ou pacífico — pelo contrário, ele descreve com riqueza de detalhes a violência legal e física envolvida —, mas porque ele constitui o ponto de partida histórico do capitalismo: sem essa expropriação em massa, não haveria trabalhadores dispostos (ou melhor, obrigados) a se empregar nas fábricas nascentes por um salário, porque ainda teriam acesso a uma terra que garantia sua subsistência.</p>
+
+    <div class="highlight">
+      <strong>Conceito-chave:</strong> a acumulação primitiva não é um evento único no passado distante — é um processo estrutural que Marx identifica como pré-condição repetida, em diferentes lugares e momentos, para a expansão do capitalismo: separar produtores de seus meios de produção (a terra) para transformá-los em trabalhadores assalariados.
+    </div>
+
+    <h3>A questão agrária como questão de classe</h3>
+    <p>Para a tradição marxista, portanto, a "questão agrária" não é apenas uma questão técnica de como organizar a produção de alimentos — é, antes de tudo, uma questão de classe: quem tem terra e quem não tem, quem vive do trabalho próprio na terra e quem é obrigado a vender sua força de trabalho para outro. Essa chave de leitura vai atravessar todo o nosso curso, porque no Brasil ela assume uma forma particularmente dramática, dado que aqui a expropriação da terra se combinou, por séculos, com a escravidão — tema que aprofundaremos no encontro 3.</p>
+
+    <h3>Uma acumulação primitiva "à brasileira": a Lei de Terras de 1850</h3>
+    <p>É possível — e muito produtivo — aplicar essa chave de leitura marxista a um momento muito específico e bem documentado da história do Brasil: a promulgação da Lei de Terras, em 1850. Até aquele momento, a forma legal de se obter uma propriedade rural no Brasil era, principalmente, através de doações da Coroa portuguesa (as sesmarias, que veremos com detalhe no encontro 3) ou, na prática cotidiana, pela simples ocupação e uso contínuo de uma terra (a chamada posse). Se os cercamentos separaram o camponês inglês da terra comunal para criar um exército de trabalhadores assalariados, o que a Lei de Terras de 1850 faria de parecido no Brasil, promulgada exatamente no momento em que a escravidão tinha os dias contados? A resposta está na letra da própria lei: a partir dela, a única forma legítima de adquirir terra pública passou a ser a compra, em dinheiro, ao Estado.</p>
+
+    <p>Essa mudança pode parecer, à primeira vista, apenas uma formalidade jurídica. Mas seu efeito histórico foi profundo, e não é coincidência que a lei tenha sido aprovada exatamente no mesmo ano em que o Brasil, sob pressão britânica, aprovava também a Lei Eusébio de Queirós, que proibia o tráfico transatlântico de escravizados. Os grandes proprietários rurais brasileiros sabiam que a escravidão tinha os dias contados no médio prazo, e a Lei de Terras funcionou como uma trava antecipada: ao exigir dinheiro para comprar terra pública, ela impediu que, no futuro, homens e mulheres libertos, ou imigrantes pobres recém-chegados, pudessem se tornar facilmente pequenos proprietários independentes. Sem terra própria acessível, a única alternativa de sobrevivência para grande parte da futura população liberta seria continuar oferecendo sua força de trabalho às mesmas grandes propriedades — agora como trabalhadores livres, mas sem opção real de autonomia.</p>
+
+    <p>A Lei de Terras de 1850 cumpriu, no Brasil, uma função estruturalmente semelhante à dos cercamentos ingleses: fechou o acesso simples e barato à terra livre exatamente no momento em que a economia precisaria, em breve, de uma massa de trabalhadores rurais disponíveis e sem alternativa própria de subsistência.</p>
+
+    <p>Essa leitura não significa que a história brasileira seja uma cópia da inglesa — as diferenças (o papel central da escravidão, o momento histórico, a inserção na economia mundial) são enormes e vamos explorá-las no encontro 3. Mas o conceito de acumulação primitiva nos dá uma ferramenta poderosa para enxergar, por trás de uma lei aparentemente técnica sobre registro de propriedades, uma decisão de classe com consequências que se estendem até os dias de hoje na concentração fundiária brasileira, tema do encontro 5.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: A Lei de Terras de 1850</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Brasil · 1850 · Marco legal</div>
+      <h3>Quando uma lei fecha uma porta antes mesmo de ela se abrir</h3>
+      <p>A Lei nº 601, de 18 de setembro de 1850, é um dos marcos legais mais estudados da história agrária brasileira justamente por seu timing. Ela estabeleceu que as terras devolutas (terras públicas sem destinação, incluindo grande parte do sertão nordestino ainda não titulado) só poderiam ser adquiridas por compra, e regulamentou a validação das posses e sesmarias já existentes através de um processo burocrático caro e demorado — o "registro do vigário", feito nas paróquias, que exigia tempo, conhecimento jurídico e recursos que a população pobre, livre ou futuramente liberta, raramente possuía.</p>
+      <p>O resultado histórico foi duplo: consolidou legalmente a propriedade dos grandes fazendeiros que já ocupavam a terra havia gerações, e dificultou, na prática, que trabalhadores rurais pobres — incluindo os libertos após 1888 — se tornassem pequenos proprietários independentes através de vias legais acessíveis. A Lei de Terras não expropriou ninguém de forma tão visível e violenta quanto os cercamentos ingleses, mas cumpriu função equivalente: consolidou, por meio jurídico, a concentração fundiária existente e bloqueou preventivamente uma possível dispersão da propriedade da terra no momento seguinte à abolição, garantindo que a massa de ex-escravizados permanecesse dependente do trabalho assalariado ou semi-assalariado nas grandes propriedades.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">15 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que Marx considera a expropriação da terra uma pré-condição necessária, e não apenas uma consequência, do desenvolvimento capitalista?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Você concorda com a leitura de que a Lei de Terras de 1850 e a Lei Eusébio de Queirós, aprovadas no mesmo ano, estão historicamente conectadas? Que evidências reforçariam ou fragilizariam essa conexão?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Com suas próprias palavras, o que diferencia "acumulação primitiva" de um simples empobrecimento ou perda de renda? E existe alguma situação que, apesar de parecer expropriação à primeira vista, você diria que NÃO se encaixa bem no conceito de Marx — por quê?</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 01 · Aula 03 · Marx e acumulação primitiva</p>
+  </div>
+
+</div>
+</body>
+</html>

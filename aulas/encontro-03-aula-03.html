@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abolição sem Reforma Agrária — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th { padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); font-family: var(--mono); }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 3 · Aula 3</div>
+  <h1>Abolição sem Reforma Agrária: <span>Continuidades da Exclusão</span></h1>
+  <p class="hero-sub">1888 acabou com a escravidão jurídica — mas não abriu a porta da terra para quem tinha sido escravizado</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Formação Histórica do Brasil Rural</span>
+    <span class="meta-pill">Abolição · Lei de Terras · Exclusão</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Compreender por que a abolição da escravidão em 1888 não veio acompanhada de qualquer política de acesso à terra para os libertos, e analisar as consequências sociais de longo prazo dessa ausência de reforma agrária.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">exposição</span>
+    </div>
+
+    <p>Em 13 de maio de 1888, a Lei Áurea extinguiu juridicamente a escravidão no Brasil. Foi um marco fundamental na história do país — e também, como vamos discutir hoje, um marco profundamente incompleto. Isso porque, ao contrário do que aconteceu em outros países que passaram por processos de abolição, no Brasil não houve nenhuma política de distribuição de terra, crédito ou assistência que permitisse aos recém-libertos construir uma vida econômica autônoma. Essa ausência tem uma história prévia bem definida, que já estudamos na nossa primeira aula deste encontro.</p>
+
+    <h3>A porta já estava fechada em 1850</h3>
+    <p>Lembrem-se da Lei de Terras de 1850: a partir dela, a terra devoluta (isto é, sem título de propriedade reconhecido) só poderia ser adquirida por compra, nunca mais por simples ocupação ou posse. Isso significava que qualquer pessoa sem capital acumulado — e, evidentemente, pessoas escravizadas não tinham qualquer capital próprio reconhecido — estava, na prática, impedida de se tornar proprietária de terra por vias legais e formais.</p>
+
+    <p>Não é coincidência que essa lei tenha sido promulgada justamente na mesma década em que o Brasil, sob pressão britânica, encerrava definitivamente o tráfico transatlântico de pessoas escravizadas (Lei Eusébio de Queirós, também de 1850). Havia, entre as elites agrárias e os formuladores de política do Império, uma percepção clara de que a escravidão tinha os dias contados a médio prazo, e a Lei de Terras funcionou, na leitura de historiadores e sociólogos como José de Souza Martins, como uma espécie de seguro contra o fim do cativeiro: se não seria mais possível escravizar, ao menos seria possível impedir que a futura força de trabalho livre tivesse acesso fácil à terra, mantendo-a disponível e dependente do trabalho assalariado ou semi-servil nas grandes propriedades.</p>
+
+    <p>Ao fechar o acesso à terra trinta e oito anos antes da abolição jurídica da escravidão, o Estado brasileiro já havia — ainda que não de forma totalmente deliberada e única, mas como resultado de interesses de classe convergentes — desenhado o problema que se manifestaria com toda força em 1888: libertos sem terra, sem capital e sem qualquer política pública de inclusão.</p>
+
+    <h3>1888: liberdade jurídica, dependência econômica</h3>
+    <p>Com a abolição, milhões de pessoas deixaram de ser propriedade de outras pessoas. Mas a maior parte delas não tinha para onde ir, nem meios de produção próprios — nem terra, nem ferramentas, nem capital de giro. O resultado, amplamente documentado pela historiografia social brasileira, foi que grande parte da população recém-liberta permaneceu, de fato, vivendo e trabalhando nas mesmas fazendas onde antes era escravizada, agora sob a condição jurídica de trabalhador livre, mas numa relação de dependência extremamente próxima da anterior: como agregados, moradores de fazenda, meeiros ou trabalhadores diaristas sem qualquer garantia de continuidade.</p>
+
+    <p>Esse fenômeno é o que a Sociologia Rural chama de <strong>continuidade na descontinuidade</strong>: a forma jurídica mudou radicalmente (de escravo a "livre"), mas a posição estrutural de dependência em relação ao dono da terra, em muitos casos, mudou muito menos do que a lei fazia parecer. Vale perguntar: se para Marx (Encontro 1) é a separação entre trabalhador e meios de produção que funda o proletariado moderno, em que momento exato essa separação foi produzida para o ex-escravizado brasileiro — em 1888, quando a lei o declarou livre, ou décadas antes, quando a Lei de Terras de 1850 fechou o acesso à terra? A resposta muda completamente o que significa a "liberdade" de 1888: aqui, a separação não precisou ser produzida no momento da abolição — ela já estava assegurada de antemão pela Lei de Terras, o que faz da liberdade jurídica uma liberdade sem base material própria.</p>
+
+    <h3>Sem reforma agrária, sem cidadania plena</h3>
+    <p>É importante que vocês, como historiadores, façam a ponte entre esse processo agrário e a discussão mais ampla sobre cidadania no Brasil pós-abolição. Ao contrário de projetos discutidos e nunca implementados de reforma agrária vinculada à abolição — que circulavam em debates da época, inclusive entre abolicionistas —, o Brasil optou por uma transição sem qualquer redistribuição fundiária. O resultado de longo prazo foi a manutenção de uma estrutura extremamente concentrada de terra, que atravessou a Primeira República, o Estado Novo, a redemocratização de 1946 e chega, em boa medida ainda hoje, ao século XXI — tema que retomaremos com dados atuais no encontro 5.</p>
+
+    <div class="callout">
+      <div class="callout-label">Tese central da aula</div>
+      A abolição de 1888 encerrou a propriedade legal de pessoas sobre outras pessoas, mas não tocou na propriedade da terra. Sem terra, a "liberdade" dos ex-escravizados foi, para a maioria, uma liberdade de escolher entre poucas opções de trabalho dependente — não uma liberdade de constituir uma vida econômica autônoma.
+    </div>
+
+    <p>Essa lacuna histórica não é só um dado do passado: ela ajuda a explicar, entre outras coisas, por que a população negra rural brasileira aparece, ainda hoje, desproporcionalmente concentrada entre os grupos com menor acesso à terra própria — um fio que vamos puxar diretamente no próximo encontro, dedicado aos quilombos e à resistência negra rural.</p>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: Libertos no Sertão Nordestino Pós-1888</h2>
+      <span class="duration">Nordeste · semiárido</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso concreto · Pós-abolição no interior</div>
+      <h3>De escravizado a agregado: uma mudança de nome, não de posição</h3>
+      <p>No sertão nordestino, região que já vínhamos acompanhando desde a aula sobre sesmarias e economia escravista, a abolição não alterou substancialmente a distribuição de terra entre as grandes fazendas de gado e algodão. Sem acesso a título de propriedade e sem capital para comprar terra — agora que a compra era a única via legal desde 1850 —, muitos libertos permaneceram nas mesmas fazendas, ou em fazendas vizinhas, sob a condição de agregados ou moradores: trabalhavam a terra do fazendeiro em troca de moradia e de um pequeno espaço para roça de subsistência, numa relação de forte dependência pessoal com o proprietário.</p>
+      <p>Essa condição de agregado — trabalhador livre juridicamente, mas dependente na prática — se tornaria, ao longo do século XX, uma das bases sociais sobre as quais se apoiaria o poder político dos chamados "coronéis" sertanejos, tema que vamos estudar com profundidade no encontro 6. O caso ilustra bem o conceito de dependência estrutural: a mudança na forma jurídica de uma relação social, de escravidão para trabalho livre, não elimina por si só a desigualdade de poder entre as partes quando uma delas continua controlando o recurso decisivo — aqui, a terra e, no semiárido, também a água.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Se a Lei de Terras de 1850 fechou o acesso à terra antes mesmo da abolição, podemos dizer que a "liberdade" de 1888 já nasceu limitada? Que outros exemplos históricos, no Brasil ou fora dele, mostram leis "neutras" produzindo efeitos desiguais deliberados?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Por que vocês acham que o debate sobre reforma agrária vinculada à abolição não avançou no Brasil, ao contrário de discussões que ocorreram em outros contextos de fim de sistemas escravistas ou servis?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Apliquem a lógica da condição de "agregado" — liberdade jurídica combinada com dependência estrutural — a um processo histórico diferente do estudado nesta aula, como o endividamento de pequenos produtores pelo crédito rural da Revolução Verde (que veremos no Encontro 9). Até que ponto a comparação se sustenta, e em que ponto ela encontra um limite?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 3 · Aula 3 · Abolição sem reforma agrária</p>
+</div>
+
+</body>
+</html>

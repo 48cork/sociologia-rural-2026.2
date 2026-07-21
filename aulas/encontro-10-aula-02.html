@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Roteiro de Campo: Entrevistando um Agricultor Familiar — Semana Livre 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .activity { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 10 · Aula 02 · Semana Livre 1</div>
+  <h1>Roteiro de Campo: <span>a Entrevista</span></h1>
+  <p class="hero-sub">Como conduzir, com método e respeito, a conversa com um agricultor ou pequena produtora familiar</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 minutos</span>
+    <span class="meta-pill">Semana Livre de Pesquisa de Campo</span>
+    <span class="meta-pill">Tarefa: entrevista de campo</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">Orientar, de forma prática e com atenção a cuidados metodológicos e éticos, a realização da entrevista de campo com um agricultor(a) familiar ou pequeno produtor(a) da região.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="tarefa">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>A Tarefa de Campo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <div class="activity green">
+      <div class="activity-header">
+        <div class="activity-icon green">🌾</div>
+        <h3>O que fazer</h3>
+      </div>
+      <p>Identifiquem e entrevistem — presencialmente, por telefone ou por vídeo — 1 agricultor(a) familiar ou pequeno(a) produtor(a) da região. Pode ser alguém conhecido do grupo, um vizinho, um familiar, ou uma pessoa indicada por outra. O importante é que seja uma conversa real, não uma simulação.</p>
+    </div>
+
+    <div class="activity blue">
+      <div class="activity-header">
+        <div class="activity-icon blue">❓</div>
+        <h3>Perguntas-guia</h3>
+      </div>
+      <p>Comecem sempre pela pergunta aberta — ela deixa a pessoa contar a história com as próprias palavras. Guardem a pergunta fechada só para o caso de a conversa não render sozinha o que vocês precisam.</p>
+      <ul>
+        <li><strong>Abertura:</strong> "Como é o dia em que o(a) senhor(a) vende o que produziu — desde a colheita até o dinheiro na mão?" <br><em>Retomada, só se não vier à tona:</em> "O(a) senhor(a) usa algum aplicativo, WhatsApp, rede social ou outra plataforma pra vender ou pra comprar insumos?"</li>
+        <li><strong>Abertura:</strong> "O que essa terra significa pra o(a) senhor(a) e pra sua família?" <br><em>Retomada, só se a resposta ficar muito curta ou genérica:</em> "É mais como propriedade, herança de família, meio de vida, ou parte da própria identidade?"</li>
+      </ul>
+      <p>Usem essas perguntas como roteiro de fundo, mas conduzam a conversa de forma natural — não precisa ser um questionário lido em voz alta. Deixem espaço para a pessoa contar histórias e detalhes que vão além das perguntas, e só puxem a pergunta fechada se o assunto realmente não aparecer sozinho.</p>
+    </div>
+
+    <div class="activity amber">
+      <div class="activity-header">
+        <div class="activity-icon amber">🤝</div>
+        <h3>Cuidados metodológicos e éticos</h3>
+      </div>
+      <ul>
+        <li>Expliquem, antes de começar, que a conversa é para um trabalho acadêmico do curso de Sociologia Rural.</li>
+        <li>Peçam autorização antes de gravar áudio ou vídeo, e antes de usar fotos ou o nome da pessoa no material que será entregue.</li>
+        <li>Anotem as falas com respeito à forma como a pessoa se expressa — não "corrijam" nem reescrevam o jeito de falar dela.</li>
+        <li>Se a pessoa não quiser responder a alguma pergunta ou não quiser ser identificada, respeitem a decisão e registrem de forma anônima.</li>
+      </ul>
+    </div>
+
+    <div class="callout-red">
+      <strong>Atenção:</strong> um caderno de campo é feito de observação real, não de invenção. Se a entrevista não render material suficiente, é melhor registrar honestamente as limitações do que preencher lacunas com suposições.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="orientacoes">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Antes de Sair a Campo</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Orientação 01</div>
+        <p>Se possível, façam uma ligação ou mensagem prévia combinando dia, horário e forma da entrevista, para não pegar a pessoa de surpresa.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Orientação 02</div>
+        <p>Levem algo para anotar (caderno físico ou celular) e, se for possível e autorizado, tirem fotos do local, do produto ou da tela de algum aplicativo usado.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Orientação 03</div>
+        <p>Combinem, logo após a entrevista, um momento rápido do grupo para trocar impressões enquanto tudo ainda está fresco na memória — isso facilita o registro da próxima aula.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 10 · Aula 02 · Semana Livre 1 — Roteiro de entrevista</p>
+</div>
+
+</body>
+</html>

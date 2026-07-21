@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trabalho Feminino na História Rural Brasileira — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 13 · Aula 01</div>
+  <h1>Trabalho Feminino na <span>História Rural Brasileira</span></h1>
+  <p class="hero-sub">Quem sempre trabalhou na roça, mas nunca apareceu como "trabalhador" nos registros e nas contas da fazenda?</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Gênero e Trabalho no Campo</span>
+    <span class="meta-pill">Invisibilização do trabalho feminino</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Compreender como o trabalho das mulheres no campo foi historicamente registrado, contado e lembrado de forma desigual em relação ao trabalho masculino, e identificar as raízes históricas dessa invisibilização na estrutura da família rural brasileira.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Quando pensamos na história do trabalho rural brasileiro, a imagem que costuma vir à cabeça é a do homem: o lavrador que planta, o vaqueiro que lida com o gado, o senhor de engenho que administra a produção. Essa imagem resulta de séculos de uma forma específica de contar a história, que tomou o homem como sujeito universal do trabalho e empurrou o trabalho das mulheres para um segundo plano, quase invisível. Esta aula é sobre recuperar essa parte apagada da história: o trabalho feminino no campo, que sempre existiu, sempre foi essencial, e quase nunca foi contado como trabalho de verdade.</p>
+
+    <h3>Um apagamento com raízes coloniais</h3>
+    <p>Desde o período colonial, a família rural brasileira se organizou em torno de uma divisão de papéis marcada pelo patriarcalismo: o homem era reconhecido como "chefe de família" e como responsável formal pela unidade produtiva — seja a grande fazenda, seja o pequeno sítio — enquanto a mulher, mesmo trabalhando tanto ou mais horas que ele, era vista como uma "ajudante" ou como alguém que apenas cuidava da casa. Só que essa divisão nunca correspondeu à realidade do trabalho. Nas fazendas de açúcar e de gado, nos engenhos, nas roças de subsistência, as mulheres plantavam, colhiam, cuidavam de animais, processavam alimentos (fazer farinha, queijo, doces, tecidos), além de cuidar de crianças e da casa. Era um trabalho contínuo, pesado e absolutamente necessário para a sobrevivência da unidade familiar e para a produção que sustentava a fazenda ou o sítio. Mas, nos registros — recenseamentos, inventários, relatos de viajantes, documentos administrativos —, essa mulher quase nunca aparecia como "trabalhadora". Ela aparecia, quando muito, como esposa, filha ou dependente de um homem que era o verdadeiro "trabalhador" aos olhos de quem registrava a história.</p>
+
+    <p>Esse padrão integra uma lógica mais ampla de sociedades patriarcais, presente muito além do Brasil, em que o trabalho remunerado ou reconhecido publicamente é associado ao homem, e o trabalho de reprodução da vida — cuidar da casa, dos filhos, da alimentação — é tratado como algo "natural" da mulher, e por isso mesmo não precisa ser contado, pago ou valorizado. A diferença é que, no Brasil rural, essa lógica se combinou com a escravidão e depois com formas de trabalho dependente (agregados, moradores de fazenda), tornando a situação da mulher trabalhadora rural ainda mais invisível: ela era, ao mesmo tempo, mulher numa sociedade patriarcal e trabalhadora numa estrutura de dependência em relação à terra e ao proprietário.</p>
+
+    <p>Essa é uma pista útil para qualquer documento histórico sobre o campo brasileiro que vocês forem analisar: quando um censo, um relatório de fazenda ou um relato de viajante lista "trabalhadores", vale perguntar sempre quem está sendo contado — e quem está fazendo o trabalho, mas não sendo contado.</p>
+
+    <h3>O trabalho que "não conta" nas estatísticas</h3>
+    <p>Esse apagamento histórico tem uma consequência direta até hoje: a forma como as estatísticas oficiais definem e medem "trabalho". Por muito tempo, levantamentos agropecuários e censos brasileiros classificaram como "trabalhador rural" sobretudo quem exercia atividades diretamente ligadas à produção comercial — plantio, colheita, manejo de animais destinados à venda — enquanto atividades como o cultivo de hortas para consumo da família, o processamento de alimentos e o cuidado da casa, majoritariamente femininos, ficavam fora da conta ou eram registrados de forma subestimada. O resultado é um duplo apagamento: primeiro, o trabalho da mulher no campo é menos reconhecido no dia a dia da fazenda ou do sítio; depois, esse mesmo trabalho é menos reconhecido nos números que os historiadores e pesquisadores usam para reconstruir o passado.</p>
+
+    <p>Vocês, como futuros historiadores, devem levar essa desconfiança metodológica para qualquer fonte que analisarem sobre o mundo rural brasileiro: uma fonte que não menciona mulheres trabalhando não é prova de que elas não trabalhavam — é, muito mais provavelmente, prova de que a fonte foi produzida por alguém que não considerava esse trabalho digno de registro. Essa é uma lição de método histórico tão importante quanto qualquer data ou nome de lei: saber ler o silêncio das fontes.</p>
+
+    <p>Antes de nomear a chave teórica: lembrando da aula sobre Durkheim (Encontro 2), que tipo de conceito explicaria por que uma classificação como "quem conta como trabalhador" parece um dado natural e objetivo, quando na verdade é imposta de fora e varia de sociedade para sociedade? E lembrando de Bourdieu, também no Encontro 2: que tipo de capital explicaria por que ser reconhecido como trabalhador depende de autoridade social, e não simplesmente do esforço de fato empregado?</p>
+
+    <div class="callout">
+      <div class="callout-label">Ponto central da aula</div>
+      A invisibilidade do trabalho feminino rural não é um acidente de registro — é um efeito da estrutura patriarcal que organizou a família e a propriedade da terra no Brasil desde a colônia. Em termos que já vimos na aula sobre Durkheim (Encontro 2): "quem conta como trabalhador" é, antes de tudo, um <strong>fato social</strong> — uma classificação que vem de fora do indivíduo e se impõe coletivamente, não uma constatação neutra sobre quem trabalha mais ou menos. E, na chave de Bourdieu (também Encontro 2), o que está em jogo é a distribuição desigual de <strong>capital simbólico</strong>: o reconhecimento do trabalho como trabalho "de verdade" depende de quem tem autoridade social para ser visto e nomeado como trabalhador, não só do esforço empregado.
+    </div>
+
+    <h3>Da invisibilidade ao reconhecimento: um processo lento</h3>
+    <p>Esse quadro só começa a mudar de forma mais sistemática a partir da segunda metade do século XX, com a organização de mulheres rurais em sindicatos e movimentos sociais (tema que vamos aprofundar na próxima aula) e com mudanças, ainda parciais, na forma como órgãos públicos e pesquisas passam a medir e reconhecer o trabalho feminino no campo. Reconhecer esse processo histórico de invisibilização é o primeiro passo para entender por que, mesmo hoje, a luta das mulheres rurais brasileiras ainda passa tanto pelo reconhecimento simbólico — ser vista como trabalhadora — quanto pelo reconhecimento material, em forma de documentação, direitos previdenciários e acesso a políticas públicas.</p>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: a mulher "ajudante" que sustentava o sítio</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso ilustrativo · Sertão nordestino · Agricultura familiar</div>
+      <h3>A "ajudante" que fazia metade do trabalho — ou mais</h3>
+      <p>Este é um caso ilustrativo, comum na literatura sobre agricultura familiar no semiárido nordestino, e não o relato de uma pessoa específica identificada. Pense numa família de pequenos agricultores do sertão, décadas atrás: o homem é registrado, nos documentos oficiais quando existem, como o "responsável" pelo sítio. Mas o dia a dia da produção depende diretamente do trabalho da esposa: ela cuida da horta e dos animais de pequeno porte (galinhas, cabras), participa do plantio e da colheita ao lado do marido, processa o que é colhido (fazer farinha, queijo de coalho, doces para vender ou trocar), e ainda administra a casa e os filhos. Quando alguém de fora pergunta "quem trabalha aqui?", a resposta comum, inclusive dela mesma, tende a ser "meu marido" — mesmo que o volume de horas de trabalho dela seja igual ou maior. O caso ilustra o fato social do qual falamos acima: o trabalho existe e é essencial, mas não é nomeado como trabalho — nem pelos de fora, nem, muitas vezes, pela própria mulher que o realiza —, porque a linguagem disponível para descrever "quem trabalha" já vem carregada de pressupostos de gênero herdados de séculos de história rural brasileira, e porque o capital simbólico de "ser trabalhador" segue distribuído de forma desigual entre marido e esposa.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Se uma fonte histórica não menciona o trabalho das mulheres numa fazenda ou num sítio, isso significa que elas não trabalhavam ali — ou significa outra coisa? O que muda na forma de vocês lerem documentos históricos a partir de hoje?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Por que o trabalho de "cuidar da casa e da família" foi historicamente tratado como algo diferente de "trabalho", mesmo quando ele era indispensável para que a produção agrícola acontecesse?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Usando os conceitos de fato social (Durkheim) e capital simbólico (Bourdieu), como vocês explicariam por que é tão difícil mudar, de uma hora para outra, quem é reconhecido como "trabalhador" numa família ou comunidade — mesmo quando todo mundo sabe, na prática, quem trabalha?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 13 · Aula 01 · Trabalho feminino rural</p>
+</div>
+
+</body>
+</html>

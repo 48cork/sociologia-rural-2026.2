@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Latifúndio e Minifúndio — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 05 · Aula 01</div>
+  <h1>Latifúndio e <span>Minifúndio</span></h1>
+  <p class="hero-sub">Como uma lei do Império, votada às vésperas da abolição, moldou até hoje o tamanho e a distribuição da propriedade da terra no Brasil</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Estrutura Fundiária Brasileira</span>
+    <span class="meta-pill">Lei de Terras de 1850</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Compreender a origem histórica da concentração fundiária brasileira a partir da Lei de Terras de 1850, e explicar por que a polarização entre latifúndio e minifúndio é resultado de um processo político deliberado, não de uma vocação natural das regiões ou dos povos.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Quando alguém diz que o Brasil "sempre teve" grandes fazendas e pequenos sítios lado a lado, como se essa desigualdade fosse parte natural da paisagem, está escondendo uma história muito concreta — e bastante recente, se pensarmos na escala do tempo histórico. A concentração de terras no Brasil não nasceu de uma vocação regional nem de uma distribuição espontânea de recursos. Ela foi construída por decisões jurídicas e políticas específicas, tomadas por quem já detinha poder, exatamente nos momentos em que esse poder estava sob ameaça. O caso mais emblemático dessa construção é a Lei de Terras, promulgada em 1850.</p>
+
+    <h3>Da doação real à mercadoria</h3>
+    <p>Desde o início da colonização, a terra no Brasil não era vendida: era doada pela Coroa portuguesa na forma de sesmarias, grandes extensões concedidas a quem tivesse condições de "aproveitá-las" — na prática, a homens de posses, com escravizados para o trabalho. Quem não tinha capital para requerer uma sesmaria simplesmente ocupava terras livres, na base da posse: um roçado aqui, uma criação de gado ali. Essa posse informal, sem título, foi durante séculos a porta de entrada de gente pobre — posseiros, agregados, pequenos lavradores — para uma relação com a terra, ainda que precária e sem garantia jurídica.</p>
+
+    <p>Em 1850, o Império aprova a Lei de Terras (Lei nº 601), que muda radicalmente essa lógica. A partir dela, terra só se adquire por compra. A posse deixa de ser um caminho válido de acesso à propriedade — quem ocupava terra sem título corria o risco de ser despejado ou obrigado a legalizar a situação pagando por algo que já ocupava havia gerações. Para entender o timing dessa lei, é preciso lembrar que, em 1850, o Brasil também aprova a Lei Eusébio de Queirós, que proíbe o tráfico transatlântico de escravizados. Os grandes proprietários sabiam que a escravidão tinha os dias contados e que, mais cedo ou mais tarde, precisariam de outra forma de garantir mão de obra barata e disponível. Se você recuperar o conceito de acumulação primitiva de Marx, visto na aula 3 do Encontro 1 — a expropriação da terra como pré-condição para formar uma massa de trabalhadores sem alternativa a não ser vender sua força de trabalho —, o que a aprovação simultânea dessas duas leis, no mesmo ano de 1850, estaria preparando de antemão?</p>
+
+    <div class="callout">
+      <div class="callout-label">A coincidência que não é coincidência</div>
+      Fechar o acesso à terra livre no mesmo momento em que se fecha o tráfico de escravizados tem uma lógica cruel e eficiente: se, no futuro, a escravidão acabasse, os libertos não teriam como se tornar pequenos proprietários independentes — precisariam continuar vendendo sua força de trabalho a quem já possuísse terra. A terra vira mercadoria justamente para que ex-escravizados e imigrantes pobres não possam facilmente se tornar donos dela.
+    </div>
+
+    <h3>Duas pontas da mesma corda</h3>
+    <p>É desse processo — muito próximo ao que Marx, na aula 3, chamou de acumulação primitiva: a expropriação de quem trabalha a terra como pré-condição para formar uma massa de gente sem alternativa a não ser vender sua força de trabalho — que nascem, de forma entrelaçada, o latifúndio e o minifúndio. O latifúndio é a grande propriedade, historicamente ligada à monocultura de exportação (açúcar, depois café, depois pecuária extensiva e soja) e a baixa produtividade por hectare, compensada pela extensão da área. O minifúndio é a pequena propriedade, muitas vezes insuficiente para sustentar uma família com dignidade, empurrando seus ocupantes para o trabalho assalariado sazonal nas grandes fazendas vizinhas — os chamados "boias-frias" no século XX, por exemplo. Latifúndio e minifúndio não são dois modelos concorrentes: são duas faces complementares de uma mesma estrutura, em que a grande propriedade depende da existência de uma massa de pequenos proprietários ou sem-terra dispostos a vender sua força de trabalho por pouco.</p>
+
+    <p>Essa estrutura fundiária concentrada se reproduz ao longo da Primeira República, do Estado Novo, da modernização conservadora dos anos 1960-70 (tema que retomaremos no encontro 9) e chega ao século XXI ainda como uma das marcas mais duradouras da desigualdade brasileira. Não é exagero dizer que a Lei de Terras de 1850 é uma das leis mais influentes — e menos lembradas — da história do país: ela não resolveu nenhum problema imediato de seu tempo, mas fixou um padrão de acesso à terra que atravessou impérios, repúblicas e ditaduras. Pensar a concentração fundiária como um processo histórico e político, e não como um dado natural, é o primeiro passo para entender por que a questão da terra continua sendo, ainda hoje, um dos temas mais explosivos da vida social e política brasileira.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: sertão nordestino, currais e fazendas de gado</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Semiárido nordestino · Séculos XVII-XIX</div>
+      <h3>Da sesmaria de gado ao "fundo de pasto"</h3>
+      <p>No interior do Nordeste, a ocupação da terra seguiu um padrão particular: em vez da monocultura açucareira do litoral, o sertão foi ocupado por fazendas de gado, organizadas a partir de sesmarias concedidas a poucas famílias — muitas delas ligadas aos senhores de engenho da costa, que expandiam seus domínios para o interior. Essas fazendas eram enormes em extensão, mas de baixa densidade populacional e baixa produtividade por área, sustentando-se em pastagens naturais e mão de obra escravizada em escala menor do que nos engenhos.</p>
+      <p>Ao lado dessas grandes propriedades, formaram-se áreas de uso comunitário do pasto — praticadas até hoje em algumas regiões sob o nome de "fundo de pasto" — em que famílias de posseiros compartilhavam terras de criação sem cercas individuais, seguindo uma lógica de uso coletivo que a Lei de Terras de 1850 nunca reconheceu como forma legítima de propriedade. Até hoje, comunidades de fundo de pasto no semiárido lutam pelo reconhecimento formal desse tipo de posse coletiva, historicamente ignorado pelo sistema jurídico da terra no Brasil — um sinal de que a lógica da Lei de Terras, com sua ideia de terra como mercadoria individual, comprável e cercável, nunca conseguiu apagar completamente formas alternativas de relação com a terra que já existiam antes dela.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que fechar o acesso à terra livre justamente no momento em que a escravidão começava a ser questionada era uma estratégia eficaz para os grandes proprietários? O que isso revela sobre a relação entre lei e poder econômico?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Se a concentração fundiária é um processo histórico e não um "destino natural", isso muda a forma como devemos avaliar políticas de reforma agrária hoje? Por quê?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>O que o exemplo do fundo de pasto no semiárido nordestino sugere sobre formas de uso da terra que não cabem na categoria de propriedade privada individual criada em 1850?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 05 · Aula 01 · Latifúndio e Minifúndio</p>
+</div>
+
+</body>
+</html>

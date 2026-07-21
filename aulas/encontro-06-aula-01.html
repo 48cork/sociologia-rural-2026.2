@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coronelismo: Conceito e Origens — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 06 · Aula 01</div>
+  <h1>Coronelismo: <span>Conceito, Origens e Funcionamento</span></h1>
+  <p class="hero-sub">Como Victor Nunes Leal explicou o compromisso que uniu poder público fraco e poder privado sobre a terra na Primeira República</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Coronelismo e Poder Local</span>
+    <span class="meta-pill">Victor Nunes Leal</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar o conceito clássico de coronelismo formulado por Victor Nunes Leal, situando-o no contexto institucional da Primeira República e explicando a lógica de troca entre poder público e poder privado que o sustentava.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Poucas palavras da história política brasileira são tão usadas — e tão mal explicadas — quanto "coronelismo". No senso comum, virou sinônimo genérico de "poder de fazendeiro" ou de "política atrasada do interior". Mas o conceito, tal como formulado pelo jurista e cientista político Victor Nunes Leal em seu livro clássico "Coronelismo, Enxada e Voto" (1948), é bem mais preciso — e bem mais interessante — do que esse uso solto sugere. Entender esse conceito com rigor é essencial para qualquer historiador que queira interpretar a política municipal brasileira entre o final do século XIX e meados do XX.</p>
+
+    <h3>De onde vem o título de "coronel"</h3>
+    <p>O título de coronel, no contexto que Leal analisa, não tinha origem no Exército regular, mas na Guarda Nacional, criada em 1831 ainda no período regencial. A Guarda Nacional distribuía patentes — entre elas a de coronel — a homens de posses locais, geralmente grandes proprietários de terra, em troca de sua colaboração com a ordem pública e com o Estado imperial. Mesmo depois de a Guarda Nacional perder relevância militar efetiva, o título de "coronel" permaneceu como marca de status social, associado a quem detinha terra, prestígio e influência sobre a população local. É esse "coronel" honorífico, e não o oficial de carreira das Forças Armadas, que dá nome ao fenômeno estudado por Leal.</p>
+
+    <h3>O compromisso coronelista</h3>
+    <p>A tese central de Victor Nunes Leal é que o coronelismo, na Primeira República (1889-1930), resulta de um "compromisso" — uma troca de favores estruturada — entre um poder público municipal e estadual institucionalmente fraco e um poder privado forte, concentrado nas mãos dos grandes proprietários de terra. Antes de seguir, recupere o que vimos na aula 02-01 sobre os três tipos de dominação de Weber: se a obediência ao coronel não vinha de uma lei nem de um cargo público, mas do costume, da dependência pessoal e do prestígio do senhor de terras — a qual desses três tipos essa obediência corresponde? Trata-se, precisamente, de uma das formas históricas mais nítidas de dominação tradicional. O coronelismo aplica essa lógica a um contexto muito específico e datado: o jogo eleitoral da Primeira República brasileira.</p>
+
+    <p>De um lado, o poder público (governadores, chefes políticos estaduais) precisava garantir votos nas eleições, num sistema em que grande parte da população rural dependia econômica e socialmente do fazendeiro local. De outro, o coronel entregava esses votos — o famoso <strong>"voto de cabresto"</strong>, dado por trabalhadores e agregados sob pressão ou lealdade pessoal ao patrão — em troca de benefícios concretos: cargos públicos para si e para aliados, obras e verbas direcionadas ao seu município, e sobretudo a manutenção de sua autoridade incontestada sobre a população local, incluindo tolerância do Estado com práticas de violência e coerção privada.</p>
+
+    <p>Para Leal, o coronel não era todo-poderoso por si mesmo: seu poder dependia justamente da fraqueza do Estado em chegar diretamente à população do interior. Quanto mais precário o acesso do cidadão comum a direitos, serviços e proteção estatal, mais ele dependia do coronel local para obter empréstimo, emprego, socorro médico ou mesmo proteção contra a violência de outros — e mais seu voto se tornava, na prática, propriedade do fazendeiro.</p>
+
+    <h3>Voto de cabresto e eleições sob controle</h3>
+    <p>O "voto de cabresto" era o mecanismo que fechava esse ciclo: eleitores rurais, muitas vezes analfabetos (o que os deixava ainda mais vulneráveis a fraudes e pressões, já que o voto não era secreto na prática em muitas localidades), votavam conforme a orientação — ou a ordem — do coronel a quem estavam ligados por trabalho, moradia ou dívida. Não era votação livre no sentido moderno do termo, mas também não era imposição puramente violenta: envolvia elementos de lealdade pessoal, proteção mútua e dependência econômica, tudo simultaneamente.</p>
+
+    <div class="highlight">
+      O coronelismo, para Leal, não é apenas "mandonismo" bruto — é um <strong>sistema de trocas recíprocas</strong> entre esferas de poder desiguais, no qual cada lado precisa do outro para se manter. Compreender essa reciprocidade é a chave para não simplificar o fenômeno como mera "opressão" sem também entender sua lógica de funcionamento.
+    </div>
+
+    <p>Esse sistema entra em crise à medida que o Estado brasileiro se fortalece institucionalmente — com a expansão do funcionalismo público, da Justiça Eleitoral (criada em 1932) e, mais tarde, do voto secreto efetivamente fiscalizado. Mas, como veremos nas próximas duas aulas, isso não significa que o coronelismo simplesmente desapareceu: ele se transformou em outras formas de poder local que atravessam o século XX até hoje.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: municípios do sertão e o compromisso coronelista</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Sertão nordestino · Primeira República</div>
+      <h3>O prefeito indicado pela fazenda</h3>
+      <p>Em muitos municípios do sertão nordestino durante a Primeira República, era comum que a indicação de prefeitos, delegados e até juízes locais passasse pelo aval — ou pela pressão direta — do maior proprietário de terras da região. Esse coronel controlava, através de sua influência sobre trabalhadores, agregados e comerciantes locais dependentes de seu crédito e proteção, a maioria dos votos do município, garantindo a eleição de candidatos alinhados a seus interesses e recebendo, em troca, cargos, verbas e a manutenção de sua autoridade incontestada sobre a vida local. Esse padrão ilustra exatamente o "compromisso coronelista" descrito por Leal: o poder do coronel vinha menos de sua riqueza em si do que da fraqueza estrutural do Estado em oferecer, diretamente, serviços e proteção à população sertaneja — um vazio que o coronel preenchia, cobrando lealdade política em troca, na mesma lógica de dominação tradicional que vimos na aula de Weber.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que Victor Nunes Leal insiste que o coronelismo é um "compromisso" recíproco, e não apenas uma imposição unilateral do fazendeiro sobre a população? O que essa distinção muda na análise histórica?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Que tipo de fragilidade do Estado brasileiro na Primeira República tornou possível o compromisso coronelista? Essa fragilidade era exclusiva do meio rural, ou também existia nas cidades?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>O voto de cabresto combinava lealdade pessoal, dependência econômica e, por vezes, coerção. Como historiadores podem diferenciar, em fontes primárias, esses diferentes componentes de uma mesma prática eleitoral?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 06 · Aula 01 · Coronelismo: Conceito e Origens</p>
+</div>
+
+</body>
+</html>

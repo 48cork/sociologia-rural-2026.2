@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clássicos II: Weber, tipos de dominação e mundo rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0e0e12; --surface: #16161e; --surface-2: #1e1e2a; --border: #2a2a3a;
+    --accent: #f59e0b; --accent-dim: #92610a; --teal: #38bdf8; --green: #4ade80;
+    --amber: #fbbf24; --red: #f87171; --purple: #7c6af7; --text: #e8e8f4; --muted: #7a7a9a;
+    --sans: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+  blockquote { border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: var(--surface); border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: var(--text); font-style: normal; }
+  blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.05rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+  .callout-red { border-left: 4px solid var(--red); background: #1c1010; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1rem; font-weight: 500; color: #f5d0d0; }
+  .callout-red strong { color: var(--red); }
+  .caso { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 12px; }
+  .caso .caso-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-family: var(--mono); margin-bottom: 12px; }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8c8e8; }
+  .caso .leitura .l-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th { padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); font-family: var(--mono); }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .debate-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 0 12px 12px 0; padding: 20px 22px; }
+  .debate-card .vs { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 10px; }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 02 · Aula 01</div>
+  <h1>Clássicos II: <span>Weber</span>, tipos de dominação e mundo rural</h1>
+  <p class="hero-sub">Por que o poder do coronel não precisa de lei escrita para ser obedecido</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco 1 · Bases Teóricas</span>
+    <span class="meta-pill">Weber · dominação</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Apresentar a tipologia weberiana das três formas de dominação legítima e mostrar por que a dominação tradicional é a chave para entender o poder pessoal do fazendeiro no Brasil rural.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Max Weber, sociólogo alemão que viveu entre 1864 e 1920, dedicou boa parte de sua obra a uma pergunta que parece simples, mas é profundamente perturbadora: por que as pessoas obedecem? Não obedecem apenas por medo — Weber está interessado em algo mais sutil, que ele chama de dominação legítima: aquela em que quem obedece acredita, de alguma forma, que é correto obedecer. Essa distinção é fundamental para entender o mundo rural brasileiro, porque nos ajuda a explicar formas de poder que não dependem de lei escrita, nem de força bruta constante, mas de uma crença compartilhada na autoridade de quem manda.</p>
+
+    <h3>Três tipos puros de dominação legítima</h3>
+    <p>Weber identificou três "tipos puros" de dominação — modelos analíticos que raramente aparecem sozinhos na realidade, mas que ajudam a organizar o pensamento. A dominação tradicional se baseia na crença de que as coisas devem ser como sempre foram: obedece-se ao chefe porque seus antepassados também obedeciam aos antepassados dele, e a autoridade vem do costume, não de uma regra escrita. A dominação carismática se baseia na qualidade excepcional atribuída a uma pessoa — um líder religioso, um herói revolucionário — cuja autoridade vem de sua capacidade de romper com a tradição e propor algo novo. E a dominação racional-legal, típica das burocracias modernas, se baseia na crença na legalidade de normas e regulamentos: obedece-se ao cargo, não à pessoa que o ocupa — um prefeito é obedecido enquanto prefeito, não enquanto indivíduo.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Tipo de dominação</th><th>Fonte da autoridade</th><th>Exemplo geral</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tradicional</td><td>O costume, "sempre foi assim"</td><td>Chefes hereditários, senhores de terra</td></tr>
+          <tr><td>Carismática</td><td>Qualidades pessoais excepcionais</td><td>Líderes religiosos, revolucionários</td></tr>
+          <tr><td>Racional-legal</td><td>Normas e regras impessoais</td><td>Funcionário público, cargo eletivo</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>A dominação tradicional no mundo rural brasileiro</h3>
+    <p>Dos três tipos, a dominação tradicional é a chave mais poderosa para entender relações de poder no campo brasileiro ao longo de boa parte de nossa história. Pense na figura histórica do grande fazendeiro, do "coronel" (termo que estudaremos com precisão no encontro 6): sua autoridade sobre trabalhadores, agregados e moradores de sua propriedade não vinha, em geral, de um cargo público formal — muitas vezes vinha exatamente do fato de sua família já mandar naquela região havia gerações, de sua posse da terra ser reconhecida pelo costume local, e de uma rede de obrigações pessoais (proteção em troca de lealdade, favores em troca de votos) que se reproduzia havia décadas. Essa é dominação tradicional em estado quase puro: ninguém precisa justificar por escrito por que o fazendeiro manda — ele manda porque sempre mandou, e sua família sempre mandou.</p>
+
+    <div class="highlight">
+      <strong>Ponto de atenção:</strong> dominação tradicional não significa ausência de mudança — significa que a mudança, quando ocorre, precisa se apresentar como reafirmação da tradição, não como ruptura com ela. É por isso que até processos de modernização no campo brasileiro (como veremos no encontro 9) muitas vezes preservaram, em vez de destruir, estruturas tradicionais de poder local.
+    </div>
+
+    <h3>Racionalidade camponesa versus racionalidade de mercado</h3>
+    <p>Se um camponês recusa vender toda a colheita mesmo quando o preço de mercado está favorável, preferindo guardar parte para o consumo da própria família ao longo do ano, isso é um erro de cálculo — uma escolha "irracional"? Weber nos oferece aqui outra ferramenta importante para este curso, e ela desafia essa suposição: existem diferentes tipos de racionalidade orientando a ação social, e nem toda ação "racional" segue a lógica do cálculo de lucro. A economia camponesa tradicional, que estudaremos com mais detalhe no encontro 7 através do agrônomo russo Alexander Chayanov, segue uma racionalidade orientada à reprodução do grupo doméstico — produzir o suficiente para sustentar a família ao longo do ano, equilibrando trabalho e consumo, e não necessariamente maximizar lucro monetário. Já a racionalidade da empresa capitalista rural, mais próxima da lógica que Weber descreve como racional com relação a fins, orienta-se pelo cálculo de custos, receitas e lucro esperado.</p>
+
+    <p>Entender essa diferença de racionalidades evita um erro comum: julgar o comportamento econômico do camponês ou do agricultor familiar como "irracional" ou "atrasado" simplesmente porque ele não maximiza lucro da mesma forma que uma empresa agroindustrial. São racionalidades diferentes, adequadas a projetos de vida diferentes — e essa distinção será central quando discutirmos a modernização conservadora da agricultura brasileira, mais adiante no curso.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: O Fazendeiro como Autoridade Tradicional</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Nordeste · Sertão · Poder pessoal</div>
+      <h3>Um poder que não precisa de lei escrita</h3>
+      <p>Ao longo de boa parte da história do sertão nordestino, a figura do grande proprietário de terras — muitas vezes dono de currais de gado, de terras de algodão ou de engenhos — exerceu, sobre a população que vivia e trabalhava em suas propriedades, uma autoridade que combinava proteção e dependência. Moradores e agregados recorriam ao fazendeiro em momentos de necessidade (doença, seca, conflito com vizinhos), e em troca ofereciam trabalho, lealdade política e, mais tarde, o voto. Essa autoridade raramente precisava ser justificada formalmente: era aceita como natural, parte da ordem das coisas, porque a família daquele fazendeiro já ocupava aquela posição havia gerações. É um exemplo quase didático de dominação tradicional: a obediência não decorre de uma lei escrita nem de um contrato formal, mas da crença compartilhada de que aquele arranjo de poder é legítimo porque sempre existiu daquela forma — o mesmo tipo de dominação que, transformado e adaptado, vamos reencontrar sob o nome de coronelismo no encontro 6.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">15 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que Weber insiste que a dominação legítima depende de uma crença compartilhada, e não apenas da capacidade de usar a força?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Você consegue identificar, em outro contexto histórico que já estudou, um exemplo de dominação carismática ou racional-legal que se misture com elementos de dominação tradicional?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>É justo dizer que a racionalidade camponesa é "menos racional" que a racionalidade de mercado, ou apenas orientada por objetivos diferentes? Defenda sua posição.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 02 · Aula 01 · Weber e dominação</p>
+  </div>
+
+</div>
+</body>
+</html>

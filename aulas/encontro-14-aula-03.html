@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Convivência com o Semiárido: Alternativas e Experiências Locais — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 14 · Aula 03</div>
+  <h1>Convivência com o Semiárido: <span>Alternativas e Experiências Locais</span></h1>
+  <p class="hero-sub">Da obra hidráulica imposta de fora à cisterna construída com o saber de quem vive no sertão</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Semiárido e Convivência</span>
+    <span class="meta-pill">ASA · Um Milhão de Cisternas</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Compreender o paradigma da "convivência com o semiárido" como alternativa ao antigo paradigma do "combate à seca", identificando experiências concretas de tecnologia social construídas a partir do saber das populações sertanejas.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Fechamos o bloco sobre semiárido olhando para uma mudança de paradigma que se consolida, sobretudo, a partir das últimas décadas do século XX e início do século XXI: a passagem de um modelo de "combate à seca" — centrado em grandes obras públicas de infraestrutura hídrica, muitas vezes capturadas por elites locais, como vimos nas duas aulas anteriores — para um modelo de "convivência com o semiárido", que parte de uma pergunta bem diferente: em vez de perguntar "como eliminar a seca?", pergunta-se "como viver bem, de forma sustentável e digna, num território que estruturalmente tem chuva escassa e irregular?".</p>
+
+    <h3>Uma mudança de pergunta, uma mudança de política</h3>
+    <p>Essa mudança de paradigma não nasce dentro de gabinetes de Brasília — ela nasce, em boa medida, da articulação de organizações da sociedade civil, movimentos sociais rurais, pesquisadores e comunidades sertanejas que, ao longo de décadas de convivência prática com a irregularidade climática, acumularam um conhecimento profundo sobre formas de captar, armazenar e usar água de maneira eficiente e descentralizada — sem depender de grandes obras controladas por poucos atores poderosos.</p>
+
+    <p>A Articulação Semiárido Brasileiro (ASA) é a principal expressão institucional dessa mudança: uma rede de organizações da sociedade civil que passa a defender, e depois a executar em parceria com o poder público, um modelo de convivência baseado em tecnologias sociais simples, baratas e descentralizadas — ao contrário das grandes obras hidráulicas do modelo anterior.</p>
+
+    <p>A diferença central entre os dois paradigmas: o "combate à seca" concentrava recursos em grandes obras controladas de cima para baixo; a "convivência com o semiárido" distribui soluções pequenas e replicáveis diretamente nas mãos das famílias e comunidades, reduzindo a dependência de intermediários políticos locais.</p>
+
+    <h3>O Programa Um Milhão de Cisternas</h3>
+    <p>O exemplo mais conhecido dessa mudança de paradigma é o Programa Um Milhão de Cisternas, articulado pela ASA em parceria com o poder público a partir dos anos 2000: a construção de cisternas de placas de cimento, relativamente simples e baratas, instaladas diretamente nas residências de famílias rurais do semiárido, para captação e armazenamento de água da chuva para consumo doméstico. Diferente do grande açude público capturado por um fazendeiro local (caso da aula anterior), a cisterna é um bem de posse direta da própria família, o que reduz drasticamente a dependência de intermediários políticos para o acesso à água.</p>
+
+    <p>Além das cisternas de consumo, o modelo de convivência também inclui tecnologias voltadas à produção — cisternas-calçadão, barragens subterrâneas, sistemas de manejo de solo adaptados à escassez de água — construídas a partir do que pesquisadores e agricultores locais chamam de "tecnologias sociais": soluções desenvolvidas ou adaptadas com participação direta das comunidades que vão utilizá-las, e não apenas transferidas de fora sem diálogo com a realidade local.</p>
+
+    <div class="callout">
+      <div class="callout-label">Ponto central da aula</div>
+      A convivência com o semiárido não é apenas uma mudança técnica — é uma mudança política, que desloca o poder de decisão sobre soluções para a seca das mãos de intermediários políticos locais (como os "coronéis" que controlavam açudes públicos) para as mãos das próprias famílias e comunidades sertanejas.
+    </div>
+
+    <h3>Um paradigma ainda em disputa</h3>
+    <p>Esse novo paradigma não substituiu totalmente o antigo — ele coexiste, e às vezes disputa espaço político e orçamentário, com projetos de grande infraestrutura hídrica que continuam sendo defendidos por outros atores. A convivência com o semiárido representa, portanto, não apenas uma solução técnica, mas uma disputa em curso sobre que modelo de desenvolvimento — centralizado ou descentralizado, de cima para baixo ou construído com a população — deve orientar as políticas públicas para essa região do Brasil.</p>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: a cisterna que muda quem decide</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso ilustrativo, baseado no Programa Um Milhão de Cisternas · Semiárido nordestino</div>
+      <h3>De dependente do açude do fazendeiro a dona da própria água</h3>
+      <p>Este é um caso ilustrativo, representativo de um padrão amplamente documentado sobre o impacto do Programa Um Milhão de Cisternas, e não o relato de uma família específica identificada. Antes de receber uma cisterna de placas em seu próprio quintal, uma família de agricultores familiares do semiárido dependia, em períodos de estiagem mais severa, de água transportada por carro-pipa — cujo fornecimento, historicamente, muitas vezes era controlado ou influenciado por atores políticos locais, funcionando quase como um favor a ser retribuído em época de eleição. Com a cisterna instalada em sua própria casa, essa mesma família passa a ter uma reserva de água autônoma para consumo doméstico, captada da chuva, sem depender de intermediários. O caso mostra como uma mudança aparentemente pequena e técnica — uma cisterna doméstica — tem um efeito político direto: reduz a dependência pessoal em relação a quem, antes, controlava o acesso à água, rompendo um dos mecanismos clássicos do coronelismo e do clientelismo estudados nos Encontros 6 e 14.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que uma solução técnica simples, como uma cisterna doméstica, pode ter um impacto político tão significativo sobre relações de poder locais?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>O paradigma de "convivência com o semiárido" resolve definitivamente as desigualdades históricas da região, ou apenas reduz alguns dos seus mecanismos mais visíveis? O que ainda ficaria de fora dessa solução?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Que lições esse modelo de "tecnologia social" construída com participação das comunidades poderia oferecer para outras políticas públicas rurais discutidas neste curso (reforma agrária, agricultura familiar, políticas de gênero)?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 14 · Aula 03 · Convivência com o semiárido</p>
+</div>
+
+</body>
+</html>

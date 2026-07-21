@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Seca como Construção Social e Política — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 14 · Aula 02</div>
+  <h1>Seca como Construção <span>Social e Política</span></h1>
+  <p class="hero-sub">A chuva não escolhe quem sofre mais com a sua falta — mas a política escolhe, sim</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Semiárido e Convivência</span>
+    <span class="meta-pill">"Indústria da seca"</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Compreender a seca no semiárido nordestino não apenas como fenômeno climático, mas como fenômeno social e político, analisando criticamente o conceito de "indústria da seca".
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Na aula anterior, vimos como o semiárido nordestino se tornou, ao longo da história brasileira, um território estigmatizado pela imagem da seca, e como o Estado respondeu a esse problema por meio de um paradigma de "combate à seca" centrado em obras hidráulicas, muitas vezes capturadas por estruturas locais de poder. Hoje vamos aprofundar um ponto essencial para entender esse processo: a seca em si — a estiagem, a falta de chuva — é um fenômeno climático real, mas seus efeitos sobre a vida das pessoas nunca são apenas naturais. Eles são, em grande medida, o resultado de decisões sociais e políticas sobre como a terra, a água e os recursos de socorro público são distribuídos.</p>
+
+    <h3>O clima não escolhe quem sofre mais</h3>
+    <p>Um mesmo período de estiagem produz efeitos radicalmente diferentes dependendo de quem você é no semiárido. Um grande fazendeiro com açude próprio, reservas financeiras e acesso a crédito consegue atravessar anos de seca com relativa tranquilidade — pode até lucrar, vendendo água ou forragem a preços elevados para vizinhos mais pobres. Já um pequeno agricultor familiar, sem reserva de água própria e sem crédito, pode perder toda sua produção, seus animais e, historicamente, ser forçado a migrar ou a depender de esmola e de assistência pública para sobreviver. A chuva que falta é a mesma para os dois — mas a capacidade de suportar sua falta é profundamente desigual, porque está ligada à estrutura fundiária e econômica da região, não ao clima.</p>
+
+    <p>Esse é o núcleo do que se chama de "construção social do desastre": um evento natural (a seca) só se torna uma catástrofe humana em razão de condições sociais preexistentes — desigualdade no acesso à terra, à água e ao crédito — que determinam quem tem capacidade de resistir e quem fica exposto ao sofrimento extremo.</p>
+
+    <h3>A "indústria da seca"</h3>
+    <p>A expressão "indústria da seca" se consolidou no vocabulário político e jornalístico brasileiro para descrever um fenômeno recorrente: recursos públicos destinados ao combate ou ao socorro às vítimas da seca sendo desviados de sua finalidade original — seja por meio de obras superfaturadas ou nunca concluídas, seja por meio da distribuição política de cargos e verbas de emergência a aliados de políticos locais, seja pelo direcionamento de grandes obras hídricas para dentro ou perto de propriedades de fazendeiros influentes, como vimos na aula anterior.</p>
+
+    <p>O termo é forte — "indústria" sugere que a seca, em vez de ser resolvida, passou a ser, para alguns atores políticos e econômicos locais, uma fonte permanente e até desejável de recursos e poder. Isso não significa que toda ação de combate à seca tenha sido corrupta ou ineficaz — muitas obras foram e são genuinamente importantes. Mas significa que o problema da seca, historicamente, nunca foi tratado de forma puramente técnica: ele sempre esteve entrelaçado com disputas de poder político local, o mesmo poder que vocês estudaram nos encontros sobre coronelismo.</p>
+
+    <div class="callout">
+      <div class="callout-label">Ponto central da aula</div>
+      Falar da seca como "construção social" não nega a realidade climática da estiagem — nega apenas a ideia de que seus efeitos sobre as pessoas sejam naturais e inevitáveis. Na chave de Durkheim (Encontro 2), o que está em jogo é um <strong>fato social</strong>: uma forma coletiva de lidar com a escassez de água, exterior a qualquer indivíduo isolado, que se impõe e distribui sofrimento de forma desigual conforme a posição de cada família na estrutura fundiária. É o mesmo movimento que a aula 01-02 já havia sugerido a respeito da palavra "atraso": o problema nunca está só no fenômeno em si, mas em quem define seu significado e quem arca com suas consequências.
+    </div>
+
+    <h3>Por que essa distinção importa para a História</h3>
+    <p>Para um historiador, essa distinção muda completamente a forma de narrar os episódios de seca no Nordeste: em vez de contar apenas "choveu pouco, morreu muita gente", torna-se necessário perguntar quem morreu, quem sobreviveu, quem lucrou, e por quê — perguntas que exigem olhar para a estrutura social e política da região, não apenas para os registros pluviométricos. É esse tipo de pergunta que vamos levar, na próxima aula, para pensar as alternativas construídas a partir da própria experiência da população sertaneja.</p>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: dois vizinhos, uma mesma seca</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso ilustrativo · Sertão nordestino</div>
+      <h3>Quando a mesma estiagem produz dois destinos diferentes</h3>
+      <p>Este é um caso ilustrativo, representativo de um padrão amplamente descrito na literatura sobre desigualdade e seca no Nordeste, e não o relato de indivíduos reais identificados. Numa mesma região sertaneja, durante um longo período de estiagem, um grande proprietário de terras — dono de um açude particular e com reservas financeiras — consegue manter parte do seu gado vivo e até vender água a preço alto para os vizinhos. Um pequeno agricultor familiar da mesma região, sem reserva própria de água nem crédito, perde toda a sua pequena criação e sua roça, e precisa recorrer a auxílios emergenciais do governo ou migrar temporariamente para trabalhar em outra região. O caso evidencia o argumento central da aula: a "mesma" seca — o mesmo evento climático — produz consequências radicalmente distintas dependendo da posição social e econômica de cada família na estrutura fundiária local, num exemplo direto do fato social de que fala Durkheim: a desigualdade que precede o clima é o que efetivamente determina o desastre.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que é importante, do ponto de vista histórico, diferenciar "seca como fenômeno climático" de "seca como catástrofe social"? O que essa diferença muda na forma de contar a história do Nordeste?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>A expressão "indústria da seca" ainda faz sentido para descrever políticas públicas atuais de combate à seca, ou seria uma simplificação injusta com avanços recentes? Argumentem os dois lados.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Se a seca é um fato social, e não apenas climático, o que muda na responsabilidade política pelos seus efeitos? Ela deixa de ser "desastre natural" e passa a ser o quê, exatamente, na visão de vocês?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 14 · Aula 02 · Seca como construção social</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coronelismo Hoje: Persistências e Transformações — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 06 · Aula 03</div>
+  <h1>Coronelismo Hoje: <span>Persistências e Transformações</span></h1>
+  <p class="hero-sub">Do voto de cabresto ao controle de uma rádio local: como antigas famílias de terra atualizaram suas ferramentas de mando sem abandonar sua lógica de poder</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Coronelismo e Poder Local</span>
+    <span class="meta-pill">Coronelismo eletrônico</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Compreender como o conceito de coronelismo eletrônico ajuda a explicar a persistência de famílias políticas tradicionais ligadas à terra no comando de municípios brasileiros contemporâneos, mesmo diante de mudanças institucionais profundas desde a Primeira República.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Fechamos o bloco sobre coronelismo e poder local com uma pergunta que costuma surpreender quem está estudando o tema pela primeira vez: por que ainda usamos a palavra "coronelismo" para descrever fenômenos políticos do século XXI, quase um século depois do fim do voto de cabresto e da Primeira República? A resposta tem a ver com a lógica de fundo que o coronelismo clássico expressava — o mando pessoal de famílias ligadas à posse da terra sobre a política local, a mesma dominação tradicional weberiana que vimos na aula 02-01 — que encontrou novas ferramentas institucionais para se reproduzir, mesmo depois de o coronelismo clássico ter se esgotado, como fenômeno historicamente datado, na aula anterior (06-02). O conceito mais usado para descrever essa atualização é o de "coronelismo eletrônico".</p>
+
+    <h3>Da fazenda ao dial de rádio</h3>
+    <p>Se o poder do coronel clássico dependia do controle sobre terra, crédito e proteção — segundo a lógica que vimos na aula 06-01 —, o que um herdeiro dessa mesma lógica passaria a controlar hoje, numa época em que não existe mais voto de cabresto e o crédito rural vem de bancos, não do fazendeiro? A resposta já está no nome que a pesquisa acadêmica deu ao fenômeno: coronelismo eletrônico.</p>
+    <p>O termo coronelismo eletrônico foi cunhado para descrever um fenômeno bem documentado na política brasileira desde a redemocratização de 1985: a concessão de emissoras de rádio e televisão a políticos em exercício de mandato ou a suas famílias, sobretudo em municípios e regiões de menor porte, onde essas emissoras se tornam praticamente o único canal de informação disponível para a população local. Diferentemente do rádio ou da TV em grandes centros urbanos, onde a oferta de veículos de comunicação é ampla e plural, em muitos municípios do interior brasileiro a emissora local pertencente à família política dominante define, sozinha, o que a população ouve e vê sobre política, obras públicas e adversários eleitorais.</p>
+
+    <p>A lógica aqui é uma atualização direta do compromisso coronelista clássico: assim como o coronel da Primeira República controlava o acesso da população a emprego, crédito e proteção, o "coronel eletrônico" contemporâneo controla o acesso da população à informação política, moldando a opinião pública local a seu favor sem precisar recorrer à coerção direta sobre o voto, hoje protegido pelo sigilo e por uma Justiça Eleitoral consolidada. O que muda, nessa atualização, é o instrumento de controle, que passa da coerção direta sobre o voto para a mediação do fluxo de informação; o que permanece é a concentração de poder político nas mãos de famílias com origem histórica na posse de terra, e a dificuldade de o Estado central garantir pluralidade de fontes de informação e de poder em regiões de menor densidade institucional.</p>
+
+    <h3>Famílias políticas de longa duração</h3>
+    <p>Outro traço de continuidade importante é a permanência, em numerosos municípios brasileiros, de famílias políticas tradicionais no comando do Executivo e do Legislativo local por múltiplas gerações — muitas vezes com origem documentada em famílias de grandes proprietários de terra do século XIX ou início do XX. Essa persistência não depende de fraude eleitoral: ela se sustenta por meio de mecanismos legítimos dentro do sistema democrático atual, como o acesso privilegiado a recursos de campanha, redes de relacionamento herdadas, controle de veículos de comunicação local (o coronelismo eletrônico já discutido) e a capacidade de intermediar o acesso da população a programas sociais e assistenciais, num paralelo direto com a antiga intermediação de crédito e proteção do coronel clássico.</p>
+
+    <p>Para vocês, como historiadores, essa persistência é melhor compreendida como uma readaptação ativa do que como uma simples "sobrevivência do passado" imutável: essas famílias precisaram se adequar a eleições livres, voto secreto, fiscalização eleitoral e pluralismo partidário formal, encontrando, dentro dessas novas regras, formas eficazes de preservar sua influência. Isso é, em si, um objeto de estudo histórico rico: como estruturas de poder sobrevivem a mudanças institucionais profundas sem depender das mesmas ferramentas que as sustentavam originalmente.</p>
+
+    <div class="highlight">
+      O coronelismo eletrônico não é uma <strong>cópia</strong> do coronelismo clássico — é sua <strong>reinvenção</strong> sob novas regras do jogo democrático, prova de que estruturas de poder historicamente enraizadas na terra sabem se adaptar quando as condições que as sustentavam originalmente desaparecem.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: as bacias políticas do sertão nordestino</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Sertão nordestino · Política municipal contemporânea</div>
+      <h3>Famílias, rádios e programas sociais</h3>
+      <p>Pesquisadores de ciência política e de comunicação identificam, em diversas regiões do sertão nordestino, o que se convencionou chamar de "bacias políticas": conjuntos de municípios vizinhos onde uma mesma família, historicamente ligada à grande propriedade rural, ocupa de forma quase ininterrupta prefeituras, câmaras municipais e cadeiras estaduais ao longo de décadas, revezando membros entre diferentes cargos ao longo das eleições sucessivas. Em muitos desses casos, a mesma família ou seus aliados diretos controlam a principal (às vezes única) emissora de rádio local, garantindo cobertura favorável a suas gestões e desfavorável a adversários.</p>
+      <p>Some-se a isso a intermediação, ainda hoje comum, do acesso da população a programas sociais federais e estaduais, a vagas de emprego público municipal e a pequenos serviços assistenciais — uma atualização direta da antiga função do coronel de "resolver problemas" da população em troca de lealdade política, agora operando dentro das regras do jogo eleitoral democrático. As bacias políticas do sertão mostram como o mando local se reproduz por vias formalmente legítimas — mídia licenciada, cargos públicos regulares, benefícios sociais — sem que isso signifique ausência de uma estrutura de poder profundamente desigual, herdeira direta da concentração fundiária histórica que estudamos no encontro 5 e da mesma dominação tradicional weberiana vista na aula 02-01.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>O coronelismo eletrônico pode ser considerado uma continuação do coronelismo clássico, ou é um fenômeno suficientemente diferente para merecer outro nome? Justifique com base na lógica de cada um.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Por que a concessão de emissoras de rádio e TV a políticos em exercício de mandato é um problema especialmente sensível em municípios pequenos, com pouca pluralidade de meios de comunicação?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>As "bacias políticas" do sertão nordestino se mantêm por vias formalmente legais. Isso torna esse tipo de concentração de poder mais difícil de combater do que a fraude eleitoral explícita do coronelismo clássico? Por quê?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 6 · Aula 3 · Coronelismo hoje</p>
+</div>
+
+</body>
+</html>

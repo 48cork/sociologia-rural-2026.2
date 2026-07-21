@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modernização Conservadora: Conceito e Crítica — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 09 · Aula 01</div>
+  <h1>Modernização <span>Conservadora</span></h1>
+  <p class="hero-sub">Como o Brasil modernizou sua agricultura sem tocar na estrutura da terra — e por que isso importa para entender o campo até hoje</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 minutos</span>
+    <span class="meta-pill">Bloco: Modernização da Agricultura</span>
+    <span class="meta-pill">Martins · modernização conservadora</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">Compreender o conceito de modernização conservadora formulado pelo sociólogo José de Souza Martins, entendendo por que a modernização técnica da agricultura brasileira, no século XX, não veio acompanhada de uma reforma na estrutura fundiária.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">30 min</span>
+    </div>
+
+    <p>Até aqui, o curso mostrou um padrão que se repete na história agrária brasileira: da colônia à República, a terra permanece concentrada nas mãos de poucos, e cada momento de mudança — a Lei de Terras de 1850, a abolição de 1888, a proclamação da República em 1889 — chega sem alterar essa base. No século XX, sobretudo a partir das décadas de 1960 e 1970, o Brasil viveu uma transformação técnica profunda na agricultura: tratores substituindo enxadas, sementes selecionadas substituindo variedades tradicionais, adubos químicos substituindo o pousio da terra. Se cada mudança institucional anterior chegou sem tocar na concentração de terra, o que vocês apostariam que aconteceu dessa vez, quando a própria técnica de produzir mudou tão radicalmente? A estrutura fundiária teria finalmente cedido, ou o padrão histórico se repetiria sob nova forma?</p>
+
+    <p>Os dados respondem que não: nenhuma redistribuição equivalente acompanhou essa modernização. E é justamente esse descompasso — entre uma técnica que muda depressa e uma estrutura social que não muda — que o sociólogo José de Souza Martins batizou de <strong>modernização conservadora</strong>: um nome propositalmente contraditório, porque descreve uma mudança que é, ao mesmo tempo, velocíssima na técnica e imóvel na distribuição do poder sobre a terra.</p>
+
+    <h3>O que significa "modernizar" sem mudar a estrutura</h3>
+    <p>Modernização conservadora é a ideia de que é possível — e, no caso brasileiro, foi exatamente isso que aconteceu — modernizar a técnica de produção agrícola preservando intacta a distribuição desigual da terra e do poder no campo. Trocam-se os instrumentos de trabalho, mas não se mexe em quem é dono do quê. O adjetivo "conservadora" descreve o ritmo da mudança social, não o ritmo da mudança técnica: essa modernização pode ser rapidíssima na incorporação de máquinas e insumos, e ainda assim conservar a velha ordem social agrária — a mesma concentração fundiária herdada da colônia, do Império e da Primeira República — enquanto transforma radicalmente os meios técnicos de produzir.</p>
+
+    <p>Isso é importante porque contraria uma expectativa comum: a de que o "progresso técnico" resolveria, quase automaticamente, os problemas sociais do campo brasileiro — a pobreza rural, a concentração de terra, a falta de oportunidade para pequenos produtores. A história mostrou o contrário. A modernização, tal como ocorreu no Brasil, foi conduzida principalmente pelo Estado, por meio de política de crédito e incentivo, de um jeito que reforçou quem já estava em vantagem.</p>
+
+    <div class="highlight">
+      <strong>Tese central de Martins:</strong> modernizar a técnica sem redistribuir a terra não é uma modernização incompleta por acidente — é um projeto que, na prática, aprofunda a desigualdade agrária brasileira em vez de superá-la.
+    </div>
+
+    <h3>Por que não houve reforma agrária junto com a modernização</h3>
+    <p>Uma reforma agrária redistributiva — que dividisse grandes propriedades improdutivas ou parcialmente ociosas entre famílias sem terra — foi debatida em diversos momentos da história brasileira, especialmente no início dos anos 1960, antes do golpe civil-militar de 1964. Mas o que prevaleceu, a partir de então, foi um caminho distinto: o Estado brasileiro escolheu investir pesadamente em crédito rural subsidiado, pesquisa agropecuária (como a criação da Embrapa em 1973) e infraestrutura, sem tocar na propriedade da terra já concentrada. Ou seja: o Estado modernizou a produção, mas não redistribuiu quem produz.</p>
+
+    <p>Esse caminho tinha uma lógica política clara. Alterar a estrutura fundiária significaria enfrentar diretamente os interesses dos grandes proprietários de terra — um grupo social historicamente ligado ao poder político local e nacional, como já vimos ao estudar o coronelismo. Era, e continua sendo, politicamente mais fácil financiar máquinas e insumos do que redistribuir terra.</p>
+
+    <blockquote>
+      A modernização conservadora é uma mudança cuidadosamente desenhada para preservar, sob nova roupagem técnica, uma hierarquia social muito antiga no campo brasileiro — a mesma que já vimos se formar com as sesmarias, se fechar com a Lei de Terras de 1850 e se perpetuar no coronelismo.
+    </blockquote>
+
+    <h3>Uma modernização desigual dentro do próprio campo</h3>
+    <p>Além de conservar a concentração fundiária, a modernização também foi desigual entre os próprios produtores rurais. Ela privilegiou regiões e culturas voltadas à exportação e ao mercado interno de grande escala — soja, cana, depois algodão e pecuária tecnificada — em detrimento da produção de alimentos básicos para o mercado interno feita por pequenos agricultores e camponeses, que tiveram muito menos acesso ao crédito subsidiado e à assistência técnica. Essa desigualdade dentro do próprio processo de modernização é um fio que vai continuar aparecendo nas próximas aulas, quando estudarmos a Revolução Verde e suas consequências sociais mais diretas: o êxodo rural e o aprofundamento da concentração de terra, mesmo com uma agricultura tecnicamente mais avançada.</p>
+
+    <p>Para o historiador, o conceito de modernização conservadora é uma ferramenta poderosa porque evita duas armadilhas comuns. A primeira é pensar a modernização agrícola como puro "avanço" neutro, sem efeitos sociais desiguais. A segunda é pensar que a técnica sozinha explica tudo, esquecendo que decisões políticas — sobre crédito, sobre reforma agrária, sobre quem recebe incentivo do Estado — são tão determinantes quanto a tecnologia em si.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: Embrapa e o dilema da tecnologia sem redistribuição</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Brasil · Décadas de 1970-1980</div>
+      <h3>A pesquisa agropecuária pública a serviço de quem?</h3>
+      <p>A criação da Empresa Brasileira de Pesquisa Agropecuária (Embrapa), em 1973, é um bom exemplo do espírito da modernização conservadora. A instituição foi criada para gerar tecnologia agrícola de ponta — variedades de sementes adaptadas ao clima tropical, técnicas de manejo de solo, correção de acidez em áreas de cerrado antes consideradas improdutivas para a lavoura de grande escala. Esse trabalho científico foi, em muitos aspectos, um sucesso técnico reconhecido internacionalmente: viabilizou a expansão da fronteira agrícola sobre o cerrado brasileiro.</p>
+      <p>O ponto de atenção sociológico é outro: quem teve capacidade de acessar e aplicar essa tecnologia em escala foram majoritariamente grandes e médios produtores capitalizados, com acesso a crédito bancário, em regiões já favorecidas pela política agrícola. Pequenos agricultores familiares e camponeses, sobretudo em regiões como o semiárido nordestino, receberam muito menos investimento proporcional em pesquisa e assistência técnica voltada à sua realidade — um contraste que só começa a ser parcialmente corrigido décadas depois, com políticas como o PRONAF, que será tema do encontro 15. O caso ilustra exatamente a tese de Martins: a distribuição desigual da tecnologia, decidida por escolhas políticas sobre crédito e investimento, reproduz e aprofunda a hierarquia fundiária herdada da colônia.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">10 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Seria possível, no Brasil dos anos 1960-70, ter modernizado a agricultura de outra forma — combinando tecnologia com redistribuição de terra? O que teria sido necessário política e socialmente para isso acontecer?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>A ideia de "modernização conservadora" pode ser aplicada a outras áreas fora da agricultura (por exemplo, à modernização urbana ou industrial brasileira)? Que semelhanças e diferenças vocês enxergam?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Por que, historicamente, é "mais fácil" para o Estado financiar máquinas e insumos do que redistribuir terra? Que interesses e grupos sociais ajudam a explicar essa escolha recorrente?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 09 · Aula 01 · Modernização conservadora</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Formação histórica do campesinato brasileiro — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 07 · Aula 02</div>
+  <h1>Formação histórica do<br><span>campesinato brasileiro</span></h1>
+  <p class="hero-sub">Posseiros, sitiantes, moradores, meeiros e agregados: como o campesinato brasileiro nasceu nas brechas da grande propriedade</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: O Campesinato Brasileiro</span>
+    <span class="meta-pill">posse · morada · meação</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">
+      Mapear as diferentes formas históricas de campesinato no Brasil — posseiros, sitiantes, moradores de fazenda, meeiros, arrendatários e agregados — e mostrar que essa diversidade nasce das margens deixadas pela grande propriedade, não de um "campesinato originário" nos moldes europeus.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior vimos duas teorias clássicas sobre o campesinato — a de Chayanov, que via nele uma lógica econômica própria orientada à reprodução da família, e a de Kautsky, que previa sua dissolução sob a pressão do capitalismo. Nenhuma das duas foi formulada pensando no Brasil. E é justamente aí que mora um problema interessante para quem estuda história: o campesinato brasileiro não nasceu como o campesinato europeu, de comunidades agrícolas antigas com direitos costumeiros sobre a terra. Ele nasceu de um jeito bem diferente — nas frestas, nas margens e nas brechas de um território dominado, desde a colonização, pela grande propriedade concedida pela Coroa.</p>
+
+    <h3>Um campesinato sem terra própria garantida</h3>
+    <p>Enquanto na Europa camponesa clássica havia, em muitos lugares, alguma forma de direito costumeiro sobre a terra comunal, no Brasil colonial e imperial a terra era, desde o princípio, objeto de concessão a poucos — as sesmarias. Isso significa que a maior parte da população rural pobre, livre ou liberta, nunca teve acesso automático à propriedade da terra. O que se formou, ao longo de séculos, foi um mosaico de situações intermediárias e precárias de ocupação e uso da terra, cada uma com regras, obrigações e vulnerabilidades próprias. Conhecer essas categorias é essencial para qualquer historiador que trabalhe com documentação rural brasileira dos séculos XIX e XX.</p>
+
+    <p><strong>Posseiro</strong> é quem ocupa e trabalha uma terra sem título de propriedade formal — muitas vezes terras devolutas (públicas) ou em disputa. A posse gera, com o tempo, uma expectativa de direito (o que a lei brasileira reconhece, sob certas condições, como usucapião), mas historicamente os posseiros foram sistematicamente expulsos por proprietários com título formal e maior poder político e jurídico.</p>
+
+    <p><strong>Sitiante</strong> é o pequeno proprietário rural, dono de um sítio de dimensões modestas — muitas vezes descendente de posseiros que conseguiram, com o tempo, regularizar sua situação, ou herdeiros de pequenas parcelas de terra fragmentadas ao longo de gerações. <strong>Morador de fazenda</strong> (também chamado de agregado, em algumas regiões) é quem vive dentro de uma grande propriedade, geralmente sem remuneração em dinheiro, trabalhando para o fazendeiro em troca do direito de morar e de cultivar uma pequena roça para consumo próprio — uma relação de dependência pessoal que lembra, em muitos aspectos, formas de sujeição anteriores à abolição.</p>
+
+    <p><strong>Meeiro</strong> é quem trabalha a terra de outrem mediante a divisão da produção — tradicionalmente "à meia", ou seja, metade para quem trabalha e metade para o dono da terra, embora essa proporção variasse bastante na prática, quase sempre em desvantagem para quem trabalhava. <strong>Arrendatário</strong> é quem paga, em dinheiro ou em produto, pelo direito de usar uma terra que não é sua, por um período combinado — uma relação já mais próxima de um contrato formal, mas ainda assim marcada pela dependência em relação a quem detém a terra.</p>
+
+    <h3>Diversidade como resposta à concentração</h3>
+    <p>O que essas categorias têm em comum é que nenhuma delas corresponde a um "camponês proprietário clássico" nos moldes de Chayanov. São, na verdade, soluções historicamente inventadas para sobreviver dentro de uma estrutura fundiária extremamente concentrada, em que o acesso pleno e seguro à terra era (e em boa parte ainda é) reservado a poucos. Essa diversidade de arranjos não é sinal de "atraso" ou de "desorganização" do campo brasileiro — é, ao contrário, evidência de enorme capacidade de adaptação de populações pobres a um sistema fundiário hostil, que raramente lhes oferecia caminhos formais de acesso à terra.</p>
+
+    <p>Recuperando o que vimos na aula anterior sobre Chayanov e na aula sobre Weber (Encontro 2): olhando para essas cinco categorias — posseiro, sitiante, morador, meeiro, arrendatário —, quais delas você diria que operam pela lógica da unidade familiar orientada à reprodução doméstica, e qual delas parece depender, antes de tudo, da lealdade pessoal a quem manda?</p>
+
+    <p>Vista a partir de Chayanov, boa parte dessas categorias — sitiante, posseiro, e o meeiro em muitos casos — ainda opera dentro da lógica da unidade familiar orientada à reprodução do grupo doméstico, e não ao lucro. Já o morador de fazenda, que veremos em detalhe no caso desta aula, aproxima-se mais da dominação tradicional que estudamos com Weber: a permanência na terra depende menos de uma lógica econômica autônoma e mais da lealdade pessoal a quem manda. A mesma palavra genérica — "camponês" — cobre, portanto, situações que vão de relativa autonomia familiar a subordinação pessoal quase direta.</p>
+
+    <p>Essas categorias, além disso, não são estanques nem universais: variam de região para região, e uma mesma família podia transitar entre elas ao longo de uma vida — começar como morador de fazenda, conseguir alguma economia, tornar-se meeiro ou arrendatário, e eventualmente, em casos mais raros, conquistar um pequeno sítio próprio. Essa mobilidade limitada, sempre dentro de margens estreitas, é uma marca da história agrária brasileira que atravessa a Colônia, o Império e boa parte da República.</p>
+
+    <div class="callout">
+      <div class="callout-label">Ponto-chave para o historiador</div>
+      Ao ler um documento de época que menciona "lavradores", "moradores" ou "agregados", é preciso perguntar: qual é exatamente a relação dessa pessoa com a terra e com o proprietário? A palavra genérica esconde relações de poder muito diferentes entre si.
+    </div>
+
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o morador de fazenda no sertão pecuarista</h2>
+    </div>
+    <div class="caso">
+      <div class="caso-label">Ilustração · sertão nordestino</div>
+      <h3>A dependência pessoal na grande propriedade de gado</h3>
+      <p>No sertão nordestino, historicamente organizado em torno da grande propriedade pecuarista, a figura do morador de fazenda foi especialmente marcante. Diferentemente da economia açucareira do litoral, baseada intensamente em mão de obra escravizada em grandes plantations, a criação extensiva de gado no sertão exigia menos trabalho constante por área — o que abriu espaço, ao longo do tempo, para relações de morada: famílias pobres, muitas vezes libertas ou seus descendentes, se fixavam dentro de uma grande propriedade, cuidando do gado e cultivando uma pequena roça de subsistência, em troca da permissão de morar ali.</p>
+      <p>Essa relação garantia alguma segurança de moradia e de sobrevivência, mas também prendia a família à vontade do fazendeiro: ele podia expulsar o morador a qualquer momento, e a permanência dependia de lealdade e obediência pessoal — um arranjo que ecoa diretamente a dominação tradicional que discutimos com Weber e prepara terreno para entender o coronelismo, tema dos próximos encontros. O morador de fazenda ilustra bem, assim, como uma categoria camponesa brasileira pode combinar elementos de autonomia relativa (a roça de subsistência, cultivada e gerida pela própria família) com uma dependência estrutural profunda em relação ao grande proprietário — a marca registrada do campesinato formado nas margens da grande propriedade brasileira.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que seria um erro tratar "posseiro", "meeiro" e "morador de fazenda" como sinônimos de "camponês pobre" sem diferenciar as relações de poder envolvidas em cada categoria?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>De que forma a falta de acesso formal e seguro à terra — e não uma suposta "preguiça" ou "atraso cultural" — explica a diversidade de arranjos camponeses no Brasil?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Que documentos históricos (inventários, processos judiciais, relatos de viajantes, censos) poderiam ajudar um historiador a identificar essas diferentes categorias camponesas em uma região específica?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 07 · Aula 02 · Formação do campesinato brasileiro</p>
+</div>
+
+</body>
+</html>

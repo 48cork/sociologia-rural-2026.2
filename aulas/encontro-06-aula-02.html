@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clientelismo e Mandonismo Local — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Encontro 06 · Aula 02</div>
+  <h1>Clientelismo e Mandonismo <span>Local</span></h1>
+  <p class="hero-sub">O que sobrevive quando o compromisso coronelista clássico deixa de existir: heranças de mando pessoal que atravessam todo o século XX brasileiro</p>
+  <div class="meta-row">
+    <span class="meta-pill">50 min</span>
+    <span class="meta-pill">Bloco: Coronelismo e Poder Local</span>
+    <span class="meta-pill">Clientelismo</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Diferenciar o coronelismo, fenômeno histórico datado da Primeira República, de padrões mais duradouros de clientelismo e mandonismo local que sobrevivem no Brasil rural ao longo de todo o século XX.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior, vimos que Victor Nunes Leal define o coronelismo como um "compromisso" específico entre um poder público fraco e o poder privado dos grandes proprietários de terra, sustentado sobretudo pelo voto de cabresto na Primeira República. Uma dúvida comum, e muito produtiva para pensar historicamente, é a seguinte: o que acontece com esse fenômeno quando o cenário institucional que o sustentava — Estado fraco no interior, voto não secreto, ausência de Justiça Eleitoral — deixa de existir? A resposta de boa parte da historiografia e da ciência política brasileira é que o coronelismo, em sua forma estrita, perde força a partir dos anos 1930 e sobretudo depois da criação da Justiça Eleitoral em 1932, mas isso não significa o fim dos padrões de poder pessoal que ele expressava. Esses padrões se transformam, e é isso que os conceitos de clientelismo e mandonismo local nos ajudam a entender.</p>
+
+    <h3>Coronelismo é um fenômeno; clientelismo é um padrão</h3>
+    <p>Para vocês, como historiadores em formação, essa distinção merece cuidado. O coronelismo, tal como definido por Leal, é um fenômeno histórico circunscrito: nasce das condições específicas da Primeira República e tende a desaparecer nessa forma exata quando essas condições mudam. Já o clientelismo é um padrão de relação política mais amplo e mais duradouro, que pode existir com ou sem coronelismo, em contextos rurais e urbanos, em diferentes países e períodos: consiste na troca de bens, cargos ou favores concretos por apoio político e lealdade pessoal, numa relação assimétrica entre quem detém recursos e quem depende deles. Se o coronelismo em sua forma estrita desaparece com o fim do voto de cabresto, o que exatamente sobrevive dele no clientelismo e no mandonismo — a mesma base de obediência que vimos na aula anterior a propósito de Weber, ou algo estruturalmente diferente? O que persiste por baixo dos três conceitos é a mesma lógica de dominação tradicional descrita por Weber: obediência fundada em vínculo pessoal e costume, não em lei ou cargo impessoal — só que agora sobrevivendo sem o mecanismo específico do voto de cabresto que dava a Leal seu objeto de estudo exato.</p>
+
+    <p>O mandonismo local, por sua vez, descreve a concentração de poder e autoridade nas mãos de uma figura ou família dominante em uma localidade, com capacidade de impor sua vontade sobre a população e sobre as instituições formais do lugar — a câmara municipal, a polícia local, o cartório — mesmo sem depender estritamente do mecanismo do voto de cabresto que caracterizava o coronelismo clássico.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conceito</th><th>Definição</th></tr></thead>
+        <tbody>
+          <tr><td>Coronelismo</td><td>Compromisso específico da Primeira República, ligado ao voto de cabresto (aula 06-01).</td></tr>
+          <tr><td>Clientelismo</td><td>Troca de favores por apoio político, presente em muitos contextos históricos e geográficos.</td></tr>
+          <tr><td>Mandonismo</td><td>Concentração de autoridade pessoal sobre uma localidade, com ou sem eleições envolvidas.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Como essas heranças atravessam o século XX</h3>
+    <p>Ao longo da Era Vargas (1930-1945), do período democrático de 1945-1964 e mesmo da ditadura militar (1964-1985), pesquisadores identificam a persistência de práticas clientelistas no meio rural brasileiro, mesmo com o enfraquecimento institucional do coronelismo clássico. Políticos municipais e estaduais continuam distribuindo cargos públicos, verbas e favores em troca de apoio eleitoral; famílias tradicionais ligadas à terra continuam ocupando posições de destaque na política local; e a dependência econômica de trabalhadores rurais em relação a proprietários continua funcionando, em muitos lugares, como base de uma lealdade política que não é mais imposta por um voto não secreto, mas ainda é moldada por relações de poder muito desiguais.</p>
+
+    <p>Para a análise histórica, o clientelismo não é exclusivo do Brasil, nem do meio rural: é um padrão de organização política identificado em diversos países, especialmente naqueles com Estados de capacidade administrativa desigual entre centro e periferia. O que torna o caso brasileiro particularmente estudado é justamente a forma como o clientelismo rural se entrelaçou, historicamente, com a extrema concentração fundiária que vimos no encontro anterior — quanto mais concentrada a terra, maior o número de pessoas em situação de dependência econômica direta de poucos proprietários, e maior o terreno fértil para práticas clientelistas se consolidarem.</p>
+
+    <div class="highlight">
+      Pensar em <strong>fenômeno x padrão</strong> ajuda a entender por que uma palavra como "coronelismo" pode datar de um contexto específico e, ainda assim, continuar sendo usada — às vezes de forma imprecisa — para descrever heranças de poder pessoal que sobrevivem muito além de seu contexto original.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: redes de dependência no sertão pós-coronelismo clássico</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Sertão nordestino · Meados do século XX</div>
+      <h3>Quando o voto de cabresto acaba, mas a dependência continua</h3>
+      <p>Mesmo depois da criação da Justiça Eleitoral em 1932 e da introdução do voto secreto fiscalizado, estudos sobre política municipal no interior nordestino ao longo das décadas de 1940 a 1960 identificam a permanência de relações de forte dependência entre trabalhadores rurais e grandes proprietários de terra. Sem poder mais controlar diretamente o voto pela ausência de sigilo, esses proprietários passam a atuar por outras vias: intermediando o acesso a empregos, a pequenos créditos informais, a assistência médica e a cargos públicos municipais, mantendo assim uma influência política considerável mesmo sem o mecanismo clássico do voto de cabresto. Esse padrão mostra como o mandonismo local se adapta a mudanças institucionais: perde o instrumento específico do voto de cabresto, mas mantém sua base estrutural — a dependência econômica de uma população sem alternativas de renda e proteção fora do círculo de influência do grande proprietário local.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que é útil, para o historiador, separar o conceito específico de "coronelismo" do conceito mais amplo de "clientelismo"? O que se perde se os dois forem tratados como sinônimos?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Como a introdução do voto secreto e da Justiça Eleitoral, a partir de 1932, transformou — sem necessariamente eliminar — as formas de dependência política no meio rural brasileiro?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>O clientelismo é um fenômeno exclusivamente rural, ou também aparece em contextos urbanos? Cite um exemplo, histórico ou contemporâneo, que sustente sua resposta.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Sociologia Rural 2026.2 · Encontro 06 · Aula 02 · Clientelismo e Mandonismo Local</p>
+</div>
+
+</body>
+</html>
