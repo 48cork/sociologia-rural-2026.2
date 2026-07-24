@@ -25,7 +25,9 @@ aqui é exclusivamente **cobertura**: o que deveria estar na aula está de fato 
    Kautsky, Abramovay, Stedile, Fernandes, CPT; Encontro 9 + aula extra → Martins
    (modernização conservadora), Abramovay, IBGE/CONAB; Encontros 10-12 (semanas livres) →
    aderência ao Roteiro de Pesquisa, não à bibliografia teórica; Encontro 13 → MDA/INCRA,
-   Marcha das Margaridas; Encontro 14 → Malvezzi, ASA; Encontro 15 → INCRA, PRONAF.
+   Marcha das Margaridas; Encontro 14 → Malvezzi, ASA; Encontro 15 → INCRA, PRONAF; Encontro 15
+   (aula extra) → Freire (conscientização, educação como prática da liberdade), Pedagogia da
+   Alternância, Decreto 7.352/2010, Parecer CNE/CEB 36/2001.
 3. **Ausências que empobrecem a aula.** Há algum conceito-chave claramente esperado para
    aquele tema que está totalmente ausente do texto?
 4. **Plausibilidade factual do caso concreto.** O caso/exemplo usado é historicamente

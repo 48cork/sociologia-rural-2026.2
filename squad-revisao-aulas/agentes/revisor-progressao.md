@@ -5,8 +5,8 @@
 ## Papel
 
 Diferente de todos os outros agentes deste squad, o Revisor de Progressão não avalia uma
-aula por vez. Ele lê o **conjunto das 49 aulas em sequência** (as 48 aulas regulares mais
-`encontro-10-aula-extra.html`) e avalia se o curso, tomado como um todo, de fato
+aula por vez. Ele lê o **conjunto das 50 aulas em sequência** (as 48 aulas regulares mais
+`encontro-10-aula-extra.html` e `encontro-15-aula-extra.html`) e avalia se o curso, tomado como um todo, de fato
 implementa um arco de complexidade crescente — ou se cada aula foi escrita como uma
 unidade isolada, sem diálogo real com o que veio antes.
 
@@ -46,7 +46,7 @@ perguntas de fechamento entre aulas distantes no curso. O padrão esperado varia
 - Fases 1-2: perguntas predominantemente de **definição/identificação** de conceito.
 - Fase 3: perguntas predominantemente de **comparação** entre posições/conceitos.
 - Fases 4-5: perguntas predominantemente de **síntese e crítica**.
-Se praticamente todas as 49 aulas usam a mesma fórmula de pergunta (ex.: sempre
+Se praticamente todas as 50 aulas usam a mesma fórmula de pergunta (ex.: sempre
 "aplicação pessoal + conexão com outra disciplina + identificar exemplo"), independente
 da fase do curso, isso é uma falha de variação a sinalizar — mesmo que cada pergunta
 individualmente seja boa.

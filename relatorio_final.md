@@ -1,7 +1,9 @@
 # Relatório Final — Squad de Revisão de Aulas
 
 Sociologia Rural 2026.2 · Curso de História · 49 arquivos de aula revisados
-(48 aulas regulares + `encontro-10-aula-extra.html`)
+(48 aulas regulares + `encontro-10-aula-extra.html`), mais um adendo de revisão pontual
+para `encontro-15-aula-extra.html`, arquivo criado depois deste relatório original — ver
+Parte 6.
 
 Workflow executado: `squad-revisao-aulas/workflows/revisar-aulas.md`.
 
@@ -356,3 +358,75 @@ pergunta e corrigido manualmente antes do fechamento desta seção.
   "outro exemplo parecido?" como desfecho — não impediu nenhum veredito PRONTO/PRECISA
   REVISAR porque é um padrão distribuído e de baixo risco, mas vale uma passada futura
   dedicada a esse ponto específico.
+
+---
+
+## Parte 6 — Adendo: encontro-15-aula-extra.html (revisão pontual, 2026-07-24)
+
+*(Arquivo criado após este Relatório Final original, para cobrir o Bloco 3 da ementa
+oficial — "educação da população da zona rural e a sua política e diretrizes
+educacionais" — ausente dos 16 encontros originais. Ver
+`Plano_Aulas_Sociologia_Rural_2026.2.md`. Segue os Passos 2-4 de
+`squad-revisao-aulas/workflows/revisar-aulas.md`; o Passo 1 não foi reexecutado sobre as
+49 aulas anteriores — apenas o posicionamento deste arquivo no Mapa de Progressão já
+existente, abaixo.)*
+
+### Posicionamento no arco (Passo 1, addendum ao Mapa de Progressão)
+
+Fase 5 — Avaliação Crítica (mesma fase de Encontros 15-16), sujeita à mesma regra já
+aplicada nesta fase: novo conceito só entra se amarrado ao aparato clássico já construído
+nas Fases 1-2, não como aparato autônomo (o precedente é a correção de "rurbanização"/
+"novas ruralidades" em 16-01).
+
+### Pareceres (Passo 2)
+
+**Conteudista:** Completo. Conceitos-chave presentes: Freire (conscientização, educação
+bancária), Pedagogia da Alternância, Decreto 7.352/2010, Parecer CNE/CEB 36/2001 —
+todos os três já verificados contra fonte real antes da escrita (ver histórico da
+conversa). Caso concreto plausível (ilustrativo, sem estatística ou nome de escola
+inventado, no mesmo padrão de "exemplo comum" usado em 15-01 e 15-03). Extensão: 971
+palavras no corpo expositivo, dentro da faixa 800-1200.
+
+**Revisor Teórico:** Sólido. Nenhum erro conceitual — Freire e Pedagogia da Alternância
+corretamente explicados e aplicados funcionalmente ao conteúdo e ao caso, não citados de
+forma decorativa.
+
+**Revisor de Fluidez:** Precisa de ajustes → corrigido.
+- (a) padrão "não é X — é Y": 2 ocorrências encontradas (definição de "educação rural";
+  e "a escola se adapta ao ritmo da terra — não o contrário", no Caso) → mantida a mais
+  central (definição de educação rural), a do Caso reescrita em prosa direta.
+- (b) caixas de destaque: 1 encontrada (dentro do limite, nenhum ajuste necessário).
+- (c) bloco "Leitura" separado do Caso: não encontrado (interpretação já integrada ao
+  parágrafo do Caso desde a escrita original).
+- (d) clichê genérico: "É importante não confundir..." → reescrito para "Dois termos que
+  soam parecidos escondem lógicas opostas."
+
+**Revisor Pedagógico:** Ajustar → corrigido.
+- Sigla "CNBB" usada sem expansão na primeira menção → expandida para "CNBB (Conferência
+  Nacional dos Bispos do Brasil)", seguindo o mesmo padrão de expansão já usado no curso
+  para INCRA e PRONAF.
+- Pontos fortes preservados (não exigiram ajuste): "conscientização" e "educação bancária"
+  explicadas em linguagem acessível antes do termo técnico aparecer; ancoragem histórica
+  forte (Angicos 1963, governo Goulart, golpe de 1964, Espírito Santo 1969, Parecer CNE/CEB
+  36/2001, Decreto 7.352/2010).
+
+**Revisor de Progressão (addendum ao Mapa):** Conceito novo sem amarração — encontrado e
+corrigido. Freire (educação bancária/conscientização) estava apresentado como aparato
+teórico autônomo, sem conexão explícita ao aparato clássico já construído nas Fases 1-2 do
+curso. A ponte mais natural — violência simbólica/habitus de Bourdieu, Encontro 2, já
+reaproveitada como amarração em 16-01 — estava ausente e foi adicionada diretamente no
+texto.
+
+### Veredito (Passo 3)
+
+| Aula | Veredito inicial | Ajuste aplicado |
+|---|---|---|
+| encontro-15-aula-extra.html | PRECISA REVISAR → corrigido | Amarração a Bourdieu (violência simbólica/habitus, Encontro 2) adicionada à explicação de conscientização/educação bancária; 1 ocorrência redundante do padrão "não X — é Y" reescrita; clichê genérico removido; sigla CNBB expandida na primeira menção; referência cruzada corrigida (a aula extra do agronegócio complementa o Encontro 9 tematicamente, mas o arquivo é `encontro-10-aula-extra.html` — o texto citava "Encontro 9" de forma ambígua) |
+
+### Atualização do Resumo Numérico (Parte 3)
+
+- Total de aulas revisadas: 49 → **50**
+- PRECISA REVISAR → corrigidas: 43 → **44**
+- Erros conceituais graves encontrados: continua **Nenhum**
+- Padrão mais recorrente permanece (c) — mas não se aplicou a este arquivo, que já nasceu
+  sem o bloco "Leitura" separado.

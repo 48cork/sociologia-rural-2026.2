@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Educação do Campo: Paulo Freire, Alternância e as Diretrizes do MEC — Sociologia Rural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* LAYOUT */
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  /* BLOCKQUOTE */
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* OBJETIVO / HIGHLIGHT */
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  /* CASO */
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  /* PERGUNTAS / DEBATE */
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  /* DIVIDER / PROSE */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  /* CLOSING */
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Sociologia Rural · Curso de História · Aula Extra · Bloco Políticas Públicas para o Campo</div>
+  <h1>Educação do Campo:<br><span>Paulo Freire, Alternância e as Diretrizes do MEC</span></h1>
+  <p class="hero-sub">A outra política pública para o campo: não a da terra e do crédito, mas a de quem tem — ou não tem — direito a uma escola que faça sentido para sua vida</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Aula extra · complementa o Encontro 15</span>
+    <span class="meta-pill">Freire · Pedagogia da Alternância · Decreto 7.352/2010</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+      <span class="duration">5 min</span>
+    </div>
+    <div class="objetivo">
+      Compreender a política educacional voltada à população da zona rural — da crítica de Paulo Freire à escola que aliena, passando pela Pedagogia da Alternância, até as diretrizes oficiais do MEC/CNE para a Educação do Campo —, distinguindo esse tema da política agrária (terra e crédito) estudada nas duas aulas anteriores deste mesmo encontro.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+      <span class="duration">40 min</span>
+    </div>
+
+    <p>As duas aulas anteriores deste encontro trataram de uma pergunta: o que o Estado brasileiro fez, historicamente, para resolver a desigualdade no acesso à terra e ao crédito no campo? Esta aula fecha o encontro com uma pergunta paralela, mas diferente: o que o Estado brasileiro fez pela educação da população que vive nesse mesmo campo? A resposta segue um padrão muito parecido com o do INCRA e do PRONAF — décadas de silêncio ou de solução equivocada, seguidas de reconhecimento tardio, sob pressão de quem vive no campo, não por iniciativa espontânea do poder público.</p>
+
+    <h3>De "educação rural" a "educação do campo": uma mudança de paradigma</h3>
+    <p>Dois termos que soam parecidos escondem lógicas opostas. Durante boa parte do século XX, a política oficial falava em "educação rural": um modelo pensado nos gabinetes urbanos, que tratava o aluno do campo como alguém a ser "trazido" para os valores e o calendário da cidade — a mesma escola urbana, só que replicada, mal e precariamente, em prédios no interior. Não era uma escola pensada a partir da vida no campo; era uma tentativa de apagar essa vida em nome de um ideal de progresso urbano-industrial.</p>
+    <p>A partir dos anos 1990 e 2000, sindicatos rurais, o MST, universidades e organizações como a CNBB (Conferência Nacional dos Bispos do Brasil) passaram a defender outra coisa, batizada de "educação do campo": uma escola pensada a partir do calendário agrícola, do trabalho familiar, da cultura e da identidade de quem vive no campo — um sujeito de sua própria educação, não um alvo a ser convertido a um modelo alheio. Essa mudança de nome não é cosmética: é a mesma disputa entre "política feita para o campo, de cima para baixo" e "política construída a partir do campo, de baixo para cima" que este curso já viu na aula anterior, a propósito do INCRA e do PRONAF.</p>
+
+    <h3>Paulo Freire e a educação como prática da libertação</h3>
+    <p>Em 1963, na cidade de Angicos, no interior do Rio Grande do Norte, trezentos trabalhadores rurais foram alfabetizados em quarenta horas por um método criado por Paulo Freire — um resultado tão expressivo que serviu de base para o Programa Nacional de Alfabetização do governo João Goulart, interrompido pelo golpe militar de 1964 antes de se espalhar pelo país inteiro. Freire sistematizou essa experiência no livro <em>Educação como Prática da Liberdade</em> (1967), escrito durante seu exílio no Chile.</p>
+    <p>A ideia central do livro é que educação nunca é neutra: ou ela adapta o aluno passivamente à realidade como ela está — o que Freire chama de "educação bancária", em que o professor apenas "deposita" conteúdo em um aluno tratado como recipiente vazio —, ou ela desenvolve no aluno a capacidade de ler criticamente sua própria realidade e agir para transformá-la, processo que Freire batiza de <strong>conscientização</strong>. Essa crítica dialoga diretamente com um conceito que este curso já viu no Encontro 2: a violência simbólica de Bourdieu, a ideia de que uma escola pode impor, como se fossem simplesmente "normais" e neutros, os valores e o habitus de um grupo social dominante sobre os demais — no caso da educação rural tradicional, o habitus urbano-industrial imposto sobre a vida camponesa. Para uma população rural historicamente tratada como atrasada e passiva — a mesma imagem que este curso já desmontou lá no Encontro 1 —, uma escola que ensina a ler o mundo, e não só a decorar letras, é, em si, um ato político.</p>
+
+    <h3>Pedagogia da Alternância: a escola que não tira o aluno da terra</h3>
+    <p>Um problema prático atravessa qualquer escola rural: como ensinar sem obrigar a criança ou o jovem a abandonar o trabalho familiar na roça, ou a se mudar para longe, para uma escola urbana? A resposta mais influente a esse problema nasceu na França, em 1935, quando agricultores insatisfeitos com uma escola que ignorava a vida no campo — e provocava evasão em massa — criaram, com apoio do padre Abade Granereau, as primeiras Maisons Familiales Rurales (Casas Familiares Rurais). A lógica é a "alternância": o estudante passa um período em regime de internato ou semi-internato na escola (tempo-escola) e outro período de volta à sua comunidade e à sua família, trabalhando e aplicando o que aprendeu (tempo-comunidade) — em vez de escolher entre estudar ou trabalhar na terra, o jovem faz as duas coisas, alternadamente, ao longo do próprio calendário agrícola.</p>
+    <p>No Brasil, essa experiência chegou em 1969, no Espírito Santo, dando origem às primeiras Escolas Família Agrícola (EFAs) e, mais tarde, às Casas Familiares Rurais (CFRs) em várias regiões do país — inclusive no semiárido nordestino, território que este curso já estudou no Encontro 14. A alternância resolve, na prática, exatamente o problema que Freire denunciava em termos teóricos: uma escola pensada para a vida urbana, aplicada sem adaptação à vida rural, expulsa o aluno do campo — seja fisicamente, seja simbolicamente.</p>
+
+    <h3>O Estado reconhece, décadas depois: diretrizes do CNE e Decreto 7.352/2010</h3>
+    <p>Como no caso do INCRA e do PRONAF, o reconhecimento formal do Estado veio muito depois da prática já estar consolidada nas comunidades. Em 2001, o Parecer CNE/CEB nº 36 estabeleceu as Diretrizes Operacionais para a Educação Básica nas Escolas do Campo, formalizadas no ano seguinte pela Resolução CNE/CEB nº 1/2002 — o primeiro documento oficial a reconhecer que a escola do campo precisa de currículo, calendário e formação de professores próprios, e não apenas uma versão simplificada da escola urbana. Quase uma década depois, o Decreto nº 7.352, de 2010, instituiu a Política de Educação do Campo e o Programa Nacional de Educação na Reforma Agrária (PRONERA), obrigando a União a garantir infraestrutura básica — energia, água potável, saneamento, transporte escolar — para as escolas do campo, e vinculando essa política diretamente à reforma agrária conduzida pelo INCRA, que vocês já conhecem da aula anterior.</p>
+
+    <div class="callout">
+      <div class="callout-label">Fechando o encontro de políticas públicas</div>
+      Terra, crédito e educação seguem, na história das políticas públicas brasileiras para o campo, o mesmo roteiro: décadas de prática e pressão social organizada por quem vive no campo, seguidas de um reconhecimento estatal tardio e parcial. A diferença de tema — de terra para escola — não muda a lógica de fundo que este encontro inteiro discutiu.
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: a Escola Família Agrícola no Semiárido</h2>
+      <span class="duration">15 min</span>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso ilustrativo · Semiárido nordestino</div>
+      <h3>Quando o calendário escolar respeita o calendário da chuva</h3>
+      <p>Um exemplo ilustrativo, comum a várias Escolas Família Agrícola e Casas Familiares Rurais espalhadas pelo semiárido nordestino: o calendário letivo é organizado em blocos de poucas semanas de internato, intercalados com períodos mais longos em que o estudante retorna à propriedade da família — período que costuma coincidir com épocas-chave do trabalho agrícola, como plantio e colheita, ou com a estação chuvosa, tão decisiva para a convivência com a seca discutida no Encontro 14. Nesse regime, o jovem não precisa escolher entre "ser aluno" e "ser filho de agricultor familiar": ele é as duas coisas ao mesmo tempo, com a escola adaptada ao ritmo da terra. Esse desenho é o oposto direto do modelo antigo de "educação rural", que exigia do aluno rural se adaptar a um calendário e a um currículo pensados para a cidade.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+      <span class="duration">5 min</span>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Por que Paulo Freire dizia que a educação nunca é neutra? Como o conceito de "conscientização" se aplica a uma população historicamente descrita como atrasada, tema já discutido no Encontro 1 deste curso?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Em que a lógica da Pedagogia da Alternância — tempo-escola e tempo-comunidade — resolve, na prática escolar, o mesmo problema que a modernização conservadora (Encontro 9) e o agronegócio (aula extra do Encontro 10) ignoraram: a permanência do jovem no campo?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>O Decreto 7.352/2010 chegou décadas depois de Freire e da Pedagogia da Alternância já estarem em prática. Esse intervalo repete o mesmo padrão visto entre a Lei de Terras de 1850 e o PRONAF de 1996? O que isso ensina sobre como o Estado brasileiro costuma reconhecer demandas do campo?</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Sociologia Rural 2026.2 · Aula Extra · Educação do Campo · complementa o Encontro 15</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -105,6 +105,7 @@ semestre.
 | encontro-15-aula-01.html | 5 — Avaliação crítica | Não | Não (esperado) | — |
 | encontro-15-aula-02.html | 5 — Avaliação crítica | Não | Não (esperado) | — |
 | encontro-15-aula-03.html | 5 — Avaliação crítica | Não — síntese explícita do próprio bloco | Não (esperado) | — |
+| encontro-15-aula-extra.html | 5 — Avaliação crítica | Não — amarra às aulas 15-01/02/03 (mesmo padrão terra/crédito/educação) | Sim, corrigido — Freire (educação bancária/conscientização) amarrado a Bourdieu (02-03) | Nenhum — corrigido durante a revisão pontual de 2026-07-24, ver `relatorio_final.md` Parte 6 |
 | encontro-16-aula-01.html | 5 — Avaliação crítica | Parcial | "Rurbanização"/"novas ruralidades" apresentadas como conceito novo autônomo | Reformular como releitura de Bourdieu (habitus/campo na fronteira rural-urbana) em vez de conceito novo |
 | encontro-16-aula-02.html | 5 — Avaliação crítica | Não — síntese explícita ("quatro fios") | Não (esperado) | Nenhum — modelo a seguir |
 | encontro-16-aula-03.html | 5 — Avaliação crítica | Não — retoma projeto desde o encontro 9 | Não (esperado) | — |

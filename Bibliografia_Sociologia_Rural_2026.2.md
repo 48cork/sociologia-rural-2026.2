@@ -96,6 +96,17 @@ Organizada por bloco de encontros. Legenda de acesso:
 
 **INCRA** e **MDA** — sites institucionais com histórico de políticas (PRONAF, reforma agrária). 🟢
 
+### Aula extra — Educação do Campo
+
+**FREIRE, Paulo.** *Educação como Prática da Liberdade.* Rio de Janeiro: Paz e Terra, 1967. 🟡🔵
+> Escrito no exílio chileno, sistematiza a experiência de alfabetização de trabalhadores rurais em Angicos (RN, 1963) e o conceito de conscientização. Mais diretamente ligado à educação rural do que *Pedagogia do Oprimido* (1968), que é a obra teórica mais geral de Freire.
+
+**Sobre Pedagogia da Alternância:** origem nas Maisons Familiales Rurales (Casas Familiares Rurais), França, 1935, com o padre Abade Granereau; chegada ao Brasil em 1969, no Espírito Santo, dando origem às Escolas Família Agrícola (EFAs) e, depois, às Casas Familiares Rurais (CFRs). Buscar "pedagogia da alternância" no SciELO ou Google Acadêmico para artigos de balanço histórico em acesso aberto. 🟢
+
+**BRASIL.** Decreto nº 7.352, de 4 de novembro de 2010 — dispõe sobre a política de educação do campo e o Programa Nacional de Educação na Reforma Agrária (PRONERA). 🟢 (planalto.gov.br)
+
+**BRASIL. Conselho Nacional de Educação.** Parecer CNE/CEB nº 36/2001 e Resolução CNE/CEB nº 1, de 3 de abril de 2002 — instituem as Diretrizes Operacionais para a Educação Básica nas Escolas do Campo. 🟢 (gov.br/mec)
+
 ---
 
 ## Como obter acesso, na prática

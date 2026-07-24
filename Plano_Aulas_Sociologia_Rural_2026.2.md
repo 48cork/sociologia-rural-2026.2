@@ -1,5 +1,5 @@
 # Sociologia Rural — Curso de História — 2026.2
-## 16 encontros × 3 aulas = 48 aulas
+## 16 encontros × 3 aulas = 48 aulas (+ 2 aulas extras = 50 aulas)
 
 | Encontro | Aula 1 | Aula 2 | Aula 3 |
 |---|---|---|---|
@@ -22,7 +22,10 @@
 | **16. Síntese e Encerramento** | Rural e urbano: fronteiras cada vez mais tênues | O rural brasileiro no século XXI: síntese do curso | Seminário de encerramento: apresentação dos trabalhos finais |
 
 ## ⚠️ Nota sobre a implementação real (atualizado)
-Na execução via Claude Code, os encontros 10, 11 e 12 viraram semanas livres de pesquisa de campo (ver Roteiro_Pesquisa_Campo_e_Seminario_Sociologia_Rural.md), com os temas: Agricultura Familiar (10), Povos e Comunidades Tradicionais (11) e Gênero e Trabalho no Campo (12). Isso deslocou o tema original do Encontro 10 (Agronegócio Contemporâneo), que foi recuperado como aula extra dentro do próprio encontro 10. Os temas de Povos Tradicionais e Gênero também foram antecipados em relação à numeração original desta tabela (originalmente encontros 12 e 13) — vale conferir se algum conteúdo ficou duplicado ou fora de ordem ao revisar os 49 arquivos gerados.
+Na execução via Claude Code, os encontros 10, 11 e 12 viraram semanas livres de pesquisa de campo (ver Roteiro_Pesquisa_Campo_e_Seminario_Sociologia_Rural.md), com os temas: Agricultura Familiar (10), Povos e Comunidades Tradicionais (11) e Gênero e Trabalho no Campo (12). Isso deslocou o tema original do Encontro 10 (Agronegócio Contemporâneo), que foi recuperado como aula extra dentro do próprio encontro 10. Os temas de Povos Tradicionais e Gênero também foram antecipados em relação à numeração original desta tabela (originalmente encontros 12 e 13) — vale conferir se algum conteúdo ficou duplicado ou fora de ordem ao revisar os arquivos gerados.
+
+## ⚠️ Nota sobre cobertura da ementa oficial (2026-07-24)
+O cruzamento com a ementa oficial de Sociologia Rural identificou que o Bloco 3 da ementa — "educação da população da zona rural e a sua política e diretrizes educacionais" — não estava coberto: o Encontro 15 tratava apenas de política agrária (INCRA, PRONAF, crédito), tema distinto de política educacional. Foi adicionada `encontro-15-aula-extra.html`, cobrindo Paulo Freire (*Educação como Prática da Liberdade*), Pedagogia da Alternância (origem francesa de 1935 e chegada ao Brasil em 1969) e as diretrizes do MEC/CNE (Parecer CNE/CEB 36/2001, Resolução CNE/CEB 1/2002, Decreto 7.352/2010). Segue o mesmo padrão já usado na aula extra do Encontro 10 (agronegócio): não altera a numeração dos 16 encontros nem dos 49 arquivos anteriores. Esta aula extra ainda não passou pelo squad de revisão (ver `squad-revisao-aulas/`) — pendente de revisão pontual antes de considerar o curso fechado.
 
 ## Observações
 - Sequência pensada para turma de **História**: cada bloco temático começa situando o processo histórico antes de entrar no conceito sociológico.
