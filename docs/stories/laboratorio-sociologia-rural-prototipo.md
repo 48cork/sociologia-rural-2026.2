@@ -447,3 +447,30 @@ Manter para revisão humana/dinâmica. Após a story entrar formalmente em **InR
 O protótipo recebeu **aprovação humana visual e pedagógica em navegador desktop** após os refinamentos de conteúdo, hierarquia visual e navegação.
 
 Este registro **não altera o gate QA `CONCERNS` para `PASS`**. Continuam pendentes os testes dinâmicos completos em navegador móvel, incluindo navegação por teclado, foco durante interação, abertura e fechamento dos elementos `details`, zoom, reflow e medição de overflow nos viewports móveis previstos. O parecer final de qualidade permanece reservado a `@qa`.
+
+---
+
+### Mobile Human Re-review Date: 2026-08-21
+
+### Reviewed By: Quinn (Test Architect), com evidência de revisão humana
+
+### Mobile Human Evidence
+
+- Índice testado dinamicamente no Chrome em **375 × 812**.
+- Atividade testada dinamicamente no Chrome em **312 × 812**, largura mais restritiva que os 320 px planejados.
+- Não foi observada rolagem horizontal.
+- Os títulos não foram cortados.
+- Os cartões foram empilhados corretamente.
+- A navegação foi reorganizada adequadamente.
+- Os links permaneceram utilizáveis.
+- A requisição de `favicon.ico` retornou **404**; classificada como não bloqueante, pois não compromete conteúdo, navegação, acessibilidade ou execução do protótipo.
+
+### Reapplied QA Gate Verdict
+
+**Gate: CONCERNS** — as evidências humanas dinâmicas resolvem a preocupação anterior sobre reflow, overflow, empilhamento, títulos e usabilidade visual dos links em viewport móvel, inclusive abaixo da largura mínima planejada. Permanecem sem evidência dinâmica completa a navegação somente por teclado, o foco durante a interação, a abertura e o fechamento de todos os elementos `details` e o comportamento com zoom; por isso o resultado não é promovido artificialmente a `PASS`.
+
+O Status permanece **Ready**: o workflow de gate exige a transição canônica a partir de **InReview**, condição que não está presente. Nenhuma transição de lifecycle ou alteração no Change Log foi aplicada por QA.
+
+### Remaining Concern After Mobile Re-review
+
+- **[MEDIUM][TEST-DYN-002] Evidência dinâmica de interação assistiva ainda parcial.** Validar em navegador a navegação somente por teclado, skip link, foco visível durante todo o percurso, abertura/fechamento dos elementos `details` e zoom/reflow ampliado. A ausência dessa evidência não invalida a aprovação humana visual e pedagógica já registrada, mas mantém o gate em `CONCERNS`.
