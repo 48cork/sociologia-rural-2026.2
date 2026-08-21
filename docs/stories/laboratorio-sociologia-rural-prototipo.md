@@ -474,3 +474,26 @@ O Status permanece **Ready**: o workflow de gate exige a transição canônica a
 ### Remaining Concern After Mobile Re-review
 
 - **[MEDIUM][TEST-DYN-002] Evidência dinâmica de interação assistiva ainda parcial.** Validar em navegador a navegação somente por teclado, skip link, foco visível durante todo o percurso, abertura/fechamento dos elementos `details` e zoom/reflow ampliado. A ausência dessa evidência não invalida a aprovação humana visual e pedagógica já registrada, mas mantém o gate em `CONCERNS`.
+
+---
+
+### Final Dynamic Human Review Date: 2026-08-21
+
+### Reviewed By: Quinn (Test Architect), com evidência de revisão humana
+
+### Final Dynamic Evidence
+
+- Foco visível: **PASS**.
+- Link “Pular para o conteúdo” acionado por Enter: **PASS**.
+- Navegação por teclado: **PASS**.
+- Prompts em elementos `details` abertos pelo mouse e por Enter: **PASS**.
+- Zoom de 200% sem sobreposição ou desorganização: **PASS**.
+- Índice móvel no Chrome em 375 × 812: **PASS**.
+- Atividade móvel no Chrome em 312 × 812: **PASS**.
+- Ausência de overflow horizontal: **PASS**.
+
+### Final QA Gate Verdict
+
+**Gate: PASS** — o conjunto de evidências automatizadas, estáticas e humanas cobre conteúdo e estrutura, links e fragmentos locais, contraste, impressão, responsividade, overflow, zoom, foco, teclado, skip link e interação com os prompts em `details`. O concern `TEST-DYN-002` está resolvido; não permanecem achados bloqueantes ou concerns de qualidade abertos para o escopo desta story. O `favicon.ico` 404 continua classificado como não bloqueante.
+
+O Status permanece **Ready** porque o workflow `qa-gate.md` exige a transição canônica `InReview → Done`, e a story não está em **InReview**. O veredito técnico final é `PASS`, sem forçar uma transição de lifecycle incompatível.
