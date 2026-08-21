@@ -19,6 +19,7 @@
 | **13. Gênero e Trabalho no Campo** | Trabalho feminino na história rural brasileira | Mulheres rurais hoje: trabalho, invisibilidade e luta por reconhecimento | Juventude rural: permanência, êxodo e novas gerações |
 | **14. Semiárido e Convivência** | Semiárido nordestino: história de um território estigmatizado | Seca como construção social e política, não só fenômeno natural | Convivência com o semiárido: alternativas e experiências locais |
 | **15. Políticas Públicas para o Campo** | História das políticas agrárias no Brasil (INCRA, PRONAF) | Políticas públicas contemporâneas: avanços e retrocessos | Desafios atuais: crédito, assistência técnica e sustentabilidade |
+| **15. Aula Extra — Educação do Campo** | (4ª aula do encontro 15, gerada à parte) Educação do Campo: Paulo Freire (*Educação como Prática da Liberdade*), Pedagogia da Alternância e as diretrizes do MEC/CNE (Parecer CNE/CEB 36/2001, Resolução CNE/CEB 1/2002, Decreto 7.352/2010) — fecha o Bloco 3 da ementa oficial (educação da população rural) | — | — |
 | **16. Síntese e Encerramento** | Rural e urbano: fronteiras cada vez mais tênues | O rural brasileiro no século XXI: síntese do curso | Seminário de encerramento: apresentação dos trabalhos finais |
 
 ## ⚠️ Nota sobre a implementação real (atualizado)
