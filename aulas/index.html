@@ -102,6 +102,30 @@
   /* LAYOUT */
   .wrapper { max-width: 880px; margin: 0 auto; padding: 48px 32px 80px; }
 
+  .laboratorio-callout {
+    margin-bottom: 32px;
+    padding: 24px 28px;
+    border: 1px solid #1e4a6a;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 12px 12px 0;
+    background: #0e1d26;
+  }
+  .laboratorio-callout h2 { margin-bottom: 8px; color: #fff; font-size: 1.25rem; line-height: 1.3; }
+  .laboratorio-callout p { margin-bottom: 12px; color: #e8e8f4; font-size: .96rem; }
+  .laboratorio-callout a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--teal);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+  .laboratorio-callout a:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+
   /* ENCONTRO BLOCK */
   .encontro-block {
     background: var(--surface);
@@ -257,11 +281,17 @@
     <span class="meta-pill">16 encontros</span>
     <span class="meta-pill">50 aulas</span>
     <span class="meta-pill">3 semanas livres de campo</span>
-    <span class="meta-pill">1 aula extra</span>
+    <span class="meta-pill">2 aulas extras</span>
   </div>
 </div>
 
 <div class="wrapper">
+
+  <aside class="laboratorio-callout" aria-labelledby="laboratorio-titulo">
+    <h2 id="laboratorio-titulo">Laboratório de Sociologia Rural</h2>
+    <p>O primeiro laboratório disponível está relacionado ao Encontro 10 — Agricultura Familiar e propõe um percurso prático complementar às aulas.</p>
+    <a href="../laboratorio/encontro-10-agricultura-familiar.html">Abrir o Laboratório 1 &rarr;</a>
+  </aside>
 
   <div class="block-label">Bloco 1 · Fundamentos e Bases Teóricas</div>
 
