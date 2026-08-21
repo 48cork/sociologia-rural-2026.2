@@ -44,6 +44,7 @@
   }
   .nav-card:hover { border-color: var(--accent-dim); transform: translateY(-2px); }
   .nav-card.teal:hover { border-color: #1e4a6a; }
+  .nav-card:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
   .nav-card-icon {
     width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
     font-size: 22px; margin-bottom: 20px;
@@ -55,6 +56,7 @@
   .nav-card .cta { display: inline-block; margin-top: 18px; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
   .nav-card.amber .cta { color: var(--accent); }
   .nav-card.teal .cta { color: var(--teal); }
+  .nav-card.laboratorio-card p { color: #b7b7cc; }
 
   /* BLOCOS */
   .bloco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 8px; }
@@ -97,7 +99,7 @@
       </a>
       <a class="nav-card amber" href="aulas/index.html">
         <div class="nav-card-icon">📚</div>
-        <h3>As 49 Aulas</h3>
+        <h3>As 50 Aulas</h3>
         <p>Textos de aula completos dos 16 encontros do curso, organizados por bloco temático — dos fundamentos teóricos clássicos (Marx, Weber, Durkheim, Bourdieu) à síntese final sobre o rural brasileiro no século XXI.</p>
         <span class="cta">Acessar o índice de aulas &rarr;</span>
       </a>
@@ -106,6 +108,12 @@
         <h3>Projeto de Pesquisa de Campo</h3>
         <p>"O Rural tem Classe Social na Era das Plataformas?" — roteiro das 3 semanas livres de pesquisa de campo (Encontros 10-12) e do Seminário Final (Encontros 13-14).</p>
         <span class="cta">Ver o roteiro completo &rarr;</span>
+      </a>
+      <a class="nav-card teal laboratorio-card" href="laboratorio/index.html">
+        <div class="nav-card-icon">🔎</div>
+        <h3>Laboratório de Sociologia Rural</h3>
+        <p>Investigue situações concretas por meio de observação, problematização, interpretação, verificação e reflexão.</p>
+        <span class="cta">Entrar no Laboratório &rarr;</span>
       </a>
     </div>
   </section>

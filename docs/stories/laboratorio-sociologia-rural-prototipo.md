@@ -2,7 +2,7 @@
 
 ## Status
 
-**Ready**
+**Done**
 
 ## Executor Assignment
 
@@ -302,6 +302,8 @@ O Encontro 10 deve usar exatamente o título **“Da feira ao dado: como circula
 | 2026-08-21 | 0.2.2 | Impressão estabilizada: propriedades de quebra neutralizadas e grades linearizadas no modo print | Dex (`@dev`) |
 | 2026-08-21 | 0.3.0 | Revisão humana: produto reformulado como dossiê em três partes, navegação renomeada e hierarquia visual refinada | Dex (`@dev`) / Uma (`@ux-design-expert`) |
 | 2026-08-21 | 0.3.1 | Aprovação humana visual e pedagógica em navegador desktop registrada, mantendo o gate QA em CONCERNS e testes móveis pendentes | Gage (`@devops`) |
+| 2026-08-21 | 0.4.0 | Lifecycle regularizado: Ready → InReview após conclusão e registro das evidências finais, sem reordenar ou substituir o histórico de QA | Pax (`@po`) |
+| 2026-08-21 | 0.4.1 | Gate final PASS reaplicado sobre todas as evidências; Status: InReview → Done | Quinn (`@qa`) |
 
 ## Dev Agent Record
 
@@ -497,3 +499,9 @@ O Status permanece **Ready**: o workflow de gate exige a transição canônica a
 **Gate: PASS** — o conjunto de evidências automatizadas, estáticas e humanas cobre conteúdo e estrutura, links e fragmentos locais, contraste, impressão, responsividade, overflow, zoom, foco, teclado, skip link e interação com os prompts em `details`. O concern `TEST-DYN-002` está resolvido; não permanecem achados bloqueantes ou concerns de qualidade abertos para o escopo desta story. O `favicon.ico` 404 continua classificado como não bloqueante.
 
 O Status permanece **Ready** porque o workflow `qa-gate.md` exige a transição canônica `InReview → Done`, e a story não está em **InReview**. O veredito técnico final é `PASS`, sem forçar uma transição de lifecycle incompatível.
+
+### Lifecycle Closure Record: 2026-08-21
+
+Após o registro do `PASS` técnico, Pax (`@po`) aplicou formalmente **Ready → InReview**; em seguida, Quinn (`@qa`) reaplicou o gate final sobre o conjunto completo de evidências e aplicou **InReview → Done**. Os registros anteriores permanecem como evidência do estado existente em cada revisão e não foram reescritos retroativamente.
+
+**Gate final reaplicado: PASS · Status final: Done.**
