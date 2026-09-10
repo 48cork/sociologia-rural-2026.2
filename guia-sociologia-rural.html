@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guia de Sociologia Rural · T01</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#19312e;background:#f4f5ef;line-height:1.6}*{box-sizing:border-box}body{margin:0}main{max-width:900px;margin:auto;padding:40px 20px 64px}h1{font-size:clamp(1.8rem,5vw,2.7rem);line-height:1.2;margin:8px 0 16px}h2{font-size:1.25rem;margin:0 0 10px}p{margin:8px 0}.eyebrow{font-weight:700;letter-spacing:.08em;font-size:.8rem;text-transform:uppercase}.muted{color:#526460}.panel{background:white;border:1px solid #ccd7cf;border-radius:16px;padding:24px;margin:24px 0}.status{background:#163e36;color:white}.status .muted{color:#d4e6df}.count{font-size:2rem;font-weight:750;display:block}progress{width:100%;height:18px;accent-color:#256958}ol{padding:0;list-style:none;display:grid;gap:12px}li{background:white;border:1px solid #ccd7cf;border-radius:12px;padding:20px}li.current{border:3px solid #256958;padding:18px;background:#eaf6ef}li h3{font-size:1.08rem;margin:6px 0}.badge{display:inline-block;background:#256958;color:white;border-radius:5px;padding:2px 8px;font-weight:700;font-size:.8rem;margin-bottom:8px}label{display:flex;align-items:center;gap:10px;cursor:pointer;margin-top:14px;padding:8px 0}input{width:22px;height:22px;accent-color:#256958}input:focus-visible{outline:3px solid #ad6600;outline-offset:4px}[hidden]{display:none!important}footer{font-size:.9rem;color:#526460}noscript{display:block;padding:24px;background:#ffe5b5}
+</style>
+<main>
+<header><div class="eyebrow">T01 · 2026.2 · Curso de História</div><h1>Sociologia Rural</h1><p>Guia de acompanhamento · 16 encontros · acompanhamento semanal.</p></header>
+<noscript>Ative o JavaScript do navegador para exibir o cronograma, identificar a semana e registrar seu progresso.</noscript>
+<section class="panel status" aria-label="Situação da semana"><p id="today" class="muted"></p><h2 id="week"></h2><p id="weekDetail"></p><p><span class="count" id="countdown" role="status"></span>Início do Seminário Final (Encontro 13): <strong>01/12/2026</strong>.</p><p id="secondDeadline" role="status" hidden></p></section>
+<div id="regular">
+<section class="panel"><h2>Seminário Final</h2><p><strong>01/12/2026:</strong> Encontro 13 — apresentação dos grupos (parte 1).</p><p><strong>08/12/2026:</strong> Encontro 14 — apresentação dos grupos (parte 2).</p><p>Recesso acadêmico: 21/12/2026 a 31/01/2027, sem aulas nem obrigações.</p><p>Depois do Encontro 15 e antes do Encontro 16, o curso está em recesso de fechamento, sem nova aula até 16/02/2027.</p></section>
+<section class="panel" aria-label="Seu progresso"><h2>Seu acompanhamento</h2><p>Marque os encontros que você já revisou/preparou. Para desfazer, desmarque a caixa.</p><p id="progressText" role="status"></p><progress id="progress" max="16" value="0" aria-label="Encontros revisados/preparados"></progress><p id="storageNote" class="muted">As marcações ficam salvas neste navegador e neste dispositivo. Não são um registro de presença ou de nota.</p></section>
+<section><h2>Os 16 encontros</h2><p class="muted">O destaque usa a data do seu dispositivo e considera a semana de segunda-feira a domingo.</p><ol id="meetings"></ol></section>
+</div>
+<footer>Use a data correta no dispositivo. As marcações são pessoais e podem ser desfeitas a qualquer momento.</footer>
+</main>
+<script>
+'use strict';
+const meetings = [
+  [
+    "2026-09-08",
+    "Apresentação e Fundamentos"
+  ],
+  [
+    "2026-09-15",
+    "Bases Teóricas Clássicas"
+  ],
+  [
+    "2026-09-22",
+    "Formação Histórica do Brasil Rural"
+  ],
+  [
+    "2026-09-29",
+    "Quilombos e Resistência Negra Rural"
+  ],
+  [
+    "2026-10-06",
+    "Estrutura Fundiária Brasileira"
+  ],
+  [
+    "2026-10-13",
+    "Coronelismo e Poder Local"
+  ],
+  [
+    "2026-10-20",
+    "O Campesinato Brasileiro"
+  ],
+  [
+    "2026-10-27",
+    "Questão Agrária e Movimentos Sociais"
+  ],
+  [
+    "2026-11-03",
+    "Modernização da Agricultura (lançamento do projeto de pesquisa de campo)"
+  ],
+  [
+    "2026-11-10",
+    "Agricultura Familiar (Semana Livre 1 de pesquisa de campo)"
+  ],
+  [
+    "2026-11-17",
+    "Povos e Comunidades Tradicionais (Semana Livre 2)"
+  ],
+  [
+    "2026-11-24",
+    "Gênero e Trabalho no Campo (Semana Livre 3)"
+  ],
+  [
+    "2026-12-01",
+    "Seminário Final, apresentação dos grupos (parte 1)"
+  ],
+  [
+    "2026-12-08",
+    "Seminário Final, apresentação dos grupos (parte 2)"
+  ],
+  [
+    "2026-12-15",
+    "Políticas Públicas para o Campo"
+  ],
+  [
+    "2027-02-16",
+    "Síntese e Encerramento do curso"
+  ]
+];
+const DAY=86400000, KEY='sociologia-rural-t01-2026-2-progresso-v1';
+function dayNumber(iso){return Date.parse(iso+'T00:00:00Z')/DAY;}
+function localISO(date){return date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2,'0')+'-'+String(date.getDate()).padStart(2,'0');}
+function formatDate(iso){return iso.split('-').reverse().join('/');}
+function stateFor(iso){
+ const day=dayNumber(iso),weekday=new Date(day*DAY).getUTCDay();
+ const monday=day-((weekday+6)%7);
+ const recess=iso>='2026-12-21'&&iso<='2027-01-31';
+ return {recess,closing:iso>'2026-12-15'&&iso<'2027-02-16',days:dayNumber('2026-12-01')-day,secondDays:dayNumber('2026-12-08')-day,index:recess?-1:meetings.findIndex(m=>dayNumber(m[0])>=monday&&dayNumber(m[0])<monday+7)};
+}
+let checked=Array(16).fill(false);
+const $=id=>document.getElementById(id);
+function storageWarning(){$('storageNote').textContent='Este navegador não permitiu salvar as marcações. Elas ficam disponíveis apenas enquanto esta página estiver aberta.';}
+try{const saved=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(saved)&&saved.length===16)checked=saved.map(v=>v===true);}catch(e){storageWarning();}
+function updateProgress(){const total=checked.filter(Boolean).length;$('progress').value=total;$('progressText').textContent=total+' de 16 encontros revisados/preparados · '+Math.round(total/16*100)+'%';}
+meetings.forEach((m,i)=>{
+ const li=document.createElement('li');li.id='encontro-'+(i+1);
+ const badge=document.createElement('span');badge.className='badge';badge.textContent='Encontro da semana';badge.hidden=true;li.append(badge);
+ const date=document.createElement('div');date.className='muted';date.textContent='Encontro '+String(i+1).padStart(2,'0')+' · '+formatDate(m[0]);li.append(date);
+ const title=document.createElement('h3');title.textContent=m[1];li.append(title);
+ const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.checked=checked[i];input.setAttribute('aria-label','Encontro '+String(i+1).padStart(2,'0')+' revisado/preparado');
+ input.addEventListener('change',()=>{checked[i]=input.checked;updateProgress();try{localStorage.setItem(KEY,JSON.stringify(checked));}catch(e){storageWarning();}});
+ label.append(input,document.createTextNode('Revisado/preparado'));li.append(label);$('meetings').append(li);
+});
+function renderToday(){
+ const iso=localISO(new Date()),s=stateFor(iso);
+ $('today').textContent='Hoje: '+formatDate(iso);
+ $('countdown').textContent=s.days>0?'Faltam '+s.days+(s.days===1?' dia':' dias')+' para o Seminário Final':s.days===0?'O Seminário Final começa hoje':'O início do Seminário Final foi em 01/12/2026';
+ $('secondDeadline').hidden=!(s.days<0&&s.secondDays>=0);
+ $('secondDeadline').textContent=s.secondDays===0?'A segunda etapa do Seminário Final é hoje — 08/12/2026.':'Segunda etapa — 08/12/2026: faltam '+s.secondDays+(s.secondDays===1?' dia.':' dias.');
+ if(s.recess){
+  $('week').textContent='Recesso acadêmico — não há aula na semana';
+  $('weekDetail').textContent='21/12/2026 a 31/01/2027 · Sem aulas nem obrigações. Recesso de fechamento: sem nova aula até 16/02/2027.';
+ }else if(s.closing){
+  $('week').textContent='Recesso de fechamento — sem nova aula até 16/02/2027';
+  $('weekDetail').textContent=s.index>=0?'Encontro '+String(s.index+1).padStart(2,'0')+' corresponde a esta semana: '+formatDate(meetings[s.index][0])+' — '+meetings[s.index][1]+'.':'';
+ }else{
+  $('week').textContent=s.index>=0?'Encontro '+String(s.index+1).padStart(2,'0')+' · nesta semana':'Nenhum encontro previsto para esta semana';
+  $('weekDetail').textContent=s.index>=0?formatDate(meetings[s.index][0])+' — '+meetings[s.index][1]:'';
+ }
+ meetings.forEach((m,i)=>{const li=$('encontro-'+(i+1));li.classList.toggle('current',i===s.index);li.firstElementChild.hidden=i!==s.index;if(i===s.index)li.setAttribute('aria-current','date');else li.removeAttribute('aria-current');});
+}
+updateProgress();renderToday();setInterval(renderToday,30000);document.addEventListener('visibilitychange',renderToday);
+</script>
+</html>
