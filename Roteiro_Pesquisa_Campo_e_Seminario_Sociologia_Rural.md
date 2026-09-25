@@ -14,7 +14,7 @@ Nos últimos 20 minutos do encontro 9, apresentar a proposta e formar os grupos 
 - Assentado(a) da reforma agrária
 - Jovem rural que migrou ou pensa em migrar para a cidade
 
-**Pergunta motriz do grupo:** como esse perfil vive, hoje, a relação entre terra, trabalho e as novas tecnologias/plataformas digitais que chegam ao campo (crédito rural digital, apps de venda, redes sociais, agricultura de precisão, etc.)?
+**Pergunta motriz do grupo:** como esse perfil vive, hoje, a relação entre terra e trabalho, e qual é a relevância, se houver, das tecnologias e plataformas digitais nesse contexto? O que elas modificam, o que permanece e o que não parece ser afetado?
 
 Cada grupo recebe o roteiro das 3 semanas livres e um caderno de campo (físico ou digital) para registrar tudo.
 
@@ -60,7 +60,7 @@ Cada grupo recebe o roteiro das 3 semanas livres e um caderno de campo (físico 
 
 ## Consolidação (antes do encontro 13)
 
-Cada grupo organiza os 3 registros de campo num dossiê único e escolhe **um conceito sociológico central** (Marx, Weber, Bourdieu, Fanon etc. — já vistos no curso) para interpretar o conjunto da pesquisa. Essa é a costura teórica que transforma relato de campo em análise sociológica.
+Cada grupo organiza os 3 registros de campo num dossiê único e escolhe **um conceito sociológico central já estudado** (por exemplo, classe ou expropriação em Marx, dominação em Weber, formas de capital em Bourdieu, solidariedade em Durkheim ou balanço entre trabalho e consumo em Chayanov) para interpretar o conjunto de evidências. Essa é a costura teórica que transforma relato de campo em análise sociológica.
 
 ---
 
@@ -70,9 +70,9 @@ Cada grupo organiza os 3 registros de campo num dossiê único e escolhe **um co
 
 **Estrutura obrigatória da apresentação:**
 1. Quem é o perfil pesquisado e por quê (1 min)
-2. Os 3 achados de campo, um por semana (5 min)
+2. Três conjuntos de evidências, um por etapa da pesquisa (5 min)
 3. Leitura sociológica: qual conceito do curso explica o que foi encontrado, e como (3-4 min)
-4. Resposta à pergunta do projeto: "esse perfil vive, hoje, uma relação nova com o rural por causa das plataformas — ou as mesmas desigualdades históricas continuam, só que com nova roupagem?" (1-2 min)
+4. Conclusão e limites: que relevância, se alguma, as plataformas digitais têm no caso? O que mudou, o que permaneceu e o que não é explicado por elas? (1-2 min)
 
 **Critérios de avaliação sugeridos:**
 - Qualidade do registro de campo (evidência real, não fabricada)
