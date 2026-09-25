@@ -66,11 +66,11 @@ Cada grupo organiza os 3 registros de campo num dossiê único e escolhe **um co
 
 ## Seminário Final — Encontros 13 e 14 (01/12 e 08/12)
 
-**Formato:** 10-12 minutos de apresentação por grupo + 5 minutos de perguntas.
+**Formato:** 10-12 minutos de apresentação por grupo (as quatro partes somam no máximo 12) + 5 minutos de perguntas. As apresentações ocupam a primeira metade da noite. Na segunda metade há uma aula de conteúdo: Trabalho feminino na história rural brasileira (Encontro 13, Aula 1) em 01/12 e Convivência com o semiárido (Encontro 14, Aula 3) em 08/12. As outras aulas dos dois encontros ficam como leitura complementar.
 
 **Estrutura obrigatória da apresentação:**
 1. Quem é o perfil pesquisado e por quê (1 min)
-2. Os 3 achados de campo, um por semana (5-6 min)
+2. Os 3 achados de campo, um por semana (5 min)
 3. Leitura sociológica: qual conceito do curso explica o que foi encontrado, e como (3-4 min)
 4. Resposta à pergunta do projeto: "esse perfil vive, hoje, uma relação nova com o rural por causa das plataformas — ou as mesmas desigualdades históricas continuam, só que com nova roupagem?" (1-2 min)
 
@@ -80,7 +80,7 @@ Cada grupo organiza os 3 registros de campo num dossiê único e escolhe **um co
 - Capacidade de conectar história agrária brasileira com o presente
 - Clareza da apresentação
 
-**Encontro 14** fecha com um debate coletivo puxado pelo professor, comparando os 5 perfis entre si — esse debate alimenta diretamente a síntese do encontro 15.
+**Encontro 14:** as apresentações fecham com um debate coletivo puxado pelo professor, ainda na primeira metade da noite, comparando os perfis entre si. O que sair dele volta na devolutiva do Encontro 16 (16/02/2027).
 
 ---
 
