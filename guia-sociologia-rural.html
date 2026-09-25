@@ -11,6 +11,7 @@
 <noscript>Ative o JavaScript do navegador para exibir o cronograma, identificar a semana e registrar seu progresso.</noscript>
 <section class="panel status" aria-label="Situação da semana"><p id="today" class="muted"></p><h2 id="week"></h2><p id="weekDetail"></p><p><span class="count" id="countdown" role="status"></span>Início do Seminário Final (Encontro 13): <strong>01/12/2026</strong>.</p><p id="secondDeadline" role="status" hidden></p></section>
 <div id="regular">
+<section class="panel"><h2>Avaliação</h2><p><strong>17/11/2026:</strong> Encontro 11 — entrega da Unidade 1 (40%), relatório individual sobre a Semana Livre 1.</p><p><strong>24/11/2026:</strong> Encontro 12 — devolutiva da Unidade 1.</p><p><strong>01/12 e 08/12/2026:</strong> Unidade 2 (60%), Seminário Final. Apresentação do grupo (70%) e resposta individual escrita no fim da noite em que o grupo apresenta (30%).</p></section>
 <section class="panel"><h2>Seminário Final</h2><p><strong>01/12/2026:</strong> Encontro 13 — apresentação dos grupos (parte 1).</p><p><strong>08/12/2026:</strong> Encontro 14 — apresentação dos grupos (parte 2).</p><p>Recesso acadêmico: 21/12/2026 a 31/01/2027, sem aulas nem obrigações.</p><p>Depois do Encontro 15 e antes do Encontro 16, o curso está em recesso de fechamento, sem nova aula até 16/02/2027.</p></section>
 <section class="panel" aria-label="Seu progresso"><h2>Seu acompanhamento</h2><p>Marque os encontros que você já revisou/preparou. Para desfazer, desmarque a caixa.</p><p id="progressText" role="status"></p><progress id="progress" max="16" value="0" aria-label="Encontros revisados/preparados"></progress><p id="storageNote" class="muted">As marcações ficam salvas neste navegador e neste dispositivo. Não são um registro de presença ou de nota.</p></section>
 <section><h2>Os 16 encontros</h2><p class="muted">O destaque usa a data do seu dispositivo e considera a semana de segunda-feira a domingo.</p><ol id="meetings"></ol></section>
@@ -62,11 +63,11 @@ const meetings = [
   ],
   [
     "2026-11-17",
-    "Povos e Comunidades Tradicionais (Semana Livre 2)"
+    "Povos e Comunidades Tradicionais (Semana Livre 2) · entrega da Unidade 1"
   ],
   [
     "2026-11-24",
-    "Gênero e Trabalho no Campo (Semana Livre 3)"
+    "Gênero e Trabalho no Campo (Semana Livre 3) · devolutiva da Unidade 1"
   ],
   [
     "2026-12-01",

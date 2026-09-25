@@ -32,6 +32,8 @@ Cada grupo recebe o roteiro das 3 semanas livres e um caderno de campo (físico 
 
 **Produto da semana:** 1 página de diário de campo (registro da entrevista) + 3 fotos ou prints (de feira, produto, tela de app, etc., se houver).
 
+**Unidade 1 (40% da nota):** relatório individual sobre esta semana, entregue no Encontro 11 (17/11/2026), com devolutiva no Encontro 12 (24/11). Mesmo com entrevista ou análise documental feita em grupo, cada estudante escreve o próprio relatório. Critérios: qualidade e rastreabilidade do registro, uso de um conceito do curso, ligação com a história agrária brasileira e cuidados éticos.
+
 ---
 
 ## Semana Livre 2 — Encontro 11 (17/11): Povos e Comunidades Tradicionais
@@ -74,7 +76,9 @@ Cada grupo organiza os 3 registros de campo num dossiê único e escolhe **um co
 3. Leitura sociológica: qual conceito do curso explica o que foi encontrado, e como (3-4 min)
 4. Conclusão e limites: que relevância, se alguma, as plataformas digitais têm no caso? O que mudou, o que permaneceu e o que não é explicado por elas? (1-2 min)
 
-**Critérios de avaliação sugeridos:**
+**Unidade 2 (60% da nota):** 70% da nota da unidade vem da apresentação do grupo, avaliada pelos critérios abaixo, e 30% de uma resposta individual escrita no fim da noite em que o grupo apresenta: 5 a 10 minutos para responder a uma pergunta sobre o trabalho do próprio grupo.
+
+**Critérios da apresentação:**
 - Qualidade do registro de campo (evidência real, não fabricada)
 - Uso correto e não decorativo do conceito sociológico
 - Capacidade de conectar história agrária brasileira com o presente

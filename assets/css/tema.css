@@ -114,6 +114,14 @@
 .tema-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
 /* ---------- Impressão ---------- */
+/* Telas estreitas: o selo de duração desce para baixo do título
+   e tabelas largas rolam dentro da própria caixa. */
+@media (max-width: 600px) {
+  .section-header { flex-wrap: wrap; }
+  .section-header .duration { margin-left: 0; white-space: normal; }
+  .table-wrap { overflow-x: auto; }
+}
+
 @media print {
   .tema-toggle { display: none; }
   html { scroll-behavior: auto; }
