@@ -1,0 +1,120 @@
+/* Tema claro/escuro das aulas.
+   Carregado depois do <style> de cada página. O tema escuro continua sendo o
+   visual original, definido no próprio HTML. Este arquivo só redefine as cores
+   quando assets/js/tema.js marca <html data-theme="light">. Sem JavaScript, a
+   página fica no tema escuro de sempre. */
+
+:root { color-scheme: dark; }
+
+/* Cinza secundário do tema escuro: #7a7a9a ficava em 4.35:1 sobre os cartões. */
+:root:not([data-theme="light"]) { --muted: #8a8aaa; }
+
+/* ---------- Paleta clara ---------- */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg:         #fafaf7;
+  --surface:    #ffffff;
+  --surface-2:  #f1f1ec;
+  --border:     #dcdce4;
+  --accent:     #a3480a;
+  --accent-dim: #92400e;
+  --teal:       #0369a1;
+  --green:      #166534;
+  --amber:      #8f5a06;
+  --red:        #b91c1c;
+  --purple:     #6d28d9;
+  --text:       #1a1a24;
+  --muted:      #5a5a72;
+}
+
+/* Cores fixas escritas direto nas páginas, fora das variáveis.
+   Seletores de elemento soltos (h3, strong, em) ficam dentro de :where() para
+   manter a especificidade baixa: assim regras como .highlight strong, que
+   usam cor própria, continuam valendo. Depende deste arquivo vir depois do
+   <style> da página. */
+:where(:root[data-theme="light"]) h3 { color: var(--text); }
+:where(:root[data-theme="light"]) strong { color: #111118; }
+:where(:root[data-theme="light"]) em { color: #2a2a3a; }
+
+:root[data-theme="light"] .hero h1,
+:root[data-theme="light"] .section-header h2,
+:root[data-theme="light"] .caso h3,
+:root[data-theme="light"] .activity h3,
+:root[data-theme="light"] .nav-card h3,
+:root[data-theme="light"] .arco-title,
+:root[data-theme="light"] .callout strong,
+:root[data-theme="light"] .laboratorio-callout h2,
+:root[data-theme="light"] .laboratorio-callout p { color: var(--text); }
+
+:root[data-theme="light"] .debate-card p,
+:root[data-theme="light"] .caso .leitura { color: #3a3a4a; }
+:root[data-theme="light"] .nav-card.laboratorio-card p { color: var(--muted); }
+
+:root[data-theme="light"] .hero {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% -10%, #f59e0b26 0%, transparent 70%),
+    linear-gradient(180deg, #fdf3e1 0%, var(--bg) 100%);
+}
+:root[data-theme="light"] .hero h1 span {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Âmbar */
+:root[data-theme="light"] .hero-badge,
+:root[data-theme="light"] .duration,
+:root[data-theme="light"] .activity-icon.amber,
+:root[data-theme="light"] .nav-card.amber .nav-card-icon { background: #fdf3e1; }
+:root[data-theme="light"] .callout { background: #fdf3e1; color: #4a3510; }
+
+/* Azul */
+:root[data-theme="light"] .objetivo { background: #e3f1f9; color: #0c3a52; }
+:root[data-theme="light"] .highlight,
+:root[data-theme="light"] .activity-icon.blue,
+:root[data-theme="light"] .nav-card.teal .nav-card-icon { background: #e3f1f9; }
+:root[data-theme="light"] .nav-card.teal:hover { border-color: #7fb8d8; }
+:root[data-theme="light"] .laboratorio-callout { background: #e3f1f9; border-color: #7fb8d8; border-left-color: var(--teal); }
+:root[data-theme="light"] .encontro-tag.livre { background: #e3f1f9; border-color: #7fb8d8; }
+
+/* Índice das aulas */
+:root[data-theme="light"] .encontro-head h2 { color: var(--text); }
+:root[data-theme="light"] .aula-tag.extra { background: #fdf3e1; }
+
+/* Vermelho, verde, roxo */
+:root[data-theme="light"] .callout-red { background: #fdecec; color: #5a1a1a; }
+:root[data-theme="light"] .activity-icon.green { background: #e6f4ea; }
+:root[data-theme="light"] .produto { background: #e6f4ea; color: #1d4a2a; }
+:root[data-theme="light"] .activity-icon.purple { background: #efeafc; }
+
+/* Tabelas */
+:root[data-theme="light"] thead tr { background: #f3efe3; }
+:root[data-theme="light"] td { border-bottom-color: var(--border); }
+:root[data-theme="light"] tbody tr:hover td { background: #f7f4ea; }
+
+/* ---------- Botão de tema ---------- */
+.tema-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font: 600 13px/1.2 var(--sans, system-ui, sans-serif);
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: .92;
+}
+.tema-toggle:hover { opacity: 1; border-color: var(--accent); }
+.tema-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- Impressão ---------- */
+@media print {
+  .tema-toggle { display: none; }
+  html { scroll-behavior: auto; }
+}
