@@ -13,22 +13,22 @@ Organizada por bloco de encontros. Legenda de acesso:
 > O clássico brasileiro do campo. Boa introdução ao objeto da disciplina — usar capítulo inicial. É uma coletânea organizada por Martins (com textos de Nisbet, Mannheim e Lefebvre, entre outros), por isso a entrada leva "(org.)". Existe 2. ed. (Hucitec, 1986). Usada no Encontro 1, Aula 1.
 
 **CHAYANOV, Alexander V.** Sobre a teoria dos sistemas econômicos não capitalistas. *In*: SILVA, José Graziano da; STOLCKE, Verena (org.). *A questão agrária*. São Paulo: Brasiliense, 1981. p. 133-163. 🟡🔵
-> Base para pensar a "economia camponesa" como lógica distinta da empresa capitalista. Atenção: é um capítulo de coletânea, não a obra completa. O balanço trabalho-consumo e a autoexploração do trabalho familiar estão desenvolvidos de forma mais extensa em *La organización de la unidad económica campesina* (Buenos Aires: Nueva Visión, 1974), edição em espanhol que constava antes nesta lista. Também vale ler via comentadores (ex.: Abramovay, cap. 2). Usada no Encontro 7 (Aulas 1 e 2) e no Encontro 13, Aula 3.
+> Base para pensar a "economia camponesa" como lógica distinta da empresa capitalista. Atenção: é um capítulo de coletânea, não a obra completa. O balanço trabalho-consumo e a autoexploração do trabalho familiar estão desenvolvidos de forma mais extensa em *La organización de la unidad económica campesina* (Buenos Aires: Nueva Visión, 1974), edição em espanhol que constava antes nesta lista. Também vale ler via comentadores (ex.: Abramovay, cap. 2). Usada no Encontro 7 (Aulas 1, 2 e 3) e no Encontro 13, Aula 3.
 
 **BOURDIEU, Pierre.** *O poder simbólico*. Tradução de Fernando Tomaz. Rio de Janeiro: Bertrand Brasil, 1989. 🟡
-> Conceitos de habitus, campo e capital — o capítulo introdutório basta. Usada no Encontro 2, Aula 3, no Encontro 13 (Aulas 1 e 2) e no Encontro 16, Aula 1.
+> Conceitos de habitus, campo e capital — o capítulo introdutório basta. Usada nas aulas 02-03, 04-01, 05-03, 09-02, 10-03, 12-03, 13-01, 13-02, 16-01 e na aula extra do Encontro 15.
 
 **MARX, Karl.** *O capital*: crítica da economia política. Livro I: o processo de produção do capital. Tradução de Rubens Enderle. São Paulo: Boitempo, 2013. 🟡
-> Capítulo sobre a chamada acumulação primitiva. Tradução feita a partir da MEGA-2. Usada no Encontro 1, Aula 3.
+> Capítulo sobre a chamada acumulação primitiva. Tradução feita a partir da MEGA-2. Usada nas aulas 01-03, 03-01, 03-02, 03-03, 05-01, 08-01, 10-03 e 12-03.
 
 **WEBER, Max.** *Economia e sociedade*: fundamentos da sociologia compreensiva. Tradução de Regis Barbosa e Karen Elsabe Barbosa. Revisão técnica de Gabriel Cohn. 4. ed. Brasília, DF: Editora Universidade de Brasília, 2000. v. 1. 🟡
-> Tipos de ação social (cap. I) e tipos de dominação legítima (cap. III). Usada no Encontro 2, Aula 1, no Encontro 7, Aula 2 e no Encontro 13, Aula 2.
+> Tipos de ação social (cap. I) e tipos de dominação legítima (cap. III). Usada nas aulas 02-01, 03-01, 06-01, 06-02, 07-02, 10-03, 12-03, 13-02 e 16-02.
 
 **DURKHEIM, Émile.** *Da divisão do trabalho social*. Tradução de Eduardo Brandão. 2. ed. São Paulo: Martins Fontes, 1999. 🟡
-> Solidariedade mecânica e orgânica. Usada no Encontro 2, Aula 2.
+> Solidariedade mecânica e orgânica. Usada nas aulas 02-02, 07-03, 10-03 e 12-03.
 
 **DURKHEIM, Émile.** *As regras do método sociológico*. Tradução de Paulo Neves. Revisão da tradução de Eduardo Brandão. 3. ed. São Paulo: Martins Fontes, 2007. 🟡
-> Conceito de fato social. Usada no Encontro 2, Aula 2, no Encontro 13, Aula 1 e no Encontro 14, Aula 2.
+> Conceito de fato social. Usada nas aulas 02-02, 10-03, 12-03, 13-01 e 14-02.
 
 ---
 
@@ -47,7 +47,7 @@ Organizada por bloco de encontros. Legenda de acesso:
 ## Bloco 3 — Estrutura Fundiária e Poder Local (Encontros 5-6)
 
 **LEAL, Victor Nunes.** *Coronelismo, enxada e voto*: o município e o regime representativo no Brasil. 7. ed. São Paulo: Companhia das Letras, 2012. 🟡🔵
-> Clássico fundador sobre coronelismo. O PDF do capítulo 1 e 7 (conceituação do fenômeno) circula em repositórios de universidades (ex: e-Disciplinas USP) — suficiente para a aula, não precisa do livro inteiro. Usada no Encontro 6, Aulas 1 e 2.
+> Clássico fundador sobre coronelismo. O PDF do capítulo 1 e 7 (conceituação do fenômeno) circula em repositórios de universidades (ex: e-Disciplinas USP) — suficiente para a aula, não precisa do livro inteiro. Usada nas aulas 06-01, 06-02, 14-01 e 16-02.
 
 **Dados sobre concentração fundiária:** **INCRA** e **Censo Agropecuário do IBGE** — dados abertos, bons para trazer números atuais para a aula. 🟢 (incra.gov.br / ibge.gov.br)
 
@@ -58,8 +58,8 @@ Organizada por bloco de encontros. Legenda de acesso:
 
 ## Bloco 4 — Campesinato e Questão Agrária (Encontros 7-8)
 
-**ABRAMOVAY, Ricardo.** *Paradigmas do Capitalismo Agrário em Questão.* São Paulo: Edusp/Hucitec, 3ª ed., 2007. 🟡
-> Referência central sobre campesinato x agricultura familiar; dialoga direto com Chayanov e com o marxismo agrário.
+**ABRAMOVAY, Ricardo.** *Paradigmas do capitalismo agrário em questão*. São Paulo: Hucitec: Anpocs; Campinas: Editora da Unicamp, 1992. 🟡
+> Referência central sobre campesinato x agricultura familiar; dialoga direto com Chayanov e com o marxismo agrário. Edição adotada em 29/09/2026: a 1. ed. (1992), confirmada no repositório da USP. A edição da Edusp que constava antes ("3ª ed., 2007") não pôde ser confirmada: as fontes divergem entre 2007 e 2008 e nenhuma confirma a 3. ed. Citado como livro inteiro, sem capítulo. Usada no Encontro 10, Aula 1.
 
 **STEDILE, João Pedro (org.).** *A Questão Agrária no Brasil.* São Paulo: Expressão Popular (coleção em vários volumes). 🟡
 > Coletânea de documentos históricos dos movimentos sociais no campo — boa fonte primária.
@@ -139,6 +139,12 @@ Entradas no formato da NBR 6023:2018 para legislação, com o texto oficial em a
 
 **BRASIL.** Lei nº 3.353, de 13 de maio de 1888. Declara extinta a escravidão no Brasil. Rio de Janeiro, 1888. Disponível em: https://www2.camara.leg.br/legin/fed/leimp/1824-1899/lei-3353-13-maio-1888-533138-publicacaooriginal-16269-pl.html. Acesso em: 29 set. 2026.
 > Lei Áurea. Usada no Encontro 3, Aula 3.
+
+**BRASIL.** Lei nº 11.326, de 24 de julho de 2006. Estabelece as diretrizes para a formulação da Política Nacional da Agricultura Familiar e Empreendimentos Familiares Rurais. Brasília, DF: Presidência da República, 2006. Disponível em: https://www2.camara.leg.br/legin/fed/lei/2006/lei-11326-24-julho-2006-544830-publicacaooriginal-56358-pl.html. Acesso em: 29 set. 2026.
+> Lei da Agricultura Familiar. Usada no Encontro 10, Aula 1.
+
+**BRASIL.** Decreto nº 6.040, de 7 de fevereiro de 2007. Institui a Política Nacional de Desenvolvimento Sustentável dos Povos e Comunidades Tradicionais. Brasília, DF: Presidência da República, 2007. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6040.htm. Acesso em: 29 set. 2026.
+> Usada no Encontro 11, Aula 1.
 
 **BRASIL.** [Constituição (1988)]. *Constituição da República Federativa do Brasil de 1988*. Brasília, DF: Presidência da República, [2026]. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 29 set. 2026.
 > Art. 68 do ADCT. A data entre colchetes segue a NBR 6023:2018 para o texto compilado consultado. Usada no Encontro 4, Aula 2.

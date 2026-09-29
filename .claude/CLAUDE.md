@@ -18,11 +18,13 @@ A ementa oficial tem 3 blocos: sociedade rural x urbana, caracterizacao socioeco
 
 ## Referencias das aulas (ABNT)
 
-- Regra de citacao: "cita e desenvolve". A secao Referencias de uma aula so inclui a obra, lei ou fonte que a aula cita pelo nome e desenvolve no conteudo. Ficam de fora mencoes de passagem, inclusive retomadas de uma frase so (ex.: Marx em 03-01, 03-03, 05-01 e 08-01, Bourdieu em 05-03), e autores indicados como sugestao de leitura para os projetos de pesquisa dos alunos. Quando a aula aplica em paragrafo proprio um conceito de encontro anterior, a obra daquele encontro e citada de novo.
-- 24 das 51 aulas tem a secao Referencias, no formato NBR 6023:2018, numerada como a proxima secao da aula (05 na maioria, 04 em encontro-01-aula-01). Estilo em assets/css/tema.css (.ref-list e .ref-nota).
-- 27 aulas ficam sem a secao: as 10 aulas-guia da pesquisa de campo (10-01 a 12-03 e 13-seminario-final) e 17 aulas sem obra nomeada (01-02, 03-01, 04-01, 04-03, 06-03, 07-03, 08-01, 08-02, 09-02, 09-03, 10-extra, 14-03, 15-01, 15-02, 15-03, 16-02, 16-03).
+- Regra de citacao (ampliada em 29/09/2026): a secao Referencias de uma aula inclui (1) toda obra, lei ou fonte que a aula cita pelo nome e desenvolve; (2) a obra de todo conceito de encontro anterior que a aula retoma nomeando o autor, mesmo em uma frase so; (3) nas aulas-guia da pesquisa de campo, os autores e leis indicados como leitura para os projetos dos alunos, com o mesmo criterio ABNT. Nao entram: referencias para frente (ex.: Kautsky em 01-02, desenvolvido so no Encontro 7), atos normativos que a aula nao nomeia (ex.: criacao do INCRA e do PRONAF em 15-01 e 15-03), literatura generica sem obra nomeada ("pesquisadores da ABA", "publicacoes do MDA") e listas de topicos sem autor.
+- Quando a aula lista genericamente os conceitos do curso (10-03 e 12-03: "Marx, Weber, Durkheim ou Bourdieu"), entram as obras dos quatro autores, com os dois livros de Durkheim.
+- 34 das 51 aulas tem a secao Referencias, no formato NBR 6023:2018, numerada como a proxima secao da aula (05 nas aulas de conteudo, 04 em encontro-01-aula-01 e nas aulas-guia). Estilo em assets/css/tema.css (.ref-list e .ref-nota). Entradas em ordem alfabetica, e cronologica quando o autor se repete (ex.: Lei 601/1850 antes da Lei 3.353/1888).
+- 17 aulas ficam sem a secao porque nao nomeiam nenhuma obra, lei ou fonte citavel: 10-02, 11-02, 11-03, 12-01, 12-02, 13-seminario-final, 16-03, 01-02, 04-03, 06-03, 08-02, 09-03, 10-extra, 14-03, 15-01, 15-02, 15-03.
 - Bibliografia_Sociologia_Rural_2026.2.md e a fonte das edicoes. Obra nova so entra depois de busca da edicao brasileira mais usada e confirmacao do professor, e cada entrada indica as aulas que a usam. Sobrenomes compostos seguem a mesma forma na mestre e nas aulas (ex.: SILVA, Jose Graziano da; FERNANDES, Bernardo Mancano).
 - Em 09-01, a autoria de "modernizacao conservadora" foi corrigida: o conceito e de Barrington Moore Jr., aplicado ao caso agrario brasileiro por Jose Graziano da Silva. A aula atribuia o conceito a Martins por engano.
+- Em 11-01, o nome do Decreto 6.040/2007 foi corrigido para "Politica Nacional de Desenvolvimento Sustentavel dos Povos e Comunidades Tradicionais".
 
 ## Skill relacionada
 
