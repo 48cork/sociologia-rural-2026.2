@@ -113,6 +113,28 @@
 .tema-toggle:hover { opacity: 1; border-color: var(--accent); }
 .tema-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
+/* ---------- Referências (seção final das aulas) ---------- */
+.ref-list { list-style: none; padding-left: 0; margin: 0; }
+.ref-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 16px 22px;
+  margin-bottom: 12px;
+  font-size: .96rem;
+  line-height: 1.65;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+.ref-list li strong { color: var(--text); }
+.ref-list .ref-nota {
+  display: block;
+  margin-top: 8px;
+  font-size: .88rem;
+  color: var(--muted);
+}
+
 /* ---------- Impressão ---------- */
 /* Telas estreitas: o selo de duração desce para baixo do título
    e tabelas largas rolam dentro da própria caixa. */
