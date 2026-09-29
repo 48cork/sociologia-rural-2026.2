@@ -92,7 +92,7 @@ Organizada por bloco de encontros. Legenda de acesso:
 
 **ABRAMOVAY, Ricardo.** *Paradigmas do Capitalismo Agrário em Questão* — reaproveitar, cap. sobre agricultura familiar. 🟡
 
-**Sobre povos e comunidades tradicionais:** Decreto nº 6.040/2007 (Política Nacional de Povos e Comunidades Tradicionais) — texto legal curto, disponível no site do Planalto. 🟢 (planalto.gov.br)
+**Sobre povos e comunidades tradicionais:** Decreto nº 6.040/2007 (Política Nacional de Desenvolvimento Sustentável dos Povos e Comunidades Tradicionais) — texto legal curto, disponível no site do Planalto. 🟢 (planalto.gov.br)
 
 **Artigos do SciELO** sobre "fundo de pasto", "ribeirinhos" ou "extrativistas" conforme a região de interesse da turma. 🟢
 
